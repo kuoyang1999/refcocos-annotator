@@ -55,7 +55,7 @@ with open('templates/reference_annotator.html', 'w') as f:
 </head>
 <body>
     <h2>Reference Bounding Box Selector and Category Labeler</h2>
-    
+
     <div>
         <button id="prev-btn">Previous</button>
         <button id="next-btn">Next</button>
@@ -64,10 +64,10 @@ with open('templates/reference_annotator.html', 'w') as f:
         <span id="saved-indicator" class="saved-indicator">✓ Saved</span>
         <span id="save-status" class="status-unsaved">Unsaved</span>
     </div>
-    
+
     <div id="status">Loading...</div>
     <div id="image-path"></div>
-    
+
     <div id="main-container">
         <div id="left-panel">
             <div>
@@ -77,22 +77,22 @@ with open('templates/reference_annotator.html', 'w') as f:
             <div id="problem-container">
                 <div id="problem-text"></div>
             </div>
-            
+
             <div class="form-section">
                 <h3>Available Bounding Boxes</h3>
                 <div id="category-info" class="category-info">No categories with multiple instances</div>
                 <div id="bbox-selector"></div>
             </div>
-            
+
             <div class="form-section">
                 <h3>Category Labels</h3>
-                
+
                 <div id="empty-case-container" class="option-group">
                     <label>Empty Case: </label>
                     <span id="empty-case-value">No</span>
                     <span>(auto-detected)</span>
                 </div>
-                
+
                 <div class="option-group">
                     <label><b>1. Hops:</b></label><br>
                     <div id="hops-options">
@@ -102,24 +102,25 @@ with open('templates/reference_annotator.html', 'w') as f:
                         <label><input type="radio" name="hops" value="5"> 5</label>
                     </div>
                 </div>
-                
+
                 <div class="option-group">
                     <label><b>2. Type:</b></label><br>
                     <div id="type-options" class="checkbox-group">
                         <label><input type="checkbox" name="type" value="spatial"> Spatial</label>
                         <label><input type="checkbox" name="type" value="exclude"> Exclude</label>
                         <label><input type="checkbox" name="type" value="verb"> Verb</label>
+                        <label><input type="checkbox" name="type" value="attr"> Attr</label>
                     </div>
                 </div>
-                
+
                 <div class="option-group">
-                    <label><b>3. Hidden:</b></label><br>
-                    <div id="hidden-options">
-                        <label><input type="radio" name="hidden" value="true"> Yes</label>
-                        <label><input type="radio" name="hidden" value="false"> No</label>
+                    <label><b>3. Occluded:</b></label><br>
+                    <div id="occluded-options">
+                        <label><input type="radio" name="occluded" value="true"> Yes</label>
+                        <label><input type="radio" name="occluded" value="false"> No</label>
                     </div>
                 </div>
-                
+
                 <div class="option-group">
                     <label><b>4. Distractors:</b></label><br>
                     <div id="distractors-container">
@@ -127,11 +128,11 @@ with open('templates/reference_annotator.html', 'w') as f:
                         <span>(auto-calculated)</span>
                     </div>
                 </div>
-                
+
                 <div id="coords">Selected Box: None</div>
             </div>
         </div>
-        
+
         <div id="right-panel">
             <div id="image-container">
                 <div id="canvas-container">
@@ -140,12 +141,12 @@ with open('templates/reference_annotator.html', 'w') as f:
             </div>
         </div>
     </div>
-    
+
     <script>
         // Prevent any default browser behaviors
         document.addEventListener('dragstart', e => e.preventDefault(), false);
         document.addEventListener('contextmenu', e => e.preventDefault(), false);
-        
+
         // Elements
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -163,12 +164,12 @@ with open('templates/reference_annotator.html', 'w') as f:
         const distractor = document.getElementById('distractors-value');
         const bboxSelector = document.getElementById('bbox-selector');
         const categoryInfo = document.getElementById('category-info');
-        
+
         // Form elements
         const hopsOptions = document.querySelectorAll('input[name="hops"]');
         const typeOptions = document.querySelectorAll('input[name="type"]');
-        const hiddenOptions = document.querySelectorAll('input[name="hidden"]');
-        
+        const occludedOptions = document.querySelectorAll('input[name="occluded"]');
+
         // Variables
         let currentIndex = 0;
         let totalImages = 0;
@@ -181,17 +182,17 @@ with open('templates/reference_annotator.html', 'w') as f:
         let bboxes = [];
         let savedData = {};
         let isSavedToFile = false;
-        
+
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
-        
+
         // Debug flag - set to true for verbose console logging
         const DEBUG = true;
-        
+
         function debug(...args) {
             if (DEBUG) console.log(...args);
         }
-        
+
         // Update the save status indicator
         function updateSaveStatus() {
             const saveStatus = document.getElementById('save-status');
@@ -203,31 +204,31 @@ with open('templates/reference_annotator.html', 'w') as f:
                 saveStatus.className = 'status-unsaved';
             }
         }
-        
+
         // Button events
         prevBtn.addEventListener('click', function() {
             if (currentIndex > 0) {
                 loadImage(currentIndex - 1);
             }
         });
-        
+
         nextBtn.addEventListener('click', function() {
             if (currentIndex < totalImages - 1) {
                 loadImage(currentIndex + 1);
             }
         });
-        
+
         saveBtn.addEventListener('click', function() {
             saveAnnotation();
         });
-        
+
         // Caption input event
         captionInput.addEventListener('input', function() {
             updateProblemText();
             isSavedToFile = false;
             updateSaveStatus();
         });
-        
+
         // Update problem text based on caption
         function updateProblemText() {
             const caption = captionInput.value.trim();
@@ -237,51 +238,51 @@ with open('templates/reference_annotator.html', 'w') as f:
                 problemText.textContent = '';
             }
         }
-        
+
         // Update the empty case status
         function updateEmptyCaseStatus(isEmpty) {
             emptyCase.textContent = isEmpty ? 'Yes' : 'No';
+
+            // When changing to empty case, ensure selectedBbox is null
+            if (isEmpty && selectedBbox !== null) {
+                selectedBbox = null;
+                coords.textContent = `Selected Box: null (Empty Case)`;
+            }
         }
-        
+
         // Calculate distractors value based on selected bbox and category
         function calculateDistractors() {
             if (selectedBbox === null) {
-                distractor.textContent = 'N/A';
-                return;
-            }
-            
-            // Check if this is an empty case
-            if (selectedBbox.every(coord => coord === 0)) {
                 // Sum all instances across all categories
                 let totalInstances = 0;
                 currentImageData.categories_with_multiple_instances.forEach(category => {
                     totalInstances += category.count;
                 });
-                
+
                 // Set distractors to the total count (always showing the exact number)
                 distractor.textContent = totalInstances.toString();
                 return distractor.textContent;
             }
-            
+
             if (selectedCategoryIndex === -1) {
                 distractor.textContent = 'N/A';
                 return;
             }
-            
+
             const categoryData = currentImageData.categories_with_multiple_instances[selectedCategoryIndex];
-            
+
             // Count is the total number of instances
             const totalInstances = categoryData.count;
-            
+
             // Distractors is total - 1 (the selected one)
             const distractorsValue = totalInstances - 1;
-            
+
             // Always show the exact number
             distractor.textContent = distractorsValue.toString();
-            
+
             return distractor.textContent;
         }
-        
+
         // Get all form data as an object
         function getFormData() {
             const formData = {
@@ -290,13 +291,13 @@ with open('templates/reference_annotator.html', 'w') as f:
                 type: Array.from(typeOptions)
                     .filter(cb => cb.checked)
                     .map(cb => cb.value),
-                hidden: getSelectedRadioValue(hiddenOptions) === 'true',
+                occluded: getSelectedRadioValue(occludedOptions) === 'true',
                 distractors: distractor.textContent
             };
-            
+
             return formData;
         }
-        
+
         // Get the value of a selected radio button
         function getSelectedRadioValue(radioButtons) {
             for (const radio of radioButtons) {
@@ -306,32 +307,32 @@ with open('templates/reference_annotator.html', 'w') as f:
             }
             return null;
         }
-        
+
         // Set form values based on loaded data
         function setFormValues(data) {
             if (data && data.categories) {
                 currentCategories = data.categories;
-                
+
                 // Set empty case
                 updateEmptyCaseStatus(data.categories.empty_case || false);
-                
+
                 // Set hops
                 if (data.categories.hops) {
                     setRadioValue(hopsOptions, data.categories.hops.toString());
                 }
-                
+
                 // Set type (multiple selection)
                 if (data.categories.type && Array.isArray(data.categories.type)) {
                     typeOptions.forEach(option => {
                         option.checked = data.categories.type.includes(option.value);
                     });
                 }
-                
-                // Set hidden
-                if (data.categories.hidden !== undefined) {
-                    setRadioValue(hiddenOptions, data.categories.hidden.toString());
+
+                // Set occluded
+                if (data.categories.occluded !== undefined) {
+                    setRadioValue(occludedOptions, data.categories.occluded.toString());
                 }
-                
+
                 // Distractors is auto-calculated
             } else {
                 // Initialize with default values
@@ -339,37 +340,37 @@ with open('templates/reference_annotator.html', 'w') as f:
                     empty_case: false,
                     hops: null,
                     type: [],
-                    hidden: false,
+                    occluded: false,
                     distractors: null
                 };
-                
+
                 // Clear all form selections
                 clearFormSelections();
             }
         }
-        
+
         // Set a radio button value
         function setRadioValue(radioButtons, value) {
             for (const radio of radioButtons) {
                 radio.checked = radio.value === value;
             }
         }
-        
+
         // Clear all form selections
         function clearFormSelections() {
             // Clear hops
             hopsOptions.forEach(radio => radio.checked = false);
-            
+
             // Clear type
             typeOptions.forEach(checkbox => checkbox.checked = false);
-            
-            // Set hidden to "No" by default
-            setRadioValue(hiddenOptions, 'false');
-            
+
+            // Set occluded to "No" by default
+            setRadioValue(occludedOptions, 'false');
+
             // Distractors is auto-calculated
             distractor.textContent = 'N/A';
         }
-        
+
         // Convert COCO bbox format [x, y, width, height] to [x1, y1, x2, y2]
         function convertBboxFormat(bbox) {
             return [
@@ -379,44 +380,44 @@ with open('templates/reference_annotator.html', 'w') as f:
                 bbox[1] + bbox[3]        // y2 = y + height
             ];
         }
-        
+
         // Draw bounding boxes on the canvas
         function drawBboxes() {
             // Clear the canvas and redraw the image
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
-            
+
             if (!currentImageData || !currentImageData.categories_with_multiple_instances) {
                 return;
             }
-            
+
             const imageWidth = currentImageData.width;
             const imageHeight = currentImageData.height;
-            
+
             // Draw all bounding boxes
             currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
                 const color = catIndex === selectedCategoryIndex ? 'red' : 'rgba(0, 0, 255, 0.7)';
-                
+
                 category.instances.forEach((bbox, bboxIndex) => {
                     // Convert from image coordinates to canvas coordinates
                     const canvasX = bbox[0] / imageWidth * canvas.width;
                     const canvasY = bbox[1] / imageHeight * canvas.height;
                     const canvasWidth = bbox[2] / imageWidth * canvas.width;
                     const canvasHeight = bbox[3] / imageHeight * canvas.height;
-                    
+
                     // Set styling based on whether this is the selected bbox
                     const isSelected = catIndex === selectedCategoryIndex && bboxIndex === selectedBboxIndex;
-                    
+
                     if (isSelected) {
                         // Draw selected bbox with red outline and semi-transparent fill
                         ctx.lineWidth = 3;
                         ctx.strokeStyle = 'red';
                         ctx.fillStyle = 'rgba(255, 0, 0, 0.2)';
-                        
+
                         // Draw rectangle with fill
                         ctx.strokeRect(canvasX, canvasY, canvasWidth, canvasHeight);
                         ctx.fillRect(canvasX, canvasY, canvasWidth, canvasHeight);
-                        
+
                         // Add category label above the bbox
                         ctx.fillStyle = 'red';
                         ctx.font = 'bold 12px Arial';
@@ -425,14 +426,14 @@ with open('templates/reference_annotator.html', 'w') as f:
                         // Draw unselected bbox with blue outline only (no fill)
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = color;
-                        
+
                         // Draw rectangle outline only
                         ctx.strokeRect(canvasX, canvasY, canvasWidth, canvasHeight);
-                        
+
                         // Draw center point
                         const centerX = canvasX + canvasWidth / 2;
                         const centerY = canvasY + canvasHeight / 2;
-                        
+
                         ctx.beginPath();
                         ctx.arc(centerX, centerY, 3, 0, 2 * Math.PI);
                         ctx.fillStyle = color;
@@ -441,65 +442,65 @@ with open('templates/reference_annotator.html', 'w') as f:
                 });
             });
         }
-        
+
         // Create interactive bbox selector
         function createBboxSelector() {
             // Clear the selector
             bboxSelector.innerHTML = '';
-            
+
             if (!currentImageData || !currentImageData.categories_with_multiple_instances) {
                 categoryInfo.textContent = 'No categories with multiple instances';
                 return;
             }
-            
+
             if (currentImageData.categories_with_multiple_instances.length === 0) {
                 categoryInfo.textContent = 'No categories with multiple instances';
                 return;
             }
-            
+
             categoryInfo.textContent = `${currentImageData.categories_with_multiple_instances.length} categories with multiple instances:`;
-            
+
             // Add Empty Case option at the top
             const emptyDiv = document.createElement('div');
             emptyDiv.className = 'category-section';
-            emptyDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${selectedBbox && selectedBbox.every(coord => coord === 0) ? 'red' : 'blue'};">Empty Case Option</div>`;
-            
+            emptyDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${selectedBbox === null ? 'red' : 'blue'};">Empty Case Option</div>`;
+
             const emptyBboxDiv = document.createElement('div');
             emptyBboxDiv.className = 'bbox-option';
-            if (selectedBbox && selectedBbox.every(coord => coord === 0)) {
+            if (selectedBbox === null) {
                 emptyBboxDiv.classList.add('selected');
             }
-            
-            emptyBboxDiv.textContent = `No bounding box [0, 0, 0, 0]`;
-            
+
+            emptyBboxDiv.textContent = `No bounding box (Empty Case)`;
+
             // Selection event for empty case
             emptyBboxDiv.addEventListener('click', () => {
                 // Update selection to empty case
                 selectedCategoryIndex = -1;
                 selectedBboxIndex = -1;
-                selectedBbox = [0, 0, 0, 0];
-                
+                selectedBbox = null;
+
                 // Update UI
-                coords.textContent = `Selected Box: [0, 0, 0, 0] (Empty Case)`;
+                coords.textContent = `Selected Box: null (Empty Case)`;
                 updateEmptyCaseStatus(true);
                 calculateDistractors();
                 isSavedToFile = false;
                 updateSaveStatus();
-                
+
                 // Redraw all bboxes with new selection
                 createBboxSelector();
                 drawBboxes();
             });
-            
+
             emptyDiv.appendChild(emptyBboxDiv);
             bboxSelector.appendChild(emptyDiv);
-            
+
             // For each category with multiple instances
             currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category-section';
                 categoryDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${catIndex === selectedCategoryIndex ? 'red' : 'blue'};">${category.category_name} (${category.count} instances)</div>`;
-                
+
                 // For each bbox in this category
                 category.instances.forEach((bbox, bboxIndex) => {
                     const bboxDiv = document.createElement('div');
@@ -507,37 +508,37 @@ with open('templates/reference_annotator.html', 'w') as f:
                     if (catIndex === selectedCategoryIndex && bboxIndex === selectedBboxIndex) {
                         bboxDiv.classList.add('selected');
                     }
-                    
+
                     // Format coordinates
                     const [x, y, w, h] = bbox;
                     bboxDiv.textContent = `Box ${bboxIndex + 1}: [${Math.round(x)}, ${Math.round(y)}, ${Math.round(w)}, ${Math.round(h)}]`;
-                    
+
                     // Selection event
                     bboxDiv.addEventListener('click', () => {
                         // Update selection
                         selectedCategoryIndex = catIndex;
                         selectedBboxIndex = bboxIndex;
                         selectedBbox = convertBboxFormat(bbox);
-                        
+
                         // Update UI
                         coords.textContent = `Selected Box: [${selectedBbox.join(', ')}]`;
                         updateEmptyCaseStatus(false);
                         calculateDistractors();
                         isSavedToFile = false;
                         updateSaveStatus();
-                        
+
                         // Redraw all bboxes with new selection
                         createBboxSelector();
                         drawBboxes();
                     });
-                    
+
                     categoryDiv.appendChild(bboxDiv);
                 });
-                
+
                 bboxSelector.appendChild(categoryDiv);
             });
         }
-        
+
         // Check if the annotation is valid for saving
         function validateAnnotation() {
             // Get caption and validate
@@ -546,49 +547,57 @@ with open('templates/reference_annotator.html', 'w') as f:
                 alert('Please enter a caption for the selected region');
                 return false;
             }
-            
-            // Check if bbox is selected
-            if (selectedBbox === null) {
-                alert('Please select a bounding box or mark as empty case');
-                return false;
-            }
-            
+
             // Get form data
             const formData = getFormData();
-            
+
+            // For empty cases, selectedBbox should be null
+            if (formData.empty_case) {
+                if (selectedBbox !== null) {
+                    alert('Empty case should have null bounding box');
+                    return false;
+                }
+            } else {
+                // For non-empty cases, selectedBbox should not be null
+                if (selectedBbox === null) {
+                    alert('Please select a bounding box');
+                    return false;
+                }
+            }
+
             // Check if hops is selected
             if (!formData.hops) {
                 alert('Please select hops value');
                 return false;
             }
-            
-            // Check if hidden is selected
-            if (formData.hidden === null) {
-                alert('Please select whether it is hidden or not');
+
+            // Check if occluded is selected
+            if (formData.occluded === null) {
+                alert('Please select whether it is occluded or not');
                 return false;
             }
-            
+
             return true;
         }
-        
+
         // Check if the annotation is already saved in the output file
         function checkIfSavedInFile(imageId, annotationData) {
             // This uses the savedData cache which is loaded from the output file
             return !!savedData[imageId];
         }
-        
+
         // Save annotation with selected bbox and categories
         function saveAnnotation(callback) {
             if (!validateAnnotation()) {
                 return;
             }
-            
+
             // Get caption
             const caption = captionInput.value.trim();
-            
+
             // Get category form data
             const formData = getFormData();
-            
+
             // Create annotation data
             const annotationData = {
                 dataset: "refcocos_test",
@@ -602,9 +611,9 @@ with open('templates/reference_annotator.html', 'w') as f:
                 normalized_solution: calculateNormalizedSolution(selectedBbox, currentImageData.width, currentImageData.height),
                 categories: formData
             };
-            
+
             debug('Saving annotation', annotationData);
-            
+
             // Send to server to save
             fetch(`/api/save_reference?cache=${cacheBuster}`, {
                 method: 'POST',
@@ -619,22 +628,22 @@ with open('templates/reference_annotator.html', 'w') as f:
                 if (data.success) {
                     // Store saved data for this image
                     savedData[currentImageData.image_id] = annotationData;
-                    
+
                     // Update current categories
                     currentCategories = formData;
-                    
+
                     // Mark as saved
                     isSavedToFile = true;
                     updateSaveStatus();
-                    
+
                     // Show saved indicator
                     savedIndicator.style.display = 'inline';
                     setTimeout(() => {
                         savedIndicator.style.display = 'none';
                     }, 2000);
-                    
+
                     status.textContent = "Annotation saved successfully!";
-                    
+
                     if (callback) callback();
                 } else {
                     alert('Error: ' + data.message);
@@ -645,22 +654,22 @@ with open('templates/reference_annotator.html', 'w') as f:
                 alert('Failed to save annotation');
             });
         }
-        
+
         // Calculate normalized solution coordinates
         function calculateNormalizedSolution(bbox, width, height) {
-            if (!bbox) return [];
-            
+            if (!bbox) return null;
+
             const [x1, y1, x2, y2] = bbox;
-            
+
             // Calculate normalized coordinates (0-1000 range)
             const norm_x1 = Math.round(x1 / width * 1000);
             const norm_y1 = Math.round(y1 / height * 1000);
             const norm_x2 = Math.round(x2 / width * 1000);
             const norm_y2 = Math.round(y2 / height * 1000);
-            
+
             return [norm_x1, norm_y1, norm_x2, norm_y2];
         }
-        
+
         // Format image path to val2017/xxxxx
         function formatImagePath(path) {
             const regex = /.*\/([^\/]+)$/;
@@ -670,11 +679,11 @@ with open('templates/reference_annotator.html', 'w') as f:
             }
             return path;
         }
-        
+
         // Find the index of the first unsaved image
         function findFirstUnsavedImageIndex() {
             debug('Finding first unsaved image...');
-            
+
             return new Promise((resolve, reject) => {
                 // First get the total images from the loaded data
                 fetch(`/api/image_status?cache=${cacheBuster}`)
@@ -683,15 +692,15 @@ with open('templates/reference_annotator.html', 'w') as f:
                         const totalImages = data.total_images;
                         const savedImageIds = data.saved_image_ids;
                         const savedAnnotations = data.saved_annotations || {};
-                        
+
                         // Store saved annotations in the savedData object
                         for (const [imageId, annotation] of Object.entries(savedAnnotations)) {
                             savedData[imageId] = annotation;
                         }
-                        
+
                         debug(`Found ${totalImages} total images, ${savedImageIds.length} already saved`);
                         debug('Saved data loaded:', Object.keys(savedData).length, 'images');
-                        
+
                         // Function to check each image sequentially
                         function checkImageSequentially(index) {
                             if (index >= totalImages) {
@@ -700,7 +709,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                                 resolve(0);
                                 return;
                             }
-                            
+
                             fetch(`/api/image/${index}?cache=${cacheBuster}`)
                                 .then(response => response.json())
                                 .then(data => {
@@ -708,10 +717,10 @@ with open('templates/reference_annotator.html', 'w') as f:
                                         checkImageSequentially(index + 1);
                                         return;
                                     }
-                                    
+
                                     // Check if this image's ID is in the saved list
                                     const isSaved = savedImageIds.includes(data.image_id);
-                                    
+
                                     if (!isSaved) {
                                         // Found an unsaved image
                                         debug(`Found unsaved image at index ${index}, image_id: ${data.image_id}`);
@@ -727,7 +736,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                                     checkImageSequentially(index + 1);
                                 });
                         }
-                        
+
                         // Start checking from the first image
                         checkImageSequentially(0);
                     })
@@ -737,12 +746,12 @@ with open('templates/reference_annotator.html', 'w') as f:
                     });
             });
         }
-        
+
         // Load image and bbox data
         function loadImage(index) {
             debug('Loading image', index);
             savedIndicator.style.display = 'none';
-            
+
             fetch(`/api/image/${index}?cache=${cacheBuster}`)
                 .then(response => response.json())
                 .then(data => {
@@ -750,49 +759,49 @@ with open('templates/reference_annotator.html', 'w') as f:
                         status.textContent = "Error: " + data.error;
                         return;
                     }
-                    
+
                     // Store current image data
                     currentIndex = index;
                     currentImageData = data;
                     totalImages = data.total_images;
-                    
+
                     // Reset selection
                     selectedBbox = null;
                     selectedBboxIndex = -1;
                     selectedCategoryIndex = -1;
-                    
+
                     // Update UI
                     progress.textContent = `Image ${index + 1}/${totalImages}`;
                     const formattedPath = formatImagePath(data.path);
                     imagePath.textContent = `Image: ${formattedPath}`;
                     prevBtn.disabled = currentIndex === 0;
                     nextBtn.disabled = currentIndex === totalImages - 1;
-                    
+
                     // Clear caption and coords
                     captionInput.value = '';
                     problemText.textContent = '';
                     coords.textContent = 'Selected Box: None';
-                    
+
                     // Check if this image has saved data
                     debug('Checking for saved data for image ID:', data.image_id);
                     debug('Available saved data keys:', Object.keys(savedData));
-                    
+
                     // Load previously saved data for this image if available
                     if (savedData[data.image_id]) {
                         debug('Found saved data for image:', data.image_id);
                         const saved = savedData[data.image_id];
                         captionInput.value = saved.normal_caption || '';
                         updateProblemText();
-                        
-                        if (saved.solution && saved.solution.length === 4) {
+
+                        if (saved.solution) {
                             selectedBbox = saved.solution;
-                            coords.textContent = `Selected Box: [${selectedBbox.join(', ')}]`;
-                            
+                            coords.textContent = `Selected Box: ${selectedBbox === null ? 'null (Empty Case)' : '[' + selectedBbox.join(', ') + ']'}`;
+
                             // Try to find the matching bbox in the current data
                             let matchFound = false;
-                            const isEmptyBox = selectedBbox.every(coord => coord === 0);
-                            
-                            if (isEmptyBox) {
+                            const isEmptyCase = saved.categories && saved.categories.empty_case === true;
+
+                            if (isEmptyCase) {
                                 // This is an empty case
                                 updateEmptyCaseStatus(true);
                                 matchFound = true;
@@ -808,12 +817,12 @@ with open('templates/reference_annotator.html', 'w') as f:
                                     });
                                 });
                             }
-                            
+
                             if (!matchFound) {
                                 debug('Warning: Could not match the saved bbox to any current bbox');
                             }
                         }
-                        
+
                         setFormValues(saved);
                         isSavedToFile = true;
                         debug('Marked as saved in file');
@@ -824,29 +833,29 @@ with open('templates/reference_annotator.html', 'w') as f:
                         clearFormSelections();
                         isSavedToFile = false;
                     }
-                    
+
                     // Update save status indicator
                     updateSaveStatus();
-                    
+
                     // Calculate distractors
                     calculateDistractors();
-                    
+
                     // Load the image
                     debug('Loading image source', data.path);
                     currentImage = new Image();
                     currentImage.onload = function() {
                         debug('Image loaded', this.width, this.height);
-                        
+
                         // Calculate canvas size to fill the container
                         const container = document.getElementById('canvas-container');
                         const containerWidth = container.clientWidth;
                         const containerHeight = container.clientHeight;
-                        
+
                         const imageRatio = this.width / this.height;
                         const containerRatio = containerWidth / containerHeight;
-                        
+
                         let canvasWidth, canvasHeight;
-                        
+
                         if (imageRatio > containerRatio) {
                             // Image is wider than container
                             canvasWidth = containerWidth;
@@ -856,26 +865,26 @@ with open('templates/reference_annotator.html', 'w') as f:
                             canvasHeight = containerHeight;
                             canvasWidth = containerHeight * imageRatio;
                         }
-                        
+
                         canvas.width = canvasWidth;
                         canvas.height = canvasHeight;
-                        
+
                         // Draw image and bboxes
                         drawBboxes();
-                        
+
                         // Create interactive bbox selector
                         createBboxSelector();
-                        
-                        status.textContent = isSavedToFile ? 
-                            "This image has been previously annotated" : 
+
+                        status.textContent = isSavedToFile ?
+                            "This image has been previously annotated" :
                             "Select a bounding box and add a caption";
                     };
-                    
+
                     currentImage.onerror = function() {
                         console.error('Failed to load image');
                         status.textContent = "Error loading image";
                     };
-                    
+
                     currentImage.src = data.image_data;
                 })
                 .catch(err => {
@@ -883,17 +892,17 @@ with open('templates/reference_annotator.html', 'w') as f:
                     status.textContent = "Failed to load image data";
                 });
         }
-        
+
         // Load the first image on page load
         window.onload = function() {
             debug('Page loaded');
-            
+
             // Fetch initial data
             fetch(`/api/reload?cache=${cacheBuster}`)
                 .then(response => response.json())
                 .then(data => {
                     debug('Initial data loaded');
-                    
+
                     // First load all saved data
                     return fetch(`/api/saved_data?cache=${cacheBuster}`)
                         .then(response => response.json())
@@ -901,7 +910,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                             // Store all saved data
                             savedData = data;
                             debug('Loaded saved data for', Object.keys(savedData).length, 'images');
-                            
+
                             // Now find the first unsaved image
                             return findFirstUnsavedImageIndex();
                         });
@@ -916,7 +925,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                     loadImage(0); // Default to first image on error
                     updateSaveStatus();
                 });
-            
+
             // Handle window resize
             window.addEventListener('resize', function() {
                 if (currentImage.complete) {
@@ -924,12 +933,12 @@ with open('templates/reference_annotator.html', 'w') as f:
                     const container = document.getElementById('canvas-container');
                     const containerWidth = container.clientWidth;
                     const containerHeight = container.clientHeight;
-                    
+
                     const imageRatio = currentImage.width / currentImage.height;
                     const containerRatio = containerWidth / containerHeight;
-                    
+
                     let canvasWidth, canvasHeight;
-                    
+
                     if (imageRatio > containerRatio) {
                         // Image is wider than container
                         canvasWidth = containerWidth;
@@ -939,10 +948,10 @@ with open('templates/reference_annotator.html', 'w') as f:
                         canvasHeight = containerHeight;
                         canvasWidth = containerHeight * imageRatio;
                     }
-                    
+
                     canvas.width = canvasWidth;
                     canvas.height = canvasHeight;
-                    
+
                     // Redraw image and bboxes
                     drawBboxes();
                 }
@@ -962,21 +971,21 @@ output_data = []
 def load_data():
     """Load multiple instances data and any existing output data"""
     global multiple_instances_data, output_data
-    
+
     try:
         # Load multiple instances data
         with open(MULTIPLE_INSTANCES_FILE, "r") as f:
             multiple_instances_data = json.load(f)
-        
+
         # Try to load existing output data if it exists
         if os.path.exists(OUTPUT_FILE):
             with open(OUTPUT_FILE, "r") as f:
                 output_data = json.load(f)
-        
+
         # If output file doesn't exist yet, initialize with empty array
         if not isinstance(output_data, list):
             output_data = []
-        
+
         return True, f"Loaded {len(multiple_instances_data['images'])} images with multiple instances"
     except Exception as e:
         return False, f"Failed to load data: {str(e)}"
@@ -985,19 +994,19 @@ def get_image_data(index):
     """Get image data and metadata for the given index"""
     if not multiple_instances_data or index >= len(multiple_instances_data["images"]):
         return {"error": "Image not found"}
-    
+
     image_data = multiple_instances_data["images"][index]
-    
+
     # Load the image
     image_path = image_data["path"]
-    
+
     try:
         with Image.open(image_path) as img:
             # Convert to base64 for embedding in HTML
             buffered = BytesIO()
             img.save(buffered, format="JPEG")
             img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
-            
+
             # Create response with image data and all information
             result = {
                 "index": index,
@@ -1010,7 +1019,7 @@ def get_image_data(index):
                 "path": image_data["path"],
                 "categories_with_multiple_instances": image_data["categories_with_multiple_instances"]
             }
-            
+
             return result
     except Exception as e:
         return {"error": f"Failed to load image: {str(e)}"}
@@ -1018,7 +1027,7 @@ def get_image_data(index):
 def save_reference_annotation(image_id, annotation):
     """Save a reference annotation for the specified image"""
     global output_data
-    
+
     try:
         # Check if this image already has an annotation
         existing_index = -1
@@ -1026,17 +1035,17 @@ def save_reference_annotation(image_id, annotation):
             if item.get("image") == annotation["image"]:
                 existing_index = i
                 break
-        
+
         # Update existing or add new
         if existing_index >= 0:
             output_data[existing_index] = annotation
         else:
             output_data.append(annotation)
-        
+
         # Save to file
         with open(OUTPUT_FILE, "w") as f:
             json.dump(output_data, f, indent=2)
-            
+
         return True, "Annotation saved successfully"
     except Exception as e:
         return False, f"Failed to save annotation: {str(e)}"
@@ -1060,10 +1069,10 @@ def save_reference():
         data = request.json
         image_id = data.get('image_id')
         annotation = data.get('annotation')
-        
+
         if image_id is None or annotation is None:
             return jsonify({"success": False, "message": "Invalid data"}), 400
-            
+
         success, message = save_reference_annotation(image_id, annotation)
         return jsonify({"success": success, "message": message})
     except Exception as e:
@@ -1080,10 +1089,10 @@ def get_image_status():
     """API endpoint to get image status information"""
     if not multiple_instances_data:
         return jsonify({"error": "No data loaded"}), 404
-        
+
     # Get total number of images
     total_images = len(multiple_instances_data["images"])
-    
+
     # Get list of saved image IDs
     saved_image_ids = []
     saved_annotations = {}
@@ -1098,7 +1107,7 @@ def get_image_status():
                     saved_image_ids.append(img_id)
                     saved_annotations[img_id] = item
                     break
-    
+
     return jsonify({
         "total_images": total_images,
         "saved_image_ids": saved_image_ids,
@@ -1111,7 +1120,7 @@ def get_saved_data():
     """API endpoint to get all saved annotations"""
     # Create a dictionary mapping image IDs to saved annotations
     saved_data = {}
-    
+
     for item in output_data:
         # Extract image ID from path
         image_path = item.get("image", "")
@@ -1121,14 +1130,14 @@ def get_saved_data():
                 if "val2017/" + img["file_name"] == image_path:
                     saved_data[img["image_id"]] = item
                     break
-    
+
     return jsonify(saved_data)
 
 if __name__ == '__main__':
     # Load data at startup
     success, message = load_data()
     print(message)
-    
+
     # Use port 5000 by default, can be changed
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True) 
+    port = int(os.environ.get('PORT', 5555))
+    app.run(host='0.0.0.0', port=port, debug=True)
