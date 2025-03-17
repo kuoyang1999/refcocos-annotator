@@ -51,6 +51,7 @@ with open('templates/reference_annotator.html', 'w') as f:
         #save-status { margin-left: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; display: inline-block; }
         .status-saved { background-color: #dff0d8; color: #3c763d; border: 1px solid #d6e9c6; }
         .status-unsaved { background-color: #f2dede; color: #a94442; border: 1px solid #ebccd1; }
+        .toggle-active { background-color: #5cb85c; color: white; }
     </style>
 </head>
 <body>
@@ -59,6 +60,7 @@ with open('templates/reference_annotator.html', 'w') as f:
     <div>
         <button id="prev-btn">Previous</button>
         <button id="next-btn">Next</button>
+        <button id="toggle-boxes-btn">Show Only Selected</button>
         <button id="save-btn">Save Annotation</button>
         <span id="progress" style="margin-left: 20px;">Image 0/0</span>
         <span id="saved-indicator" class="saved-indicator">✓ Saved</span>
@@ -164,6 +166,7 @@ with open('templates/reference_annotator.html', 'w') as f:
         const distractor = document.getElementById('distractors-value');
         const bboxSelector = document.getElementById('bbox-selector');
         const categoryInfo = document.getElementById('category-info');
+        const toggleBoxesBtn = document.getElementById('toggle-boxes-btn');
 
         // Form elements
         const hopsOptions = document.querySelectorAll('input[name="hops"]');
@@ -182,6 +185,7 @@ with open('templates/reference_annotator.html', 'w') as f:
         let bboxes = [];
         let savedData = {};
         let isSavedToFile = false;
+        let showOnlySelected = false;
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -216,6 +220,18 @@ with open('templates/reference_annotator.html', 'w') as f:
             if (currentIndex < totalImages - 1) {
                 loadImage(currentIndex + 1);
             }
+        });
+
+        toggleBoxesBtn.addEventListener('click', function() {
+            showOnlySelected = !showOnlySelected;
+            if (showOnlySelected) {
+                toggleBoxesBtn.textContent = 'Show All Boxes';
+                toggleBoxesBtn.classList.add('toggle-active');
+            } else {
+                toggleBoxesBtn.textContent = 'Show Only Selected';
+                toggleBoxesBtn.classList.remove('toggle-active');
+            }
+            drawBboxes();
         });
 
         saveBtn.addEventListener('click', function() {
@@ -399,6 +415,13 @@ with open('templates/reference_annotator.html', 'w') as f:
                 const color = catIndex === selectedCategoryIndex ? 'red' : 'rgba(0, 0, 255, 0.7)';
 
                 category.instances.forEach((bbox, bboxIndex) => {
+                    const isSelected = catIndex === selectedCategoryIndex && bboxIndex === selectedBboxIndex;
+
+                    // Skip drawing unselected boxes if showOnlySelected is true
+                    if (showOnlySelected && !isSelected) {
+                        return;
+                    }
+
                     // Convert from image coordinates to canvas coordinates
                     const canvasX = bbox[0] / imageWidth * canvas.width;
                     const canvasY = bbox[1] / imageHeight * canvas.height;
@@ -406,8 +429,6 @@ with open('templates/reference_annotator.html', 'w') as f:
                     const canvasHeight = bbox[3] / imageHeight * canvas.height;
 
                     // Set styling based on whether this is the selected bbox
-                    const isSelected = catIndex === selectedCategoryIndex && bboxIndex === selectedBboxIndex;
-
                     if (isSelected) {
                         // Draw selected bbox with red outline and semi-transparent fill
                         ctx.lineWidth = 3;
