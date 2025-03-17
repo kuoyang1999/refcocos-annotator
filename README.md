@@ -14,11 +14,11 @@ pip install Flask Pillow
    ```bash
    # Create data directory
    mkdir -p data/val2017 data/annotations
-   
+
    # Download val2017 images
    wget http://images.cocodataset.org/zips/val2017.zip
    unzip val2017.zip -d ./data/
-   
+
    # Download COCO annotations
    wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
    unzip annotations_trainval2017.zip -d ./data/
@@ -49,8 +49,8 @@ Once the server is running, access it through your browser at:
 - **Caption Input**: Add captions to selected bounding boxes
 - **Category Form**: Provides form controls for labeling multiple categories:
   1. **Hops**: Single choice (2, 3, 4, 5)
-  2. **Type**: Multiple choice (spatial, exclude, verb)
-  3. **Hidden**: Single choice (Yes/No)
+  2. **Type**: Multiple choice (spatial, exclude, verb, attr)
+  3. **Occluded**: Single choice (Yes/No)
   4. **Distractors**: Auto-calculated based on selected bounding box
   5. **Empty Case**: Auto-detected or can be manually selected
 - **Visual Save Status**: Persistent indicator showing whether the current image is saved
@@ -65,8 +65,8 @@ Once the server is running, access it through your browser at:
 5. Enter a descriptive caption for the selected region
 6. Select appropriate values for categories:
    - Hops: Select one of (2, 3, 4, 5)
-   - Type: Select one or more of (spatial, exclude, verb)
-   - Hidden: Select Yes or No
+   - Type: Select one or more of (spatial, exclude, verb, attr)
+   - Occluded: Select Yes or No
    - Distractors: Auto-calculated based on the number of instances (minus the selected one)
 7. Click "Save Annotation" to store your selections
 8. Navigate through images using "Previous" and "Next" buttons
@@ -82,8 +82,8 @@ Once the server is running, access it through your browser at:
 - **categories**: Object with the following properties:
   - **empty_case**: Boolean (true/false)
   - **hops**: Number (2, 3, 4, 5)
-  - **type**: Array of strings (spatial, exclude, verb)
-  - **hidden**: Boolean (true/false)
+  - **type**: Array of strings (spatial, exclude, verb, attr)
+  - **occluded**: Boolean (true/false)
   - **distractors**: String (number)
 
 ### Reference Annotations:
