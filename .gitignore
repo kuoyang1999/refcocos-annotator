@@ -32,10 +32,13 @@ ENV/
 *.swo
 .DS_Store
 
-# Project specific
+# web cache
 static/
 templates/
+
+# data and results
 *.json
-data/
+*.jpg
+
+# temp files
 trash/
-results/
