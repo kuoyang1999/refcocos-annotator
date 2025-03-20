@@ -47,24 +47,66 @@ with open('templates/reference_annotator.html', 'w') as f:
         #caption-input { width: 95%; padding: 8px; margin: 10px 0; }
         #problem-container { margin-top: 10px; }
         #image-container { flex: 1; display: flex; flex-direction: column; }
-        #canvas-container { flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        #canvas-container { flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; }
         #save-status { margin-left: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; display: inline-block; }
         .status-saved { background-color: #dff0d8; color: #3c763d; border: 1px solid #d6e9c6; }
         .status-unsaved { background-color: #f2dede; color: #a94442; border: 1px solid #ebccd1; }
         .toggle-active { background-color: #5cb85c; color: white; }
+        #toggle-view-icon { 
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            font-size: 20px; 
+            cursor: pointer; 
+            background-color: rgba(255,255,255,0.7); 
+            border-radius: 4px; 
+            width: 34px; 
+            height: 34px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            z-index: 100;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        #toggle-view-icon:hover {
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        #toggle-view-icon.active {
+            color: #5cb85c;
+        }
+        .button-group {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .danger-button {
+            background-color: #d9534f;
+            color: white;
+            border: 1px solid #d43f3a;
+        }
+        .danger-button:hover:not(:disabled) {
+            background-color: #c9302c;
+        }
     </style>
 </head>
 <body>
-    <h2>Reference Bounding Box Selector and Category Labeler</h2>
-
-    <div>
+    <div class="button-group">
         <button id="prev-btn">Previous</button>
         <button id="next-btn">Next</button>
-        <button id="toggle-boxes-btn">Show Only Selected</button>
-        <button id="save-btn">Save Annotation</button>
         <span id="progress" style="margin-left: 20px;">Image 0/0</span>
         <span id="saved-indicator" class="saved-indicator">✓ Saved</span>
         <span id="save-status" class="status-unsaved">Unsaved</span>
+    </div>
+    
+    <div class="button-group">
+        <button id="prev-annotation-btn">Previous Annotation</button>
+        <button id="next-annotation-btn">Next Annotation</button>
+        <button id="new-annotation-btn">New Annotation</button>
+        <button id="save-btn">Save Annotation</button>
+        <button id="delete-annotation-btn" class="danger-button">Delete Annotation</button>
+        <span id="annotation-progress" style="margin-left: 20px;">Annotation 0/0</span>
     </div>
 
     <div id="status">Loading...</div>
@@ -130,14 +172,22 @@ with open('templates/reference_annotator.html', 'w') as f:
                         <span>(auto-calculated)</span>
                     </div>
                 </div>
-
-                <div id="coords">Selected Box: None</div>
             </div>
         </div>
 
         <div id="right-panel">
             <div id="image-container">
                 <div id="canvas-container">
+                    <div id="toggle-view-icon" title="Toggle view mode">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="show-all-icon">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="show-selected-icon" style="display: none;">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </div>
                     <canvas id="canvas"></canvas>
                 </div>
             </div>
@@ -166,7 +216,9 @@ with open('templates/reference_annotator.html', 'w') as f:
         const distractor = document.getElementById('distractors-value');
         const bboxSelector = document.getElementById('bbox-selector');
         const categoryInfo = document.getElementById('category-info');
-        const toggleBoxesBtn = document.getElementById('toggle-boxes-btn');
+        const toggleViewIcon = document.getElementById('toggle-view-icon');
+        const showAllIcon = toggleViewIcon.querySelector('.show-all-icon');
+        const showSelectedIcon = toggleViewIcon.querySelector('.show-selected-icon');
 
         // Form elements
         const hopsOptions = document.querySelectorAll('input[name="hops"]');
@@ -186,6 +238,14 @@ with open('templates/reference_annotator.html', 'w') as f:
         let savedData = {};
         let isSavedToFile = false;
         let showOnlySelected = false;
+        let isDrawingCustomBox = false;
+        let customBoxStartX = 0;
+        let customBoxStartY = 0;
+        let customBoxCoords = null;
+        let savedCustomBoxCoords = null;  // Store custom box coordinates when switching selections
+        let currentAnnotationIndex = 0;
+        let totalAnnotations = 0;
+        let currentAnnotationId = null;
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -222,14 +282,57 @@ with open('templates/reference_annotator.html', 'w') as f:
             }
         });
 
-        toggleBoxesBtn.addEventListener('click', function() {
+        // Annotation navigation buttons
+        const prevAnnotationBtn = document.getElementById('prev-annotation-btn');
+        const nextAnnotationBtn = document.getElementById('next-annotation-btn');
+        const newAnnotationBtn = document.getElementById('new-annotation-btn');
+        const deleteAnnotationBtn = document.getElementById('delete-annotation-btn');
+        const annotationProgress = document.getElementById('annotation-progress');
+
+        prevAnnotationBtn.addEventListener('click', function() {
+            if (currentAnnotationIndex > 0) {
+                loadAnnotation(currentIndex, currentAnnotationIndex - 1);
+            }
+        });
+
+        nextAnnotationBtn.addEventListener('click', function() {
+            if (currentAnnotationIndex < totalAnnotations - 1) {
+                loadAnnotation(currentIndex, currentAnnotationIndex + 1);
+            }
+        });
+
+        newAnnotationBtn.addEventListener('click', function() {
+            // Create a new annotation for the current image
+            createNewAnnotation();
+        });
+        
+        // Add delete annotation functionality
+        deleteAnnotationBtn.addEventListener('click', function() {
+            if (!savedData[currentImageData.image_id] || 
+                savedData[currentImageData.image_id].length === 0 || 
+                !currentAnnotationId) {
+                alert('No annotation to delete');
+                return;
+            }
+            
+            if (confirm('Are you sure you want to delete this annotation?')) {
+                deleteAnnotation();
+            }
+        });
+
+        // Replace toggle boxes button with eye icon
+        toggleViewIcon.addEventListener('click', function() {
             showOnlySelected = !showOnlySelected;
             if (showOnlySelected) {
-                toggleBoxesBtn.textContent = 'Show All Boxes';
-                toggleBoxesBtn.classList.add('toggle-active');
+                toggleViewIcon.classList.add('active');
+                toggleViewIcon.title = 'Show all boxes';
+                showAllIcon.style.display = 'none';
+                showSelectedIcon.style.display = 'block';
             } else {
-                toggleBoxesBtn.textContent = 'Show Only Selected';
-                toggleBoxesBtn.classList.remove('toggle-active');
+                toggleViewIcon.classList.remove('active');
+                toggleViewIcon.title = 'Show only selected';
+                showAllIcon.style.display = 'block';
+                showSelectedIcon.style.display = 'none';
             }
             drawBboxes();
         });
@@ -243,6 +346,7 @@ with open('templates/reference_annotator.html', 'w') as f:
             updateProblemText();
             isSavedToFile = false;
             updateSaveStatus();
+            updateStatusMessage();
         });
 
         // Update problem text based on caption
@@ -298,6 +402,59 @@ with open('templates/reference_annotator.html', 'w') as f:
 
             return distractor.textContent;
         }
+
+        // Add distractors manual edit functionality
+        function setupDistractorEdit() {
+            const distractorContainer = document.getElementById('distractors-container');
+            
+            // Clear existing content
+            distractorContainer.innerHTML = '';
+            
+            // Create input field for manual editing
+            const inputField = document.createElement('input');
+            inputField.type = 'number';
+            inputField.min = '0';
+            inputField.id = 'distractors-input';
+            inputField.value = distractor.textContent === 'N/A' ? '0' : distractor.textContent;
+            inputField.style.width = '60px';
+            inputField.style.marginRight = '10px';
+            
+            // Add label and auto-calculated info
+            const label = document.createElement('span');
+            label.innerHTML = '(auto: <span id="auto-distractor-value">' + 
+                (distractor.textContent === 'N/A' ? '0' : distractor.textContent) + 
+                '</span>)';
+            
+            // Add event listener for input changes
+            inputField.addEventListener('input', function() {
+                distractor.textContent = this.value;
+                isSavedToFile = false;
+                updateSaveStatus();
+            });
+            
+            // Append elements to container
+            distractorContainer.appendChild(inputField);
+            distractorContainer.appendChild(label);
+        }
+
+        // Update setupDistractorEdit call after calculateDistractors
+        const originalCalculateDistractors = calculateDistractors;
+        calculateDistractors = function() {
+            const result = originalCalculateDistractors.apply(this, arguments);
+            setupDistractorEdit();
+            return result;
+        };
+
+        // Remove the coords element completely
+        const coordsElement = document.getElementById('coords');
+        if (coordsElement) {
+            coordsElement.parentNode.removeChild(coordsElement);
+        }
+
+        // Alternatively, just hide it if removal causes layout issues
+        // if (coordsElement) {
+        //     coordsElement.style.display = 'none';
+        // }
 
         // Get all form data as an object
         function getFormData() {
@@ -462,6 +619,21 @@ with open('templates/reference_annotator.html', 'w') as f:
                     }
                 });
             });
+
+            // Draw custom box if it exists
+            if (customBoxCoords) {
+                const [x1, y1, x2, y2] = customBoxCoords;
+                const canvasX1 = x1 / imageWidth * canvas.width;
+                const canvasY1 = y1 / imageHeight * canvas.height;
+                const canvasX2 = x2 / imageWidth * canvas.width;
+                const canvasY2 = y2 / imageHeight * canvas.height;
+
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = 'green';
+                ctx.fillStyle = 'rgba(0, 255, 0, 0.2)';
+                ctx.strokeRect(canvasX1, canvasY1, canvasX2 - canvasX1, canvasY2 - canvasY1);
+                ctx.fillRect(canvasX1, canvasY1, canvasX2 - canvasX1, canvasY2 - canvasY1);
+            }
         }
 
         // Create interactive bbox selector
@@ -484,11 +656,11 @@ with open('templates/reference_annotator.html', 'w') as f:
             // Add Empty Case option at the top
             const emptyDiv = document.createElement('div');
             emptyDiv.className = 'category-section';
-            emptyDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${selectedBbox === null ? 'red' : 'blue'};">Empty Case Option</div>`;
+            emptyDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${selectedBbox === null && !customBoxCoords && !isDrawingCustomBox ? 'red' : 'blue'};">Empty Case Option</div>`;
 
             const emptyBboxDiv = document.createElement('div');
             emptyBboxDiv.className = 'bbox-option';
-            if (selectedBbox === null) {
+            if (selectedBbox === null && !customBoxCoords && !isDrawingCustomBox) {
                 emptyBboxDiv.classList.add('selected');
             }
 
@@ -496,17 +668,24 @@ with open('templates/reference_annotator.html', 'w') as f:
 
             // Selection event for empty case
             emptyBboxDiv.addEventListener('click', () => {
+                // Save custom box coords before changing selection
+                if (customBoxCoords !== null) {
+                    savedCustomBoxCoords = [...customBoxCoords];
+                }
+                
                 // Update selection to empty case
                 selectedCategoryIndex = -1;
                 selectedBboxIndex = -1;
                 selectedBbox = null;
+                customBoxCoords = null;
+                isDrawingCustomBox = false;
 
                 // Update UI
-                coords.textContent = `Selected Box: null (Empty Case)`;
                 updateEmptyCaseStatus(true);
                 calculateDistractors();
                 isSavedToFile = false;
                 updateSaveStatus();
+                updateStatusMessage();
 
                 // Redraw all bboxes with new selection
                 createBboxSelector();
@@ -515,6 +694,51 @@ with open('templates/reference_annotator.html', 'w') as f:
 
             emptyDiv.appendChild(emptyBboxDiv);
             bboxSelector.appendChild(emptyDiv);
+
+            // Add Custom Box option
+            const customDiv = document.createElement('div');
+            customDiv.className = 'category-section';
+            customDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${customBoxCoords !== null || isDrawingCustomBox ? 'red' : 'blue'};">Custom Box Option</div>`;
+
+            const customBboxDiv = document.createElement('div');
+            customBboxDiv.className = 'bbox-option';
+            if (customBoxCoords !== null || isDrawingCustomBox) {
+                customBboxDiv.classList.add('selected');
+            }
+
+            customBboxDiv.textContent = customBoxCoords ? 
+                `Custom Box: [${customBoxCoords.join(', ')}]` : 
+                `Draw custom bounding box`;
+
+            // Selection event for custom box
+            customBboxDiv.addEventListener('click', () => {
+                // Restore saved custom box coords if they exist
+                if (savedCustomBoxCoords !== null) {
+                    customBoxCoords = [...savedCustomBoxCoords];
+                }
+                
+                // Always activate drawing mode
+                isDrawingCustomBox = true;
+                
+                // Clear other selections
+                selectedCategoryIndex = -1;
+                selectedBboxIndex = -1;
+                selectedBbox = null;
+                
+                // Update UI
+                updateEmptyCaseStatus(false);
+                calculateDistractors();
+                isSavedToFile = false;
+                updateSaveStatus();
+                status.textContent = "Click and drag to draw a custom bounding box";
+
+                // Redraw all bboxes with new selection
+                createBboxSelector();
+                drawBboxes();
+            });
+
+            customDiv.appendChild(customBboxDiv);
+            bboxSelector.appendChild(customDiv);
 
             // For each category with multiple instances
             currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
@@ -536,17 +760,24 @@ with open('templates/reference_annotator.html', 'w') as f:
 
                     // Selection event
                     bboxDiv.addEventListener('click', () => {
+                        // Save custom box coords before changing selection
+                        if (customBoxCoords !== null) {
+                            savedCustomBoxCoords = [...customBoxCoords];
+                        }
+                        
                         // Update selection
                         selectedCategoryIndex = catIndex;
                         selectedBboxIndex = bboxIndex;
                         selectedBbox = convertBboxFormat(bbox);
+                        customBoxCoords = null;
+                        isDrawingCustomBox = false;
 
                         // Update UI
-                        coords.textContent = `Selected Box: [${selectedBbox.join(', ')}]`;
                         updateEmptyCaseStatus(false);
                         calculateDistractors();
                         isSavedToFile = false;
                         updateSaveStatus();
+                        updateStatusMessage();
 
                         // Redraw all bboxes with new selection
                         createBboxSelector();
@@ -558,6 +789,34 @@ with open('templates/reference_annotator.html', 'w') as f:
 
                 bboxSelector.appendChild(categoryDiv);
             });
+        }
+
+        // Add function to update status message based on current state
+        function updateStatusMessage() {
+            // Check what's missing: bbox, caption, category labels
+            const hasBbox = selectedBbox !== null || customBoxCoords !== null;
+            const hasCaption = captionInput.value.trim() !== '';
+            const hasHops = getSelectedRadioValue(hopsOptions) !== null;
+            const hasType = Array.from(typeOptions).some(cb => cb.checked);
+            const hasOccluded = getSelectedRadioValue(occludedOptions) !== null;
+            
+            // Build status message
+            let message = "";
+            let missing = [];
+            
+            if (!hasBbox) missing.push("bounding box");
+            if (!hasCaption) missing.push("caption");
+            if (!hasHops) missing.push("hops value");
+            if (!hasType) missing.push("type");
+            if (!hasOccluded) missing.push("occluded status");
+            
+            if (missing.length > 0) {
+                message = "Please select/provide " + missing.join(", ");
+            } else {
+                message = "Ready to save";
+            }
+            
+            status.textContent = message;
         }
 
         // Check if the annotation is valid for saving
@@ -621,15 +880,17 @@ with open('templates/reference_annotator.html', 'w') as f:
 
             // Create annotation data
             const annotationData = {
+                annotation_id: currentAnnotationId || `${currentImageData.image_id}_${Date.now()}`,
                 dataset: "refcocos_test",
                 text_type: "caption",
                 height: currentImageData.height,
                 width: currentImageData.width,
                 normal_caption: caption,
                 image: "val2017/" + currentImageData.file_name,
+                file_name: currentImageData.file_name,
                 problem: `Please provide the bounding box coordinate of the region this sentence describes: ${caption}.`,
-                solution: selectedBbox,
-                normalized_solution: calculateNormalizedSolution(selectedBbox, currentImageData.width, currentImageData.height),
+                solution: customBoxCoords || selectedBbox,
+                normalized_solution: calculateNormalizedSolution(customBoxCoords || selectedBbox, currentImageData.width, currentImageData.height),
                 categories: formData
             };
 
@@ -647,8 +908,30 @@ with open('templates/reference_annotator.html', 'w') as f:
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Store saved data for this image
-                    savedData[currentImageData.image_id] = annotationData;
+                    // Store current annotation ID
+                    currentAnnotationId = annotationData.annotation_id;
+                    
+                    // Update saved data for this image
+                    if (!savedData[currentImageData.image_id]) {
+                        savedData[currentImageData.image_id] = [];
+                    }
+                    
+                    // Update or add the annotation in the savedData array
+                    let found = false;
+                    for (let i = 0; i < savedData[currentImageData.image_id].length; i++) {
+                        if (savedData[currentImageData.image_id][i].annotation_id === currentAnnotationId) {
+                            savedData[currentImageData.image_id][i] = annotationData;
+                            found = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!found) {
+                        savedData[currentImageData.image_id].push(annotationData);
+                        totalAnnotations = savedData[currentImageData.image_id].length;
+                        currentAnnotationIndex = totalAnnotations - 1;
+                        updateAnnotationProgress();
+                    }
 
                     // Update current categories
                     currentCategories = formData;
@@ -701,75 +984,43 @@ with open('templates/reference_annotator.html', 'w') as f:
             return path;
         }
 
-        // Find the index of the first unsaved image
-        function findFirstUnsavedImageIndex() {
-            debug('Finding first unsaved image...');
+        // Find the index of the last saved image based on the order in val2017_multiple_instance.json
+        function findLastSavedImageIndex() {
+            debug('Finding last saved image...');
 
             return new Promise((resolve, reject) => {
-                // First get the total images from the loaded data
-                fetch(`/api/image_status?cache=${cacheBuster}`)
+                // Use the dedicated endpoint to get the last saved index directly
+                fetch(`/api/last_saved_index?cache=${cacheBuster}`)
                     .then(response => response.json())
                     .then(data => {
-                        const totalImages = data.total_images;
-                        const savedImageIds = data.saved_image_ids;
-                        const savedAnnotations = data.saved_annotations || {};
-
-                        // Store saved annotations in the savedData object
-                        for (const [imageId, annotation] of Object.entries(savedAnnotations)) {
-                            savedData[imageId] = annotation;
+                        if (data.error) {
+                            debug('Error getting last saved index:', data.error);
+                            resolve(0); // Default to first image
+                            return;
                         }
 
-                        debug(`Found ${totalImages} total images, ${savedImageIds.length} already saved`);
-                        debug('Saved data loaded:', Object.keys(savedData).length, 'images');
-
-                        // Function to check each image sequentially
-                        function checkImageSequentially(index) {
-                            if (index >= totalImages) {
-                                // If we've checked all images and none are unsaved, return to the first image
-                                debug('All images appear to be saved, starting at image 0');
-                                resolve(0);
-                                return;
-                            }
-
-                            fetch(`/api/image/${index}?cache=${cacheBuster}`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    if (data.error) {
-                                        checkImageSequentially(index + 1);
-                                        return;
-                                    }
-
-                                    // Check if this image's ID is in the saved list
-                                    const isSaved = savedImageIds.includes(data.image_id);
-
-                                    if (!isSaved) {
-                                        // Found an unsaved image
-                                        debug(`Found unsaved image at index ${index}, image_id: ${data.image_id}`);
-                                        resolve(index);
-                                    } else {
-                                        // This image is saved, check the next one
-                                        debug(`Image at index ${index} is already saved, checking next`);
-                                        checkImageSequentially(index + 1);
-                                    }
-                                })
-                                .catch(err => {
-                                    console.error('Error checking image:', err);
-                                    checkImageSequentially(index + 1);
-                                });
-                        }
-
-                        // Start checking from the first image
-                        checkImageSequentially(0);
+                        const lastIndex = data.index;
+                        debug(`Last saved image found at index ${lastIndex}`);
+                        
+                        // First load all saved data
+                        return fetch(`/api/saved_data?cache=${cacheBuster}`)
+                            .then(response => response.json())
+                            .then(savedDataResponse => {
+                                // Store all saved data
+                                savedData = savedDataResponse;
+                                debug('Loaded saved data for', Object.keys(savedData).length, 'images');
+                                resolve(lastIndex);
+                            });
                     })
                     .catch(err => {
-                        console.error('Error getting image status:', err);
+                        console.error('Error finding last saved image:', err);
                         resolve(0); // Default to first image on error
                     });
             });
         }
 
         // Load image and bbox data
-        function loadImage(index) {
+        function loadImage(index, callback) {
             debug('Loading image', index);
             savedIndicator.style.display = 'none';
 
@@ -786,80 +1037,47 @@ with open('templates/reference_annotator.html', 'w') as f:
                     currentImageData = data;
                     totalImages = data.total_images;
 
-                    // Reset selection
+                    // Reset selection - at initial stage nothing should be selected
                     selectedBbox = null;
                     selectedBboxIndex = -1;
                     selectedCategoryIndex = -1;
+                    customBoxCoords = null;
+                    savedCustomBoxCoords = null;
+                    isDrawingCustomBox = false;
+                    currentAnnotationId = null;
+                    currentAnnotationIndex = 0;
+                    totalAnnotations = 0;
 
                     // Update UI
                     progress.textContent = `Image ${index + 1}/${totalImages}`;
                     const formattedPath = formatImagePath(data.path);
-                    imagePath.textContent = `Image: ${formattedPath}`;
+                    imagePath.textContent = `Image ${index + 1}/${totalImages}: ${formattedPath}`;
                     prevBtn.disabled = currentIndex === 0;
                     nextBtn.disabled = currentIndex === totalImages - 1;
 
-                    // Clear caption and coords
+                    // Clear caption and problem text
                     captionInput.value = '';
                     problemText.textContent = '';
-                    coords.textContent = 'Selected Box: None';
 
                     // Check if this image has saved data
                     debug('Checking for saved data for image ID:', data.image_id);
                     debug('Available saved data keys:', Object.keys(savedData));
 
-                    // Load previously saved data for this image if available
-                    if (savedData[data.image_id]) {
-                        debug('Found saved data for image:', data.image_id);
-                        const saved = savedData[data.image_id];
-                        captionInput.value = saved.normal_caption || '';
-                        updateProblemText();
-
-                        if (saved.solution) {
-                            selectedBbox = saved.solution;
-                            coords.textContent = `Selected Box: ${selectedBbox === null ? 'null (Empty Case)' : '[' + selectedBbox.join(', ') + ']'}`;
-
-                            // Try to find the matching bbox in the current data
-                            let matchFound = false;
-                            const isEmptyCase = saved.categories && saved.categories.empty_case === true;
-
-                            if (isEmptyCase) {
-                                // This is an empty case
-                                updateEmptyCaseStatus(true);
-                                matchFound = true;
-                            } else {
-                                data.categories_with_multiple_instances.forEach((category, catIndex) => {
-                                    category.instances.forEach((bbox, bboxIndex) => {
-                                        const convertedBbox = convertBboxFormat(bbox);
-                                        if (JSON.stringify(convertedBbox) === JSON.stringify(selectedBbox)) {
-                                            selectedCategoryIndex = catIndex;
-                                            selectedBboxIndex = bboxIndex;
-                                            matchFound = true;
-                                        }
-                                    });
-                                });
-                            }
-
-                            if (!matchFound) {
-                                debug('Warning: Could not match the saved bbox to any current bbox');
-                            }
-                        }
-
-                        setFormValues(saved);
-                        isSavedToFile = true;
-                        debug('Marked as saved in file');
+                    // Load first annotation if available
+                    if (savedData[data.image_id] && savedData[data.image_id].length > 0) {
+                        debug('Found saved annotations for image:', data.image_id, savedData[data.image_id].length);
+                        totalAnnotations = savedData[data.image_id].length;
+                        // Load the first annotation by default
+                        loadAnnotation(currentIndex, 0);
                     } else {
-                        debug('No saved data found for this image');
+                        debug('No saved annotations found for this image');
                         // Initialize with default values
                         updateEmptyCaseStatus(false);
                         clearFormSelections();
                         isSavedToFile = false;
+                        updateSaveStatus();
+                        updateAnnotationProgress();
                     }
-
-                    // Update save status indicator
-                    updateSaveStatus();
-
-                    // Calculate distractors
-                    calculateDistractors();
 
                     // Load the image
                     debug('Loading image source', data.path);
@@ -896,9 +1114,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                         // Create interactive bbox selector
                         createBboxSelector();
 
-                        status.textContent = isSavedToFile ?
-                            "This image has been previously annotated" :
-                            "Select a bounding box and add a caption";
+                        if (callback) callback();
                     };
 
                     currentImage.onerror = function() {
@@ -932,8 +1148,8 @@ with open('templates/reference_annotator.html', 'w') as f:
                             savedData = data;
                             debug('Loaded saved data for', Object.keys(savedData).length, 'images');
 
-                            // Now find the first unsaved image
-                            return findFirstUnsavedImageIndex();
+                            // Now find the last saved image
+                            return findLastSavedImageIndex();
                         });
                 })
                 .then(index => {
@@ -977,7 +1193,319 @@ with open('templates/reference_annotator.html', 'w') as f:
                     drawBboxes();
                 }
             });
+
+            // Add canvas event listeners for custom box drawing
+            canvas.addEventListener('mousedown', function(e) {
+                if (!isDrawingCustomBox) return;
+                
+                const rect = canvas.getBoundingClientRect();
+                customBoxStartX = Math.round(e.clientX - rect.left);
+                customBoxStartY = Math.round(e.clientY - rect.top);
+                
+                // Clear canvas and redraw image
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawBboxes();
+                
+                e.preventDefault();
+            });
+            
+            canvas.addEventListener('mousemove', function(e) {
+                if (!isDrawingCustomBox || !customBoxStartX) return;  // Only draw if we have a start point
+                
+                const rect = canvas.getBoundingClientRect();
+                const currentX = Math.round(e.clientX - rect.left);
+                const currentY = Math.round(e.clientY - rect.top);
+                
+                // Redraw the image and existing boxes
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawBboxes();
+                
+                // Calculate the rectangle coordinates
+                const rectX = Math.min(customBoxStartX, currentX);
+                const rectY = Math.min(customBoxStartY, currentY);
+                const rectWidth = Math.abs(currentX - customBoxStartX);
+                const rectHeight = Math.abs(currentY - customBoxStartY);
+                
+                // Draw rectangle
+                ctx.strokeStyle = 'green';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(rectX, rectY, rectWidth, rectHeight);
+                
+                // Fill with semi-transparent green
+                ctx.fillStyle = 'rgba(0, 255, 0, 0.2)';
+                ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+                
+                e.preventDefault();
+            });
+            
+            canvas.addEventListener('mouseup', function(e) {
+                if (!isDrawingCustomBox || !customBoxStartX) return;  // Only process if we have a start point
+                
+                const rect = canvas.getBoundingClientRect();
+                const endX = Math.round(e.clientX - rect.left);
+                const endY = Math.round(e.clientY - rect.top);
+                
+                // Only create a box if it has some size
+                if (Math.abs(endX - customBoxStartX) < 5 || Math.abs(endY - customBoxStartY) < 5) {
+                    status.textContent = "Box too small. Try again with a larger selection.";
+                    // Reset drawing state
+                    customBoxStartX = 0;
+                    customBoxStartY = 0;
+                    return;
+                }
+                
+                // Calculate original image coordinates
+                const scaleX = currentImageData.width / canvas.width;
+                const scaleY = currentImageData.height / canvas.height;
+                
+                const imgX1 = Math.round(Math.min(customBoxStartX, endX) * scaleX);
+                const imgY1 = Math.round(Math.min(customBoxStartY, endY) * scaleY);
+                const imgX2 = Math.round(Math.max(customBoxStartX, endX) * scaleX);
+                const imgY2 = Math.round(Math.max(customBoxStartY, endY) * scaleY);
+                
+                // Ensure no values are below 0
+                const safeX1 = Math.max(0, imgX1);
+                const safeY1 = Math.max(0, imgY1);
+                const safeX2 = Math.max(0, imgX2);
+                const safeY2 = Math.max(0, imgY2);
+                
+                // Store coordinates with safe values
+                customBoxCoords = [safeX1, safeY1, safeX2, safeY2];
+                
+                // Reset drawing state
+                isDrawingCustomBox = false;
+                customBoxStartX = 0;
+                customBoxStartY = 0;
+                updateStatusMessage();
+                
+                // Redraw with the new custom box
+                drawBboxes();
+                createBboxSelector();
+                
+                e.preventDefault();
+            });
+            
+            canvas.addEventListener('mouseleave', function(e) {
+                if (!isDrawingCustomBox || !customBoxStartX) return;  // Only process if we have a start point
+                
+                // Cancel drawing if mouse leaves canvas
+                isDrawingCustomBox = false;
+                customBoxStartX = 0;
+                customBoxStartY = 0;
+                status.textContent = "Custom box drawing cancelled";
+                customBoxCoords = null;
+                drawBboxes();
+                
+                e.preventDefault();
+            });
         };
+
+        // Create a new function to handle loading a specific annotation
+        function loadAnnotation(imageIndex, annotationIndex) {
+            debug('Loading annotation', imageIndex, annotationIndex);
+            
+            // First ensure we have the right image data
+            if (currentIndex !== imageIndex) {
+                // If we're changing images, load that image first then set the annotation
+                loadImage(imageIndex, function() {
+                    loadAnnotation(imageIndex, annotationIndex);
+                });
+                return;
+            }
+            
+            // Ensure we have saved data for this image
+            if (!savedData[currentImageData.image_id] || !savedData[currentImageData.image_id].length) {
+                debug('No saved annotations for this image');
+                createNewAnnotation();
+                return;
+            }
+            
+            // Ensure annotation index is valid
+            if (annotationIndex < 0 || annotationIndex >= savedData[currentImageData.image_id].length) {
+                debug('Invalid annotation index, defaulting to 0');
+                annotationIndex = 0;
+            }
+            
+            currentAnnotationIndex = annotationIndex;
+            totalAnnotations = savedData[currentImageData.image_id].length;
+            
+            // Load the selected annotation
+            const annotation = savedData[currentImageData.image_id][annotationIndex];
+            currentAnnotationId = annotation.annotation_id;
+            
+            // Reset UI elements
+            selectedBbox = null;
+            selectedBboxIndex = -1;
+            selectedCategoryIndex = -1;
+            customBoxCoords = null;
+            savedCustomBoxCoords = null;
+            isDrawingCustomBox = false;
+            
+            // Load caption
+            captionInput.value = annotation.normal_caption || '';
+            updateProblemText();
+            
+            // Load bounding box
+            if (annotation.solution) {
+                const solution = annotation.solution;
+                
+                // Check if it's an empty case
+                const isEmptyCase = annotation.categories && annotation.categories.empty_case === true;
+                
+                if (isEmptyCase) {
+                    // Empty case handling
+                    selectedBbox = null;
+                    updateEmptyCaseStatus(true);
+                } else {
+                    // Try to match with existing boxes
+                    let matchFound = false;
+                    
+                    currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
+                        category.instances.forEach((bbox, bboxIndex) => {
+                            const convertedBbox = convertBboxFormat(bbox);
+                            if (JSON.stringify(convertedBbox) === JSON.stringify(solution)) {
+                                selectedBbox = convertedBbox;
+                                selectedCategoryIndex = catIndex;
+                                selectedBboxIndex = bboxIndex;
+                                matchFound = true;
+                            }
+                        });
+                    });
+                    
+                    if (!matchFound) {
+                        // Treat as custom box
+                        customBoxCoords = solution;
+                        selectedBbox = null;
+                        selectedCategoryIndex = -1;
+                        selectedBboxIndex = -1;
+                    }
+                    
+                    updateEmptyCaseStatus(false);
+                }
+            }
+            
+            // Load categories
+            setFormValues(annotation);
+            
+            // Update status
+            isSavedToFile = true;
+            updateSaveStatus();
+            calculateDistractors();
+            updateStatusMessage();
+            updateAnnotationProgress();
+            
+            // Redraw
+            drawBboxes();
+            createBboxSelector();
+        }
+        
+        // Function to handle creating a new annotation
+        function createNewAnnotation() {
+            debug('Creating new annotation');
+            
+            // Reset UI elements
+            selectedBbox = null;
+            selectedBboxIndex = -1;
+            selectedCategoryIndex = -1;
+            customBoxCoords = null;
+            savedCustomBoxCoords = null;
+            isDrawingCustomBox = false;
+            currentAnnotationId = null;
+            
+            // Clear caption
+            captionInput.value = '';
+            updateProblemText();
+            
+            // Reset form values
+            clearFormSelections();
+            
+            // Update status
+            isSavedToFile = false;
+            updateSaveStatus();
+            updateEmptyCaseStatus(false);
+            calculateDistractors();
+            updateStatusMessage();
+            
+            // Set annotation index to one past the end
+            if (!savedData[currentImageData.image_id]) {
+                totalAnnotations = 0;
+                currentAnnotationIndex = 0;
+            } else {
+                totalAnnotations = savedData[currentImageData.image_id].length;
+                currentAnnotationIndex = totalAnnotations;
+            }
+            
+            updateAnnotationProgress();
+            
+            // Redraw
+            drawBboxes();
+            createBboxSelector();
+        }
+        
+        // Update annotation progress display
+        function updateAnnotationProgress() {
+            // Show format: "current / (saved + 1)" when creating a new annotation
+            const total = savedData[currentImageData.image_id] ? 
+                (currentAnnotationIndex >= savedData[currentImageData.image_id].length ? 
+                    savedData[currentImageData.image_id].length + 1 : 
+                    savedData[currentImageData.image_id].length) : 
+                1;
+                
+            annotationProgress.textContent = `Annotation ${currentAnnotationIndex + 1}/${total}`;
+            
+            // Update navigation buttons
+            prevAnnotationBtn.disabled = currentAnnotationIndex <= 0;
+            nextAnnotationBtn.disabled = currentAnnotationIndex >= totalAnnotations - 1;
+            
+            // Update delete button
+            deleteAnnotationBtn.disabled = !currentAnnotationId || 
+                !savedData[currentImageData.image_id] || 
+                savedData[currentImageData.image_id].length === 0;
+        }
+
+        function deleteAnnotation() {
+            // Delete the current annotation
+            fetch(`/api/delete_annotation?cache=${cacheBuster}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    image_id: currentImageData.image_id,
+                    annotation_id: currentAnnotationId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update savedData
+                    if (savedData[currentImageData.image_id]) {
+                        savedData[currentImageData.image_id] = savedData[currentImageData.image_id].filter(
+                            a => a.annotation_id !== currentAnnotationId
+                        );
+                        
+                        totalAnnotations = savedData[currentImageData.image_id].length;
+                        
+                        if (totalAnnotations === 0) {
+                            // If no annotations left, create a new blank one
+                            createNewAnnotation();
+                        } else {
+                            // Load the previous annotation or the first one
+                            const newIndex = Math.min(currentAnnotationIndex, totalAnnotations - 1);
+                            loadAnnotation(currentIndex, newIndex);
+                        }
+                    } else {
+                        createNewAnnotation();
+                    }
+                    
+                    status.textContent = "Annotation deleted successfully!";
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(err => {
+                console.error('Delete error:', err);
+                alert('Failed to delete annotation');
+            });
+        }
     </script>
 </body>
 </html>""")
@@ -1050,17 +1578,24 @@ def save_reference_annotation(image_id, annotation):
     global output_data
 
     try:
-        # Check if this image already has an annotation
+        # Each image can have multiple annotations
+        # Check if this particular annotation already exists
         existing_index = -1
-        for i, item in enumerate(output_data):
-            if item.get("image") == annotation["image"]:
-                existing_index = i
-                break
+        annotation_id = annotation.get("annotation_id", None)
+        
+        if annotation_id is not None:
+            for i, item in enumerate(output_data):
+                if item.get("image") == annotation["image"] and item.get("annotation_id") == annotation_id:
+                    existing_index = i
+                    break
 
         # Update existing or add new
         if existing_index >= 0:
             output_data[existing_index] = annotation
         else:
+            # Generate a new annotation ID if not provided
+            if not annotation_id:
+                annotation["annotation_id"] = f"{image_id}_{len([a for a in output_data if a.get('image') == 'val2017/' + annotation['file_name']])}"
             output_data.append(annotation)
 
         # Save to file
@@ -1114,9 +1649,10 @@ def get_image_status():
     # Get total number of images
     total_images = len(multiple_instances_data["images"])
 
-    # Get list of saved image IDs
+    # Get list of saved image IDs and annotations
     saved_image_ids = []
     saved_annotations = {}
+    
     for item in output_data:
         # Extract image ID from path
         image_path = item.get("image", "")
@@ -1125,8 +1661,14 @@ def get_image_status():
             for img in multiple_instances_data["images"]:
                 if "val2017/" + img["file_name"] == image_path:
                     img_id = img["image_id"]
-                    saved_image_ids.append(img_id)
-                    saved_annotations[img_id] = item
+                    if img_id not in saved_image_ids:
+                        saved_image_ids.append(img_id)
+                    
+                    # Group annotations by image_id
+                    if img_id not in saved_annotations:
+                        saved_annotations[img_id] = []
+                    
+                    saved_annotations[img_id].append(item)
                     break
 
     return jsonify({
@@ -1139,7 +1681,7 @@ def get_image_status():
 @app.route('/api/saved_data')
 def get_saved_data():
     """API endpoint to get all saved annotations"""
-    # Create a dictionary mapping image IDs to saved annotations
+    # Create a dictionary mapping image IDs to saved annotations (multiple per image)
     saved_data = {}
 
     for item in output_data:
@@ -1149,10 +1691,77 @@ def get_saved_data():
             # Try to find matching image from multiple_instances_data
             for img in multiple_instances_data["images"]:
                 if "val2017/" + img["file_name"] == image_path:
-                    saved_data[img["image_id"]] = item
+                    if img["image_id"] not in saved_data:
+                        saved_data[img["image_id"]] = []
+                    
+                    saved_data[img["image_id"]].append(item)
                     break
 
     return jsonify(saved_data)
+
+@app.route('/api/delete_annotation', methods=['POST'])
+def delete_annotation():
+    """API endpoint to delete a reference annotation"""
+    try:
+        data = request.json
+        image_id = data.get('image_id')
+        annotation_id = data.get('annotation_id')
+
+        if image_id is None or annotation_id is None:
+            return jsonify({"success": False, "message": "Invalid data"}), 400
+
+        # Find and remove the annotation from output_data
+        found = False
+        for i, item in enumerate(output_data):
+            if item.get("annotation_id") == annotation_id:
+                output_data.pop(i)
+                found = True
+                break
+        
+        if not found:
+            return jsonify({"success": False, "message": "Annotation not found"}), 404
+        
+        # Save updated data to file
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(output_data, f, indent=2)
+            
+        return jsonify({"success": True, "message": "Annotation deleted successfully"})
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)}), 500
+
+# Add a new server endpoint to get the last saved image index
+@app.route('/api/last_saved_index')
+def get_last_saved_index():
+    """API endpoint to get the index of the last saved image according to original order"""
+    if not multiple_instances_data:
+        return jsonify({"error": "No data loaded"}), 404
+
+    # If no output data, return the first image
+    if not output_data:
+        return jsonify({"index": 0})
+
+    # Create a lookup of image IDs to their indices in the original JSON
+    image_id_to_index = {}
+    for i, img in enumerate(multiple_instances_data["images"]):
+        image_id_to_index[img["image_id"]] = i
+
+    # Find all image IDs that have saved annotations
+    saved_image_ids = set()
+    for item in output_data:
+        image_path = item.get("image", "")
+        if image_path:
+            for img in multiple_instances_data["images"]:
+                if "val2017/" + img["file_name"] == image_path:
+                    saved_image_ids.add(img["image_id"])
+                    break
+
+    # Find the highest index (last in sequence) with saved annotations
+    last_index = 0
+    for img_id in saved_image_ids:
+        if img_id in image_id_to_index:
+            last_index = max(last_index, image_id_to_index[img_id])
+
+    return jsonify({"index": last_index})
 
 if __name__ == '__main__':
     # Load data at startup
