@@ -124,12 +124,6 @@ refcocos-annotator
 - Flask
 - Pillow
 
-### Running Tests
-
-```
-pytest
-```
-
 ## License
 
 MIT License
