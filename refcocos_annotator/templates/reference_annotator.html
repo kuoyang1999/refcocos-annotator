@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Bounding Box Selector and Category Labeler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="button-group">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+        <span id="progress" style="margin-left: 20px;">Image 0/0</span>
+        <span id="saved-indicator" class="saved-indicator">✓ Saved</span>
+        <span id="save-status" class="status-unsaved">Unsaved</span>
+    </div>
+    
+    <div class="button-group">
+        <button id="prev-annotation-btn">Previous Annotation</button>
+        <button id="next-annotation-btn">Next Annotation</button>
+        <button id="new-annotation-btn">New Annotation</button>
+        <button id="save-btn">Save Annotation</button>
+        <button id="delete-annotation-btn" class="danger-button">Delete Annotation</button>
+        <span id="annotation-progress" style="margin-left: 20px;">Annotation 0/0</span>
+    </div>
+
+    <div id="status">Loading...</div>
+    <div id="image-path" style="display: none;"></div>
+
+    <div id="main-container">
+        <div id="left-panel">
+            <div>
+                <label for="caption-input">Caption:</label>
+                <input type="text" id="caption-input" placeholder="Enter a descriptive caption for the selected object">
+            </div>
+            <div id="problem-container">
+                <div id="problem-text"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Available Bounding Boxes</h3>
+                <div id="category-info" class="category-info">No categories with multiple instances</div>
+                <div id="bbox-selector"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Category Labels</h3>
+
+                <div id="empty-case-container" class="option-group">
+                    <label>Empty Case: </label>
+                    <span id="empty-case-value">No</span>
+                    <span>(auto-detected)</span>
+                </div>
+
+                <div class="option-group">
+                    <label><b>1. Hops:</b></label><br>
+                    <div id="hops-options">
+                        <label><input type="radio" name="hops" value="2"> 2</label>
+                        <label><input type="radio" name="hops" value="3"> 3</label>
+                        <label><input type="radio" name="hops" value="4"> 4</label>
+                        <label><input type="radio" name="hops" value="5"> 5</label>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label><b>2. Type:</b></label><br>
+                    <div id="type-options" class="checkbox-group">
+                        <label><input type="checkbox" name="type" value="spatial"> Spatial</label>
+                        <label><input type="checkbox" name="type" value="exclude"> Exclude</label>
+                        <label><input type="checkbox" name="type" value="verb"> Verb</label>
+                        <label><input type="checkbox" name="type" value="attr"> Attr</label>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label><b>3. Occluded:</b></label><br>
+                    <div id="occluded-options">
+                        <label><input type="radio" name="occluded" value="true"> Yes</label>
+                        <label><input type="radio" name="occluded" value="false"> No</label>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label><b>4. Distractors:</b></label><br>
+                    <div id="distractors-container">
+                        <span id="distractors-value">N/A</span>
+                        <span>(auto-calculated)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-panel">
+            <div id="image-container">
+                <div id="canvas-container">
+                    <div id="toggle-view-icon" title="Toggle view mode">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="show-all-icon">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="show-selected-icon" style="display: none;">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </div>
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
