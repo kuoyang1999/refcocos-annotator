@@ -110,7 +110,7 @@ with open('templates/reference_annotator.html', 'w') as f:
     </div>
 
     <div id="status">Loading...</div>
-    <div id="image-path"></div>
+    <div id="image-path" style="display: none;"></div>
 
     <div id="main-container">
         <div id="left-panel">
@@ -715,6 +715,8 @@ with open('templates/reference_annotator.html', 'w') as f:
                 // Restore saved custom box coords if they exist
                 if (savedCustomBoxCoords !== null) {
                     customBoxCoords = [...savedCustomBoxCoords];
+                    // Update status message after restoring the box
+                    updateStatusMessage();
                 }
                 
                 // Always activate drawing mode
@@ -833,13 +835,13 @@ with open('templates/reference_annotator.html', 'w') as f:
 
             // For empty cases, selectedBbox should be null
             if (formData.empty_case) {
-                if (selectedBbox !== null) {
+                if (selectedBbox !== null || customBoxCoords !== null) {
                     alert('Empty case should have null bounding box');
                     return false;
                 }
             } else {
                 // For non-empty cases, selectedBbox should not be null
-                if (selectedBbox === null) {
+                if (selectedBbox === null && customBoxCoords === null) {
                     alert('Please select a bounding box');
                     return false;
                 }
@@ -1058,6 +1060,7 @@ with open('templates/reference_annotator.html', 'w') as f:
                     // Clear caption and problem text
                     captionInput.value = '';
                     problemText.textContent = '';
+                    status.textContent = 'Please select a bounding box and provide a caption';
 
                     // Check if this image has saved data
                     debug('Checking for saved data for image ID:', data.image_id);
@@ -1424,7 +1427,7 @@ with open('templates/reference_annotator.html', 'w') as f:
             updateSaveStatus();
             updateEmptyCaseStatus(false);
             calculateDistractors();
-            updateStatusMessage();
+            status.textContent = 'Please select a bounding box and provide a caption';
             
             // Set annotation index to one past the end
             if (!savedData[currentImageData.image_id]) {
