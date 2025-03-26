@@ -754,6 +754,9 @@
 
                     status.textContent = "Annotation saved successfully!";
 
+                    // Update the reference count
+                    updateReferenceCount();
+
                     if (callback) callback();
                 } else {
                     alert('Error: ' + data.message);
@@ -954,6 +957,9 @@
                             // Store all saved data
                             savedData = data;
                             debug('Loaded saved data for', Object.keys(savedData).length, 'images');
+                            
+                            // Update the reference count
+                            updateReferenceCount();
 
                             // Now find the last saved image
                             return findLastSavedImageIndex();
@@ -1291,6 +1297,9 @@
                         
                         totalAnnotations = savedData[currentImageData.image_id].length;
                         
+                        // Update the reference count
+                        updateReferenceCount();
+                        
                         if (totalAnnotations === 0) {
                             // If no annotations left, create a new blank one
                             createNewAnnotation();
@@ -1312,4 +1321,20 @@
                 console.error('Delete error:', err);
                 alert('Failed to delete annotation');
             });
+        }
+
+        // Fix the updateReferenceCount function to correctly count references
+        function updateReferenceCount() {
+            // Count all annotations across all images in savedData
+            let totalReferences = 0;
+            
+            // Iterate through each image in savedData
+            for (const imageId in savedData) {
+                if (savedData.hasOwnProperty(imageId)) {
+                    // Each image has an array of annotations
+                    totalReferences += savedData[imageId].length;
+                }
+            }
+            
+            document.getElementById('reference-count-value').textContent = totalReferences;
         }
