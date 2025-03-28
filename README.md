@@ -58,6 +58,42 @@ refcocos_annotator/
 pip install refcocos-annotator
 ```
 
+## Data Preparation
+
+Before running the annotator, you need to download the COCO dataset files:
+
+1. Create a `data` directory in the project root:
+   ```bash
+   mkdir data
+   cd data
+   ```
+
+2. Download the required files:
+   ```bash
+   # Download annotations
+   wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+   
+   # Download validation images
+   wget http://images.cocodataset.org/zips/val2017.zip
+   ```
+
+3. Extract the downloaded files:
+   ```bash
+   unzip annotations_trainval2017.zip
+   unzip val2017.zip
+   ```
+
+The directory structure should look like this:
+```
+data/
+├── annotations/
+│   ├── instances_val2017.json
+│   └── ...
+└── val2017/
+    ├── 000000000009.jpg
+    └── ...
+```
+
 ## Configuration
 
 The tool is configured via environment variables or by modifying `config.py`:
