@@ -15,7 +15,7 @@ def parse_args():
                         help='Path to COCO annotation file (default: ./data/annotations/instances_val2017.json)')
     parser.add_argument('--img-dir', type=str, default="./data/val2017",
                         help='Path to image directory (default: ./data/val2017)')
-    parser.add_argument('--output-file', type=str, default="val2017_multiple_instances.json",
+    parser.add_argument('--output-file', type=str, default="./data/val2017_multiple_instances.json",
                         help='Path to output JSON file (default: val2017_multiple_instances.json)')
     
     return parser.parse_args()
