@@ -76,4 +76,20 @@ button:disabled { opacity: 0.5; }
 }
 .reference-count span {
     color: #007bff;
+}
+
+#jump-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+#jump-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#jump-btn {
+    margin-right: 0;
 } 

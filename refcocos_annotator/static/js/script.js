@@ -14,6 +14,8 @@
         const progress = document.getElementById('progress');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
+        const jumpBtn = document.getElementById('jump-btn');
+        const jumpInput = document.getElementById('jump-input');
         const saveBtn = document.getElementById('save-btn');
         const savedIndicator = document.getElementById('saved-indicator');
         const emptyCase = document.getElementById('empty-case-value');
@@ -86,6 +88,23 @@
             }
         });
 
+        // Jump to button event
+        jumpBtn.addEventListener('click', function() {
+            const targetIndex = parseInt(jumpInput.value, 10);
+            if (!isNaN(targetIndex) && targetIndex >= 1 && targetIndex <= totalImages) {
+                loadImage(targetIndex - 1); // Convert from 1-indexed to 0-indexed
+            } else {
+                status.textContent = `Please enter a valid image number between 1 and ${totalImages}`;
+            }
+        });
+
+        // Jump input event
+        jumpInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                jumpBtn.click();
+            }
+        });
+
         // Annotation navigation buttons
         const prevAnnotationBtn = document.getElementById('prev-annotation-btn');
         const nextAnnotationBtn = document.getElementById('next-annotation-btn');
@@ -112,15 +131,24 @@
         
         // Add delete annotation functionality
         deleteAnnotationBtn.addEventListener('click', function() {
+            // Check if we have saved data and annotations for the current image
             if (!savedData[currentImageData.image_id] || 
-                savedData[currentImageData.image_id].length === 0 || 
-                !currentAnnotationId) {
+                savedData[currentImageData.image_id].length === 0) {
                 alert('No annotation to delete');
                 return;
             }
             
+            // Check if we're looking at a valid annotation index
+            if (currentAnnotationIndex < 0 || currentAnnotationIndex >= savedData[currentImageData.image_id].length) {
+                alert('Invalid annotation index');
+                return;
+            }
+            
+            // Get current annotation even if it doesn't have an ID
+            const currentAnnotation = savedData[currentImageData.image_id][currentAnnotationIndex];
+            
             if (confirm('Are you sure you want to delete this annotation?')) {
-                deleteAnnotation();
+                deleteAnnotation(currentAnnotation);
             }
         });
 
@@ -152,6 +180,37 @@
             updateSaveStatus();
             updateStatusMessage();
         });
+
+        // Event listener for changes to the form inputs that should affect the save status
+        function setupFormChangeListeners() {
+            // Add event listeners to all form elements
+            hopsOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    isSavedToFile = false;
+                    updateSaveStatus();
+                    updateStatusMessage();
+                });
+            });
+            
+            typeOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    isSavedToFile = false;
+                    updateSaveStatus();
+                    updateStatusMessage();
+                });
+            });
+            
+            occludedOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    isSavedToFile = false;
+                    updateSaveStatus();
+                    updateStatusMessage();
+                });
+            });
+        }
+        
+        // Call the setup function
+        setupFormChangeListeners();
 
         // Update problem text based on caption
         function updateProblemText() {
@@ -697,10 +756,9 @@
                 problem: `Please provide the bounding box coordinate of the region this sentence describes: ${caption}.`,
                 solution: customBoxCoords || selectedBbox,
                 normalized_solution: calculateNormalizedSolution(customBoxCoords || selectedBbox, currentImageData.width, currentImageData.height),
-                categories: formData
+                categories: formData,
+                image_index: currentIndex
             };
-
-            debug('Saving annotation', annotationData);
 
             // Send to server to save
             fetch(`/api/save_reference?cache=${cacheBuster}`, {
@@ -728,6 +786,7 @@
                         if (savedData[currentImageData.image_id][i].annotation_id === currentAnnotationId) {
                             savedData[currentImageData.image_id][i] = annotationData;
                             found = true;
+                            debug('Updated existing annotation:', currentAnnotationId);
                             break;
                         }
                     }
@@ -736,6 +795,7 @@
                         savedData[currentImageData.image_id].push(annotationData);
                         totalAnnotations = savedData[currentImageData.image_id].length;
                         currentAnnotationIndex = totalAnnotations - 1;
+                        debug('Created new annotation:', currentAnnotationId);
                         updateAnnotationProgress();
                     }
 
@@ -846,13 +906,15 @@
                     currentImageData = data;
                     totalImages = data.total_images;
 
-                    // Reset selection - at initial stage nothing should be selected
+                    // Reset selection variables
                     selectedBbox = null;
                     selectedBboxIndex = -1;
                     selectedCategoryIndex = -1;
                     customBoxCoords = null;
                     savedCustomBoxCoords = null;
                     isDrawingCustomBox = false;
+                    
+                    // Reset annotation variables - we'll set these after checking for saved data
                     currentAnnotationId = null;
                     currentAnnotationIndex = 0;
                     totalAnnotations = 0;
@@ -863,6 +925,7 @@
                     imagePath.textContent = `Image ${index + 1}/${totalImages}: ${formattedPath}`;
                     prevBtn.disabled = currentIndex === 0;
                     nextBtn.disabled = currentIndex === totalImages - 1;
+                    jumpInput.value = index + 1; // Set jump input to current image index (1-indexed)
 
                     // Clear caption and problem text
                     captionInput.value = '';
@@ -1135,16 +1198,27 @@
             
             // Ensure annotation index is valid
             if (annotationIndex < 0 || annotationIndex >= savedData[currentImageData.image_id].length) {
-                debug('Invalid annotation index, defaulting to 0');
+                debug('Invalid annotation index', annotationIndex, 'defaulting to 0');
                 annotationIndex = 0;
             }
             
             currentAnnotationIndex = annotationIndex;
             totalAnnotations = savedData[currentImageData.image_id].length;
             
+            debug('Set currentAnnotationIndex to:', currentAnnotationIndex, 'of', totalAnnotations);
+            
             // Load the selected annotation
             const annotation = savedData[currentImageData.image_id][annotationIndex];
+            
+            // Handle missing annotation_id
+            if (!annotation.annotation_id) {
+                debug('Found annotation without ID, generating temporary ID');
+                annotation.annotation_id = `${currentImageData.image_id}_${Date.now()}`;
+                debug('Generated annotation_id:', annotation.annotation_id);
+            }
+            
             currentAnnotationId = annotation.annotation_id;
+            debug('Set currentAnnotationId to:', currentAnnotationId);
             
             // Reset UI elements
             selectedBbox = null;
@@ -1223,6 +1297,8 @@
             customBoxCoords = null;
             savedCustomBoxCoords = null;
             isDrawingCustomBox = false;
+            
+            // Explicitly set to null to ensure a new ID is generated when saving
             currentAnnotationId = null;
             
             // Clear caption
@@ -1270,51 +1346,192 @@
             prevAnnotationBtn.disabled = currentAnnotationIndex <= 0;
             nextAnnotationBtn.disabled = currentAnnotationIndex >= totalAnnotations - 1;
             
-            // Update delete button
-            deleteAnnotationBtn.disabled = !currentAnnotationId || 
-                !savedData[currentImageData.image_id] || 
-                savedData[currentImageData.image_id].length === 0;
+            // Update delete button - enable if we have a valid annotation ID
+            const hasValidAnnotation = currentAnnotationId !== null && 
+                savedData[currentImageData.image_id] && 
+                savedData[currentImageData.image_id].length > 0;
+                
+            deleteAnnotationBtn.disabled = !hasValidAnnotation;
+            
+            debug('Update annotation progress:', 
+                'currentAnnotationIndex =', currentAnnotationIndex, 
+                'totalAnnotations =', totalAnnotations,
+                'hasValidAnnotation =', hasValidAnnotation,
+                'currentAnnotationId =', currentAnnotationId);
         }
 
-        function deleteAnnotation() {
-            // Delete the current annotation
+        function deleteAnnotation(annotation) {
+            // If the annotation doesn't have an annotation_id, use the index in the array instead
+            if (!annotation.annotation_id) {
+                debug('Annotation has no ID, using index-based deletion');
+                
+                // Find the index of this annotation in the array
+                const indexToDelete = savedData[currentImageData.image_id].findIndex(a => 
+                    a === annotation || 
+                    (a.normal_caption === annotation.normal_caption && 
+                     JSON.stringify(a.solution) === JSON.stringify(annotation.solution))
+                );
+                
+                if (indexToDelete === -1) {
+                    debug('Could not find annotation in saved data');
+                    status.textContent = "Error: Could not find annotation in saved data";
+                    return;
+                }
+                
+                // Remove the annotation from the array
+                savedData[currentImageData.image_id].splice(indexToDelete, 1);
+                
+                totalAnnotations = savedData[currentImageData.image_id].length;
+                debug('Remaining annotations:', totalAnnotations);
+                
+                // Update the reference count
+                updateReferenceCount();
+                
+                // Update UI after deletion
+                if (totalAnnotations === 0) {
+                    debug('No annotations remaining, creating new one');
+                    createNewAnnotation();
+                } else {
+                    // Load the first annotation or the previous one
+                    const newIndex = Math.min(indexToDelete, totalAnnotations - 1);
+                    debug('Loading new annotation at index:', newIndex);
+                    loadAnnotation(currentIndex, newIndex);
+                }
+                
+                status.textContent = "Annotation deleted successfully!";
+                return;
+            }
+            
+            debug('Deleting annotation', annotation.annotation_id);
+            
+            // Delete the current annotation via API
             fetch(`/api/delete_annotation?cache=${cacheBuster}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     image_id: currentImageData.image_id,
-                    annotation_id: currentAnnotationId
+                    annotation_id: annotation.annotation_id
                 })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    debug('Annotation deleted successfully:', annotation.annotation_id);
+                    
                     // Update savedData
                     if (savedData[currentImageData.image_id]) {
-                        savedData[currentImageData.image_id] = savedData[currentImageData.image_id].filter(
-                            a => a.annotation_id !== currentAnnotationId
+                        // Store current index before deleting
+                        const wasFirstAnnotation = currentAnnotationIndex === 0;
+                        
+                        // Find the index of the deleted annotation
+                        const indexToDelete = savedData[currentImageData.image_id].findIndex(
+                            a => a.annotation_id === annotation.annotation_id
                         );
                         
+                        debug('Deleting annotation at index:', indexToDelete);
+                        
+                        // Ensure we found it
+                        if (indexToDelete === -1) {
+                            debug('Could not find annotation in saved data:', annotation.annotation_id);
+                            status.textContent = "Error: Could not find annotation in saved data";
+                            return;
+                        }
+                        
+                        // Remove the annotation from the array
+                        savedData[currentImageData.image_id].splice(indexToDelete, 1);
+                        
                         totalAnnotations = savedData[currentImageData.image_id].length;
+                        debug('Remaining annotations:', totalAnnotations);
                         
                         // Update the reference count
                         updateReferenceCount();
                         
+                        // Determine which annotation to load next
                         if (totalAnnotations === 0) {
                             // If no annotations left, create a new blank one
+                            debug('No annotations remaining, creating new one');
                             createNewAnnotation();
                         } else {
-                            // Load the previous annotation or the first one
-                            const newIndex = Math.min(currentAnnotationIndex, totalAnnotations - 1);
+                            // If we deleted the first annotation, load index 0 (new first annotation)
+                            // If we deleted another annotation, go to the previous one or stay at same index
+                            let newIndex = 0;
+                            
+                            if (wasFirstAnnotation) {
+                                // If we deleted the first annotation, load the new first annotation
+                                newIndex = 0;
+                            } else {
+                                // If we deleted annotation > 0, go to previous index
+                                newIndex = Math.min(indexToDelete - 1, totalAnnotations - 1);
+                                // But never go below 0
+                                newIndex = Math.max(0, newIndex);
+                            }
+                            
+                            debug('Loading new annotation at index:', newIndex);
                             loadAnnotation(currentIndex, newIndex);
                         }
                     } else {
+                        debug('No saved data found for image, creating new annotation');
                         createNewAnnotation();
                     }
                     
                     status.textContent = "Annotation deleted successfully!";
                 } else {
-                    alert('Error: ' + data.message);
+                    // If server says annotation not found, handle it client-side anyway
+                    if (data.message && data.message.includes("not found")) {
+                        debug('Server could not find annotation, deleting client-side');
+                        
+                        // Find the index of this annotation in the array
+                        const indexToDelete = savedData[currentImageData.image_id].findIndex(a => 
+                            a === annotation || 
+                            a.annotation_id === annotation.annotation_id ||
+                            (a.normal_caption === annotation.normal_caption && 
+                             JSON.stringify(a.solution) === JSON.stringify(annotation.solution))
+                        );
+                        
+                        if (indexToDelete === -1) {
+                            debug('Could not find annotation in saved data');
+                            status.textContent = "Error: Could not find annotation in saved data";
+                            return;
+                        }
+                        
+                        // Store if this was the first annotation
+                        const wasFirstAnnotation = indexToDelete === 0;
+                        
+                        // Remove the annotation from the client-side array
+                        savedData[currentImageData.image_id].splice(indexToDelete, 1);
+                        
+                        totalAnnotations = savedData[currentImageData.image_id].length;
+                        debug('Remaining annotations:', totalAnnotations);
+                        
+                        // Update the reference count
+                        updateReferenceCount();
+                        
+                        // Update UI after deletion
+                        if (totalAnnotations === 0) {
+                            debug('No annotations remaining, creating new one');
+                            createNewAnnotation();
+                        } else {
+                            // Load the first annotation or the previous one
+                            let newIndex = 0;
+                            
+                            if (wasFirstAnnotation) {
+                                // If we deleted the first annotation, load the new first annotation
+                                newIndex = 0;
+                            } else {
+                                // If we deleted annotation > 0, go to previous index
+                                newIndex = Math.min(indexToDelete - 1, totalAnnotations - 1);
+                                // But never go below 0
+                                newIndex = Math.max(0, newIndex);
+                            }
+                            
+                            debug('Loading new annotation at index:', newIndex);
+                            loadAnnotation(currentIndex, newIndex);
+                        }
+                        
+                        status.textContent = "Annotation deleted client-side successfully!";
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
                 }
             })
             .catch(err => {

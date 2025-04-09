@@ -27,38 +27,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 480,
-    "width": 640,
-    "normal_caption": "the person on the right hand side of the boy not wearing hat",
-    "image": "val2017/000000001000.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on the right hand side of the boy not wearing hat.",
-    "solution": [
-      386.0,
-      156.0,
-      461.0,
-      478.0
-    ],
-    "normalized_solution": [
-      603,
-      325,
-      720,
-      995
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "spatial",
-        "exclude"
-      ],
-      "hidden": true,
-      "distractors": "5"
-    }
+    },
+    "image_index": 1901,
+    "file_name": "000000547144.jpg",
+    "annotation_id": "000000547144_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -89,7 +61,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 1247,
+    "file_name": "000000006471.jpg",
+    "annotation_id": "000000006471_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -117,7 +92,10 @@
       "type": [],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 1337,
+    "file_name": "000000002157.jpg",
+    "annotation_id": "000000002157_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -147,7 +125,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 2172,
+    "file_name": "000000009590.jpg",
+    "annotation_id": "000000009590_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -177,7 +158,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 1808,
+    "file_name": "000000009400.jpg",
+    "annotation_id": "000000009400_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -208,7 +192,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 1701,
+    "file_name": "000000010707.jpg",
+    "annotation_id": "000000010707_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -238,37 +225,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 428,
-    "width": 640,
-    "normal_caption": "the person who is on the phone",
-    "image": "val2017/000000012670.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person who is on the phone.",
-    "solution": [
-      100.0,
-      122.0,
-      199.0,
-      275.0
-    ],
-    "normalized_solution": [
-      156,
-      285,
-      310,
-      642
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "verb"
-      ],
-      "hidden": true,
-      "distractors": "5"
-    }
+    },
+    "image_index": 982,
+    "file_name": "000000009891.jpg",
+    "annotation_id": "000000009891_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -298,37 +258,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 640,
-    "width": 640,
-    "normal_caption": "image containing fork and knife",
-    "image": "val2017/000000008629.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: image containing fork and knife.",
-    "solution": [
-      430.0,
-      226.0,
-      621.0,
-      417.0
-    ],
-    "normalized_solution": [
-      671,
-      353,
-      970,
-      651
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "verb"
-      ],
-      "hidden": false,
-      "distractors": "5"
-    }
+    },
+    "image_index": 2191,
+    "file_name": "000000015335.jpg",
+    "annotation_id": "000000015335_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -348,7 +281,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 1660,
+    "file_name": "000000000139.jpg",
+    "annotation_id": "000000000139_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -368,25 +304,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 427,
-    "width": 640,
-    "normal_caption": "letter X",
-    "image": "val2017/000000000885.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: letter X.",
-    "solution": null,
-    "normalized_solution": null,
-    "categories": {
-      "empty_case": true,
-      "hops": "2",
-      "type": [],
-      "hidden": false,
-      "distractors": "3"
-    }
+    },
+    "image_index": 1767,
+    "file_name": "000000000632.jpg",
+    "annotation_id": "000000000632_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -416,7 +337,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 567,
+    "file_name": "000000001268.jpg",
+    "annotation_id": "000000001268_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -434,7 +358,10 @@
       "type": [],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 419,
+    "file_name": "000000001532.jpg",
+    "annotation_id": "000000001532_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -464,7 +391,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 993,
+    "file_name": "000000002299.jpg",
+    "annotation_id": "000000002299_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -495,7 +425,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 1515,
+    "file_name": "000000002473.jpg",
+    "annotation_id": "000000002473_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -525,7 +458,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 2167,
+    "file_name": "000000002685.jpg",
+    "annotation_id": "000000002685_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -553,7 +489,10 @@
       "type": [],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 187,
+    "file_name": "000000003845.jpg",
+    "annotation_id": "000000003845_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -583,37 +522,10 @@
       ],
       "hidden": true,
       "distractors": "4"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 480,
-    "width": 640,
-    "normal_caption": "the person behind the lady in orange",
-    "image": "val2017/000000005001.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person behind the lady in orange.",
-    "solution": [
-      425.0,
-      25.0,
-      506.0,
-      164.0
-    ],
-    "normalized_solution": [
-      664,
-      52,
-      790,
-      341
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "spatial"
-      ],
-      "hidden": true,
-      "distractors": "5"
-    }
+    },
+    "image_index": 1737,
+    "file_name": "000000003934.jpg",
+    "annotation_id": "000000003934_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -643,7 +555,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 1539,
+    "file_name": "000000005193.jpg",
+    "annotation_id": "000000005193_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -674,38 +589,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 404,
-    "width": 640,
-    "normal_caption": "the person sitting on the left side of the red chair",
-    "image": "val2017/000000014439.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person sitting on the left side of the red chair.",
-    "solution": [
-      23.0,
-      120.0,
-      64.0,
-      155.0
-    ],
-    "normalized_solution": [
-      35,
-      297,
-      100,
-      383
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "spatial",
-        "verb"
-      ],
-      "hidden": false,
-      "distractors": "5"
-    }
+    },
+    "image_index": 1230,
+    "file_name": "000000013291.jpg",
+    "annotation_id": "000000013291_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -735,7 +622,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 695,
+    "file_name": "000000014473.jpg",
+    "annotation_id": "000000014473_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -765,7 +655,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 1244,
+    "file_name": "000000006954.jpg",
+    "annotation_id": "000000006954_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -795,7 +688,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 2198,
+    "file_name": "000000007818.jpg",
+    "annotation_id": "000000007818_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -815,7 +711,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 1910,
+    "file_name": "000000009483.jpg",
+    "annotation_id": "000000009483_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -835,7 +734,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 2053,
+    "file_name": "000000017959.jpg",
+    "annotation_id": "000000017959_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -865,7 +767,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 678,
+    "file_name": "000000019109.jpg",
+    "annotation_id": "000000019109_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -895,7 +800,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 2283,
+    "file_name": "000000018380.jpg",
+    "annotation_id": "000000018380_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -926,7 +834,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 1320,
+    "file_name": "000000018491.jpg",
+    "annotation_id": "000000018491_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -957,7 +868,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1841,
+    "file_name": "000000081988.jpg",
+    "annotation_id": "000000081988_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -987,7 +901,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1642,
+    "file_name": "000000083531.jpg",
+    "annotation_id": "000000083531_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1017,7 +934,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 1323,
+    "file_name": "000000084031.jpg",
+    "annotation_id": "000000084031_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1047,37 +967,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 480,
-    "width": 640,
-    "normal_caption": "person wearing striped shirt without long hair",
-    "image": "val2017/000000085157.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: person wearing striped shirt without long hair.",
-    "solution": [
-      422.0,
-      97.0,
-      630.0,
-      455.0
-    ],
-    "normalized_solution": [
-      659,
-      202,
-      984,
-      947
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "exclude"
-      ],
-      "hidden": true,
-      "distractors": "4"
-    }
+    },
+    "image_index": 57,
+    "file_name": "000000084241.jpg",
+    "annotation_id": "000000084241_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1107,7 +1000,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 151,
+    "file_name": "000000091615.jpg",
+    "annotation_id": "000000091615_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1137,7 +1033,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 1622,
+    "file_name": "000000091779.jpg",
+    "annotation_id": "000000091779_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1165,37 +1064,10 @@
       "type": [],
       "hidden": false,
       "distractors": "3"
-    }
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 480,
-    "width": 640,
-    "normal_caption": "black board that does not have a number on it",
-    "image": "val2017/000000094185.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: black board that does not have a number on it.",
-    "solution": [
-      551.0,
-      180.0,
-      604.0,
-      352.0
-    ],
-    "normalized_solution": [
-      860,
-      375,
-      943,
-      733
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "exclude"
-      ],
-      "hidden": false,
-      "distractors": "3"
-    }
+    },
+    "image_index": 1455,
+    "file_name": "000000092053.jpg",
+    "annotation_id": "000000092053_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1226,7 +1098,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 1160,
+    "file_name": "000000100238.jpg",
+    "annotation_id": "000000100238_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1244,7 +1119,10 @@
       "type": [],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 1201,
+    "file_name": "000000104669.jpg",
+    "annotation_id": "000000104669_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1274,7 +1152,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 614,
+    "file_name": "000000105264.jpg",
+    "annotation_id": "000000105264_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1304,7 +1185,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 113,
+    "file_name": "000000111086.jpg",
+    "annotation_id": "000000111086_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1334,7 +1218,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 1053,
+    "file_name": "000000114049.jpg",
+    "annotation_id": "000000114049_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1365,7 +1252,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 914,
+    "file_name": "000000114884.jpg",
+    "annotation_id": "000000114884_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1383,7 +1273,10 @@
       "type": [],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1888,
+    "file_name": "000000115870.jpg",
+    "annotation_id": "000000115870_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1413,7 +1306,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1003,
+    "file_name": "000000119641.jpg",
+    "annotation_id": "000000119641_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1444,7 +1340,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 1115,
+    "file_name": "000000121031.jpg",
+    "annotation_id": "000000121031_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1462,7 +1361,10 @@
       "type": [],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1198,
+    "file_name": "000000123213.jpg",
+    "annotation_id": "000000123213_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1492,7 +1394,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 1082,
+    "file_name": "000000125062.jpg",
+    "annotation_id": "000000125062_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1522,7 +1427,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 1412,
+    "file_name": "000000125936.jpg",
+    "annotation_id": "000000125936_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1552,7 +1460,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 12,
+    "file_name": "000000127182.jpg",
+    "annotation_id": "000000127182_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1580,7 +1491,10 @@
       "type": [],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1640,
+    "file_name": "000000127517.jpg",
+    "annotation_id": "000000127517_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1611,7 +1525,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 1654,
+    "file_name": "000000128148.jpg",
+    "annotation_id": "000000128148_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1642,7 +1559,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1601,
+    "file_name": "000000128476.jpg",
+    "annotation_id": "000000128476_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1672,7 +1592,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 620,
+    "file_name": "000000129416.jpg",
+    "annotation_id": "000000129416_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1703,7 +1626,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 2120,
+    "file_name": "000000133969.jpg",
+    "annotation_id": "000000133969_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1733,7 +1659,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 535,
+    "file_name": "000000135872.jpg",
+    "annotation_id": "000000135872_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1764,7 +1693,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 623,
+    "file_name": "000000137576.jpg",
+    "annotation_id": "000000137576_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1794,7 +1726,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 122,
+    "file_name": "000000139099.jpg",
+    "annotation_id": "000000139099_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1824,7 +1759,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1914,
+    "file_name": "000000139684.jpg",
+    "annotation_id": "000000139684_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1854,7 +1792,10 @@
       ],
       "hidden": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 836,
+    "file_name": "000000140556.jpg",
+    "annotation_id": "000000140556_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1885,7 +1826,10 @@
       ],
       "hidden": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 531,
+    "file_name": "000000140640.jpg",
+    "annotation_id": "000000140640_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1915,7 +1859,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 2050,
+    "file_name": "000000140840.jpg",
+    "annotation_id": "000000140840_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1946,7 +1893,10 @@
       ],
       "hidden": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 1888,
+    "file_name": "000000115870.jpg",
+    "annotation_id": "000000115870_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1977,7 +1927,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 280,
+    "file_name": "000000142324.jpg",
+    "annotation_id": "000000142324_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2005,7 +1958,10 @@
       "type": [],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 2186,
+    "file_name": "000000142620.jpg",
+    "annotation_id": "000000142620_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2035,7 +1991,10 @@
       ],
       "hidden": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 966,
+    "file_name": "000000143961.jpg",
+    "annotation_id": "000000143961_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2065,7 +2024,10 @@
       ],
       "hidden": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 1413,
+    "file_name": "000000145597.jpg",
+    "annotation_id": "000000145597_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2095,7 +2057,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 0,
+    "file_name": "000000494869.jpg",
+    "annotation_id": "000000494869_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2126,7 +2091,10 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 1,
+    "file_name": "000000554002.jpg",
+    "annotation_id": "000000554002_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2146,7 +2114,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 2,
+    "file_name": "000000078823.jpg",
+    "annotation_id": "000000078823_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2178,7 +2149,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 3,
+    "file_name": "000000419974.jpg",
+    "annotation_id": "000000419974_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2208,7 +2182,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 5,
+    "file_name": "000000424162.jpg",
+    "annotation_id": "000000424162_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2238,7 +2215,10 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 4,
+    "file_name": "000000329219.jpg",
+    "annotation_id": "000000329219_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2270,7 +2250,10 @@
       ],
       "occluded": true,
       "distractors": "7"
-    }
+    },
+    "image_index": 7,
+    "file_name": "000000067213.jpg",
+    "annotation_id": "000000067213_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2291,7 +2274,10 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 6,
+    "file_name": "000000061108.jpg",
+    "annotation_id": "000000061108_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2321,7 +2307,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 8,
+    "file_name": "000000365207.jpg",
+    "annotation_id": "000000365207_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2351,7 +2340,10 @@
       ],
       "occluded": true,
       "distractors": "10"
-    }
+    },
+    "image_index": 9,
+    "file_name": "000000279278.jpg",
+    "annotation_id": "000000279278_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2382,7 +2374,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 10,
+    "file_name": "000000482100.jpg",
+    "annotation_id": "000000482100_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2402,7 +2397,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 11,
+    "file_name": "000000540502.jpg",
+    "annotation_id": "000000540502_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2432,7 +2430,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 12,
+    "file_name": "000000127182.jpg",
+    "annotation_id": "000000127182_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2463,7 +2464,10 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 13,
+    "file_name": "000000575970.jpg",
+    "annotation_id": "000000575970_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2483,7 +2487,10 @@
       ],
       "occluded": false,
       "distractors": "17"
-    }
+    },
+    "image_index": 14,
+    "file_name": "000000226984.jpg",
+    "annotation_id": "000000226984_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -2513,7 +2520,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 15,
+    "file_name": "000000037777.jpg",
+    "annotation_id": "000000037777_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2543,7 +2553,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 16,
+    "file_name": "000000491216.jpg",
+    "annotation_id": "000000491216_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2575,7 +2588,10 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 17,
+    "file_name": "000000136355.jpg",
+    "annotation_id": "000000136355_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2606,7 +2622,10 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 18,
+    "file_name": "000000529568.jpg",
+    "annotation_id": "000000529568_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2626,7 +2645,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 19,
+    "file_name": "000000306733.jpg",
+    "annotation_id": "000000306733_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2654,7 +2676,10 @@
       "type": [],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 20,
+    "file_name": "000000068833.jpg",
+    "annotation_id": "000000068833_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2684,7 +2709,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 21,
+    "file_name": "000000149222.jpg",
+    "annotation_id": "000000149222_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2714,7 +2742,10 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 22,
+    "file_name": "000000361586.jpg",
+    "annotation_id": "000000361586_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2735,7 +2766,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 23,
+    "file_name": "000000186632.jpg",
+    "annotation_id": "000000186632_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2765,7 +2799,10 @@
       ],
       "occluded": true,
       "distractors": "7"
-    }
+    },
+    "image_index": 24,
+    "file_name": "000000440475.jpg",
+    "annotation_id": "000000440475_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2786,7 +2823,10 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 25,
+    "file_name": "000000240940.jpg",
+    "annotation_id": "000000240940_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2817,7 +2857,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 26,
+    "file_name": "000000070774.jpg",
+    "annotation_id": "000000070774_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2837,7 +2880,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 27,
+    "file_name": "000000123585.jpg",
+    "annotation_id": "000000123585_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2868,7 +2914,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 28,
+    "file_name": "000000466156.jpg",
+    "annotation_id": "000000466156_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2898,7 +2947,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 29,
+    "file_name": "000000172330.jpg",
+    "annotation_id": "000000172330_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2928,7 +2980,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 30,
+    "file_name": "000000227044.jpg",
+    "annotation_id": "000000227044_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2959,7 +3014,10 @@
       ],
       "occluded": true,
       "distractors": "11"
-    }
+    },
+    "image_index": 31,
+    "file_name": "000000176857.jpg",
+    "annotation_id": "000000176857_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -2990,7 +3048,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 32,
+    "file_name": "000000017178.jpg",
+    "annotation_id": "000000017178_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3020,7 +3081,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 33,
+    "file_name": "000000368335.jpg",
+    "annotation_id": "000000368335_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3051,7 +3115,10 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 34,
+    "file_name": "000000367680.jpg",
+    "annotation_id": "000000367680_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3082,7 +3149,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 35,
+    "file_name": "000000234807.jpg",
+    "annotation_id": "000000234807_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3112,7 +3182,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 36,
+    "file_name": "000000507975.jpg",
+    "annotation_id": "000000507975_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3142,7 +3215,10 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 37,
+    "file_name": "000000338304.jpg",
+    "annotation_id": "000000338304_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3172,7 +3248,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 38,
+    "file_name": "000000555050.jpg",
+    "annotation_id": "000000555050_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3202,7 +3281,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 39,
+    "file_name": "000000206135.jpg",
+    "annotation_id": "000000206135_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3232,7 +3314,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 40,
+    "file_name": "000000465129.jpg",
+    "annotation_id": "000000465129_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3263,7 +3348,10 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 41,
+    "file_name": "000000506310.jpg",
+    "annotation_id": "000000506310_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3293,7 +3381,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 42,
+    "file_name": "000000519569.jpg",
+    "annotation_id": "000000519569_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3313,7 +3404,10 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 43,
+    "file_name": "000000178028.jpg",
+    "annotation_id": "000000178028_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3343,7 +3437,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 44,
+    "file_name": "000000290768.jpg",
+    "annotation_id": "000000290768_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3371,7 +3468,10 @@
       "type": [],
       "occluded": true,
       "distractors": "10"
-    }
+    },
+    "image_index": 45,
+    "file_name": "000000182611.jpg",
+    "annotation_id": "000000182611_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3402,7 +3502,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 46,
+    "file_name": "000000228214.jpg",
+    "annotation_id": "000000228214_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3433,7 +3536,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 47,
+    "file_name": "000000293390.jpg",
+    "annotation_id": "000000293390_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3463,7 +3569,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 48,
+    "file_name": "000000384808.jpg",
+    "annotation_id": "000000384808_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3493,7 +3602,10 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 49,
+    "file_name": "000000425226.jpg",
+    "annotation_id": "000000425226_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3523,7 +3635,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 50,
+    "file_name": "000000292005.jpg",
+    "annotation_id": "000000292005_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3553,7 +3668,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 51,
+    "file_name": "000000480122.jpg",
+    "annotation_id": "000000480122_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3581,7 +3699,10 @@
       "type": [],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 52,
+    "file_name": "000000197796.jpg",
+    "annotation_id": "000000197796_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3611,7 +3732,10 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 53,
+    "file_name": "000000481386.jpg",
+    "annotation_id": "000000481386_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3642,7 +3766,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 54,
+    "file_name": "000000397133.jpg",
+    "annotation_id": "000000397133_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3673,7 +3800,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 55,
+    "file_name": "000000173302.jpg",
+    "annotation_id": "000000173302_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3703,7 +3833,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 56,
+    "file_name": "000000523100.jpg",
+    "annotation_id": "000000523100_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3733,7 +3866,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 57,
+    "file_name": "000000084241.jpg",
+    "annotation_id": "000000084241_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3763,7 +3899,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 58,
+    "file_name": "000000074209.jpg",
+    "annotation_id": "000000074209_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3793,7 +3932,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 59,
+    "file_name": "000000239627.jpg",
+    "annotation_id": "000000239627_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3823,7 +3965,10 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 60,
+    "file_name": "000000195165.jpg",
+    "annotation_id": "000000195165_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3854,7 +3999,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 61,
+    "file_name": "000000492878.jpg",
+    "annotation_id": "000000492878_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3874,7 +4022,10 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 62,
+    "file_name": "000000175364.jpg",
+    "annotation_id": "000000175364_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3905,7 +4056,10 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 63,
+    "file_name": "000000438774.jpg",
+    "annotation_id": "000000438774_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3935,7 +4089,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 64,
+    "file_name": "000000485424.jpg",
+    "annotation_id": "000000485424_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3966,7 +4123,10 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 65,
+    "file_name": "000000530836.jpg",
+    "annotation_id": "000000530836_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -3996,7 +4156,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 66,
+    "file_name": "000000177934.jpg",
+    "annotation_id": "000000177934_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4026,7 +4189,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 67,
+    "file_name": "000000040471.jpg",
+    "annotation_id": "000000040471_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4057,7 +4223,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 68,
+    "file_name": "000000455597.jpg",
+    "annotation_id": "000000455597_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4087,7 +4256,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 69,
+    "file_name": "000000308799.jpg",
+    "annotation_id": "000000308799_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4118,7 +4290,10 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 70,
+    "file_name": "000000045229.jpg",
+    "annotation_id": "000000045229_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4138,7 +4313,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 71,
+    "file_name": "000000109976.jpg",
+    "annotation_id": "000000109976_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4168,7 +4346,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 72,
+    "file_name": "000000441247.jpg",
+    "annotation_id": "000000441247_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4199,7 +4380,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 73,
+    "file_name": "000000093437.jpg",
+    "annotation_id": "000000093437_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4230,7 +4414,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 74,
+    "file_name": "000000221708.jpg",
+    "annotation_id": "000000221708_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4260,7 +4447,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 75,
+    "file_name": "000000216497.jpg",
+    "annotation_id": "000000216497_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4290,7 +4480,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 76,
+    "file_name": "000000458768.jpg",
+    "annotation_id": "000000458768_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4320,7 +4513,10 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 77,
+    "file_name": "000000543047.jpg",
+    "annotation_id": "000000543047_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4351,7 +4547,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 78,
+    "file_name": "000000472046.jpg",
+    "annotation_id": "000000472046_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4371,7 +4570,10 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 79,
+    "file_name": "000000045596.jpg",
+    "annotation_id": "000000045596_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4402,7 +4604,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 80,
+    "file_name": "000000259830.jpg",
+    "annotation_id": "000000259830_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4432,7 +4637,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 82,
+    "file_name": "000000357737.jpg",
+    "annotation_id": "000000357737_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4463,7 +4671,10 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 83,
+    "file_name": "000000055022.jpg",
+    "annotation_id": "000000055022_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4494,7 +4705,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 84,
+    "file_name": "000000087038.jpg",
+    "annotation_id": "000000087038_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4525,7 +4739,10 @@
       ],
       "occluded": true,
       "distractors": "10"
-    }
+    },
+    "image_index": 85,
+    "file_name": "000000577932.jpg",
+    "annotation_id": "000000577932_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4555,7 +4772,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 86,
+    "file_name": "000000356387.jpg",
+    "annotation_id": "000000356387_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4585,7 +4805,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 88,
+    "file_name": "000000441586.jpg",
+    "annotation_id": "000000441586_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4613,7 +4836,10 @@
       "type": [],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 89,
+    "file_name": "000000228436.jpg",
+    "annotation_id": "000000228436_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4644,7 +4870,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 90,
+    "file_name": "000000414510.jpg",
+    "annotation_id": "000000414510_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4674,7 +4903,10 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 91,
+    "file_name": "000000210273.jpg",
+    "annotation_id": "000000210273_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4705,7 +4937,10 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 92,
+    "file_name": "000000507037.jpg",
+    "annotation_id": "000000507037_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4737,7 +4972,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 93,
+    "file_name": "000000350122.jpg",
+    "annotation_id": "000000350122_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4769,7 +5007,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 94,
+    "file_name": "000000038829.jpg",
+    "annotation_id": "000000038829_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4800,7 +5041,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 97,
+    "file_name": "000000291634.jpg",
+    "annotation_id": "000000291634_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4830,7 +5074,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 101,
+    "file_name": "000000395180.jpg",
+    "annotation_id": "000000395180_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4860,7 +5107,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 103,
+    "file_name": "000000226417.jpg",
+    "annotation_id": "000000226417_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4891,7 +5141,10 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 111,
+    "file_name": "000000301376.jpg",
+    "annotation_id": "000000301376_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4923,7 +5176,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 127,
+    "file_name": "000000455624.jpg",
+    "annotation_id": "000000455624_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4943,7 +5199,10 @@
       ],
       "occluded": false,
       "distractors": "23"
-    }
+    },
+    "image_index": 122,
+    "file_name": "000000139099.jpg",
+    "annotation_id": "000000139099_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4963,7 +5222,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 123,
+    "file_name": "000000292456.jpg",
+    "annotation_id": "000000292456_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4993,7 +5255,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 124,
+    "file_name": "000000534605.jpg",
+    "annotation_id": "000000534605_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5013,7 +5278,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 125,
+    "file_name": "000000178982.jpg",
+    "annotation_id": "000000178982_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5044,7 +5312,10 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 128,
+    "file_name": "000000574702.jpg",
+    "annotation_id": "000000574702_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5074,7 +5345,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 129,
+    "file_name": "000000246963.jpg",
+    "annotation_id": "000000246963_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5104,7 +5378,10 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 131,
+    "file_name": "000000345027.jpg",
+    "annotation_id": "000000345027_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5134,7 +5411,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 134,
+    "file_name": "000000200839.jpg",
+    "annotation_id": "000000200839_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5165,7 +5445,10 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 136,
+    "file_name": "000000057672.jpg",
+    "annotation_id": "000000057672_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5186,7 +5469,10 @@
       ],
       "occluded": false,
       "distractors": "14"
-    }
+    },
+    "image_index": 108,
+    "file_name": "000000138639.jpg",
+    "annotation_id": "000000138639_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5218,7 +5504,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 121,
+    "file_name": "000000078748.jpg",
+    "annotation_id": "000000078748_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5249,7 +5538,10 @@
       ],
       "occluded": true,
       "distractors": "11"
-    }
+    },
+    "image_index": 113,
+    "file_name": "000000111086.jpg",
+    "annotation_id": "000000111086_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5281,7 +5573,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 115,
+    "file_name": "000000461751.jpg",
+    "annotation_id": "000000461751_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5312,7 +5607,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 130,
+    "file_name": "000000336232.jpg",
+    "annotation_id": "000000336232_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5343,7 +5641,10 @@
       ],
       "occluded": true,
       "distractors": "8"
-    }
+    },
+    "image_index": 137,
+    "file_name": "000000248334.jpg",
+    "annotation_id": "000000248334_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5374,7 +5675,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 139,
+    "file_name": "000000445834.jpg",
+    "annotation_id": "000000445834_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5406,7 +5710,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 140,
+    "file_name": "000000472623.jpg",
+    "annotation_id": "000000472623_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5437,7 +5744,10 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 141,
+    "file_name": "000000244833.jpg",
+    "annotation_id": "000000244833_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5467,7 +5777,10 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 143,
+    "file_name": "000000191845.jpg",
+    "annotation_id": "000000191845_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5499,7 +5812,10 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 144,
+    "file_name": "000000267537.jpg",
+    "annotation_id": "000000267537_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5530,7 +5846,10 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 145,
+    "file_name": "000000370486.jpg",
+    "annotation_id": "000000370486_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5560,7 +5879,10 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 146,
+    "file_name": "000000333745.jpg",
+    "annotation_id": "000000333745_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5592,7 +5914,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 147,
+    "file_name": "000000074058.jpg",
+    "annotation_id": "000000074058_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5623,7 +5948,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 150,
+    "file_name": "000000393569.jpg",
+    "annotation_id": "000000393569_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5654,7 +5982,10 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 157,
+    "file_name": "000000292060.jpg",
+    "annotation_id": "000000292060_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5685,7 +6016,10 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 158,
+    "file_name": "000000437898.jpg",
+    "annotation_id": "000000437898_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5716,7 +6050,10 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 159,
+    "file_name": "000000052996.jpg",
+    "annotation_id": "000000052996_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5746,7 +6083,10 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 160,
+    "file_name": "000000078266.jpg",
+    "annotation_id": "000000078266_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -5777,7 +6117,10 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 162,
+    "file_name": "000000156278.jpg",
+    "annotation_id": "000000156278_1744240036432"
   },
   {
     "annotation_id": "38829_1742593294302",
@@ -5811,7 +6154,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 94
   },
   {
     "annotation_id": "309391_1742594615011",
@@ -5845,7 +6189,8 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 81
   },
   {
     "annotation_id": "122166_1742595465272",
@@ -5878,7 +6223,8 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 87
   },
   {
     "annotation_id": "122166_1742595533439",
@@ -5911,7 +6257,8 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 87
   },
   {
     "annotation_id": "241319_1742939549372",
@@ -5944,7 +6291,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 163
   },
   {
     "annotation_id": "89556_1742939838888",
@@ -5977,7 +6325,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 168
   },
   {
     "annotation_id": "292997_1742940912411",
@@ -6009,7 +6358,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 169
   },
   {
     "annotation_id": "295809_1742963403240",
@@ -6042,7 +6392,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 170
   },
   {
     "annotation_id": "295809_1742963434580",
@@ -6075,7 +6426,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 170
   },
   {
     "annotation_id": "227511_1743028736038",
@@ -6109,7 +6461,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 171
   },
   {
     "annotation_id": "418696_1743028923790",
@@ -6143,7 +6496,8 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 172
   },
   {
     "annotation_id": "480944_1743029152077",
@@ -6176,7 +6530,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 173
   },
   {
     "annotation_id": "480944_1743029418875",
@@ -6209,7 +6564,8 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 173
   },
   {
     "annotation_id": "412531_1743029524744",
@@ -6241,7 +6597,8 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 175
   },
   {
     "annotation_id": "183709_1743029836053",
@@ -6273,7 +6630,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 176
   },
   {
     "annotation_id": "183709_1743029968398",
@@ -6307,7 +6665,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 176
   },
   {
     "annotation_id": "301135_1743032969026",
@@ -6342,7 +6701,8 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 177
   },
   {
     "annotation_id": "301135_1743033605992",
@@ -6376,7 +6736,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 177
   },
   {
     "annotation_id": "199771_1743034817144",
@@ -6409,7 +6770,8 @@
       ],
       "occluded": true,
       "distractors": "9"
-    }
+    },
+    "image_index": 181
   },
   {
     "annotation_id": "504074_1743035255690",
@@ -6441,7 +6803,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 182
   },
   {
     "annotation_id": "298396_1743035742441",
@@ -6474,7 +6837,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 183
   },
   {
     "annotation_id": "298396_1743035848865",
@@ -6507,7 +6871,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 183
   },
   {
     "annotation_id": "298396_1743035931591",
@@ -6540,7 +6905,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 183
   },
   {
     "annotation_id": "479126_1743035982786",
@@ -6573,7 +6939,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 184
   },
   {
     "annotation_id": "34873_1743037312583",
@@ -6606,7 +6973,8 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 185
   },
   {
     "annotation_id": "469192_1743038252862",
@@ -6639,7 +7007,8 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 188
   },
   {
     "annotation_id": "567197_1743038636134",
@@ -6672,7 +7041,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 189
   },
   {
     "annotation_id": "492362_1743038892795",
@@ -6704,7 +7074,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 190
   },
   {
     "annotation_id": "78404_1743039916102",
@@ -6736,7 +7107,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 191
   },
   {
     "annotation_id": "173799_1743040072713",
@@ -6769,7 +7141,8 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 192
   },
   {
     "annotation_id": "110042_1743041705366",
@@ -6803,7 +7176,8 @@
       ],
       "occluded": true,
       "distractors": "4"
-    }
+    },
+    "image_index": 193
   },
   {
     "annotation_id": "580294_1743041892447",
@@ -6836,7 +7210,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 194
   },
   {
     "annotation_id": "16249_1743042113421",
@@ -6869,7 +7244,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 196
   },
   {
     "annotation_id": "16249_1743196211645",
@@ -6903,7 +7279,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 196
   },
   {
     "annotation_id": "346703_1743196558721",
@@ -6936,7 +7313,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 197
   },
   {
     "annotation_id": "346703_1743196756464",
@@ -6970,7 +7348,8 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 197
   },
   {
     "annotation_id": "346703_1743196973149",
@@ -7003,7 +7382,8 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 197
   },
   {
     "annotation_id": "294350_1743197098773",
@@ -7036,7 +7416,8 @@
       ],
       "occluded": true,
       "distractors": "6"
-    }
+    },
+    "image_index": 198
   },
   {
     "annotation_id": "252219_1743197273559",
@@ -7069,7 +7450,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 199
   },
   {
     "annotation_id": "104572_1743260963696",
@@ -7102,7 +7484,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 217
   },
   {
     "annotation_id": "283785_1743261209235",
@@ -7136,7 +7519,8 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 219
   },
   {
     "annotation_id": "534664_1743261317008",
@@ -7169,7 +7553,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 220
   },
   {
     "annotation_id": "555597_1743261397143",
@@ -7202,7 +7587,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 221
   },
   {
     "annotation_id": "276018_1743262502730",
@@ -7235,7 +7621,8 @@
       ],
       "occluded": true,
       "distractors": "9"
-    }
+    },
+    "image_index": 223
   },
   {
     "annotation_id": "209613_1743262570421",
@@ -7268,7 +7655,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 227
   },
   {
     "annotation_id": "342367_1743262653518",
@@ -7301,7 +7689,8 @@
       ],
       "occluded": true,
       "distractors": "2"
-    }
+    },
+    "image_index": 237
   },
   {
     "annotation_id": "17627_1743519637856",
@@ -7335,7 +7724,8 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 301
   },
   {
     "annotation_id": "211674_1743519813208",
@@ -7368,7 +7758,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 315
   },
   {
     "annotation_id": "156071_1743520253598",
@@ -7402,7 +7793,8 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 322
   },
   {
     "annotation_id": "143556_1743520569040",
@@ -7436,7 +7828,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 331
   },
   {
     "annotation_id": "7816_1743520727004",
@@ -7469,7 +7862,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 335
   },
   {
     "annotation_id": "194875_1743520851067",
@@ -7503,7 +7897,8 @@
       ],
       "occluded": true,
       "distractors": "10"
-    }
+    },
+    "image_index": 338
   },
   {
     "annotation_id": "194875_1743520958164",
@@ -7536,7 +7931,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 338
   },
   {
     "annotation_id": "102411_1743521203776",
@@ -7569,7 +7965,8 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 344
   },
   {
     "annotation_id": "109900_1743542454625",
@@ -7602,7 +7999,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 350
   },
   {
     "annotation_id": "284445_1743542826479",
@@ -7635,7 +8033,8 @@
       ],
       "occluded": true,
       "distractors": "13"
-    }
+    },
+    "image_index": 387
   },
   {
     "annotation_id": "463199_1743543004006",
@@ -7668,7 +8067,8 @@
       ],
       "occluded": true,
       "distractors": "11"
-    }
+    },
+    "image_index": 401
   },
   {
     "annotation_id": "1532_1743543184557",
@@ -7701,7 +8101,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 419
   },
   {
     "annotation_id": "287291_1743543400698",
@@ -7734,7 +8135,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 429
   },
   {
     "annotation_id": "303818_1744115681193",
@@ -7768,7 +8170,8 @@
       ],
       "occluded": false,
       "distractors": "11"
-    }
+    },
+    "image_index": 449
   },
   {
     "annotation_id": "288584_1744115895091",
@@ -7801,7 +8204,8 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 450
   },
   {
     "annotation_id": "255917_1744116117577",
@@ -7834,7 +8238,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 456
   },
   {
     "annotation_id": "531134_1744116265191",
@@ -7868,7 +8273,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 459
   },
   {
     "annotation_id": "162858_1744116338173",
@@ -7901,7 +8307,8 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 461
   },
   {
     "annotation_id": "412894_1744116578418",
@@ -7935,7 +8342,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 468
   },
   {
     "annotation_id": "88848_1744116699504",
@@ -7968,7 +8376,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 472
   },
   {
     "annotation_id": "130826_1744116842828",
@@ -8001,7 +8410,8 @@
       ],
       "occluded": true,
       "distractors": "5"
-    }
+    },
+    "image_index": 476
   },
   {
     "annotation_id": "531707_1744116981433",
@@ -8035,7 +8445,8 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 485
   },
   {
     "annotation_id": "204186_1744117299968",
@@ -8069,7 +8480,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 517
   },
   {
     "annotation_id": "548780_1744117519828",
@@ -8103,7 +8515,8 @@
       ],
       "occluded": false,
       "distractors": "5"
-    }
+    },
+    "image_index": 532
   },
   {
     "annotation_id": "295231_1744117885971",
@@ -8137,7 +8550,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 597
   },
   {
     "annotation_id": "375763_1744118050795",
@@ -8170,7 +8584,8 @@
       ],
       "occluded": true,
       "distractors": "11"
-    }
+    },
+    "image_index": 604
   },
   {
     "annotation_id": "430073_1744118285673",
@@ -8203,7 +8618,8 @@
       ],
       "occluded": false,
       "distractors": "23"
-    }
+    },
+    "image_index": 615
   },
   {
     "annotation_id": "13659_1744118423931",
@@ -8236,7 +8652,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 633
   },
   {
     "annotation_id": "13659_1744118554804",
@@ -8269,7 +8686,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 633
   },
   {
     "annotation_id": "334555_1744118865354",
@@ -8303,7 +8721,8 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 660
   },
   {
     "annotation_id": "356612_1744119030948",
@@ -8336,7 +8755,8 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 665
   },
   {
     "annotation_id": "507797_1744119263307",
@@ -8369,7 +8789,8 @@
       ],
       "occluded": false,
       "distractors": "7"
-    }
+    },
+    "image_index": 683
   },
   {
     "annotation_id": "70254_1744119539929",
@@ -8402,7 +8823,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 718
   },
   {
     "annotation_id": "181796_1744201784534",
@@ -8435,7 +8857,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 2284
   },
   {
     "annotation_id": "146155_1744201991763",
@@ -8468,7 +8891,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 2297
   },
   {
     "annotation_id": "210520_1744202253260",
@@ -8501,7 +8925,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 2306
   },
   {
     "annotation_id": "192904_1744203259978",
@@ -8534,7 +8959,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2308
   },
   {
     "annotation_id": "117492_1744203929364",
@@ -8567,7 +8993,8 @@
       ],
       "occluded": false,
       "distractors": "13"
-    }
+    },
+    "image_index": 2322
   },
   {
     "annotation_id": "462576_1744204022545",
@@ -8600,7 +9027,8 @@
       ],
       "occluded": false,
       "distractors": "3"
-    }
+    },
+    "image_index": 2313
   },
   {
     "annotation_id": "173371_1744204132246",
@@ -8632,7 +9060,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2309
   },
   {
     "annotation_id": "192904_1744204193719",
@@ -8665,7 +9094,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2308
   },
   {
     "annotation_id": "541634_1744204279053",
@@ -8697,7 +9127,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2307
   },
   {
     "annotation_id": "541634_1744204349247",
@@ -8729,7 +9160,8 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2307
   },
   {
     "annotation_id": "210520_1744204456777",
@@ -8761,7 +9193,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 2306
   },
   {
     "annotation_id": "171190_1744204522770",
@@ -8794,7 +9227,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 2305
   },
   {
     "annotation_id": "171190_1744204587148",
@@ -8827,7 +9261,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 2305
   },
   {
     "annotation_id": "171190_1744204705735",
@@ -8861,7 +9296,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 2305
   },
   {
     "annotation_id": "57150_1744204899565",
@@ -8894,7 +9330,8 @@
       ],
       "occluded": false,
       "distractors": "12"
-    }
+    },
+    "image_index": 2299
   },
   {
     "annotation_id": "244750_1744205032925",
@@ -8927,7 +9364,8 @@
       ],
       "occluded": true,
       "distractors": "3"
-    }
+    },
+    "image_index": 2292
   },
   {
     "annotation_id": "470773_1744205146502",
@@ -8960,7 +9398,8 @@
       ],
       "occluded": false,
       "distractors": "9"
-    }
+    },
+    "image_index": 2288
   },
   {
     "annotation_id": "181796_1744205284491",
@@ -8993,7 +9432,8 @@
       ],
       "occluded": false,
       "distractors": "4"
-    }
+    },
+    "image_index": 2284
   },
   {
     "annotation_id": "483999_1744205488824",
@@ -9026,7 +9466,8 @@
       ],
       "occluded": false,
       "distractors": "10"
-    }
+    },
+    "image_index": 2279
   },
   {
     "annotation_id": "268378_1744205637031",
@@ -9059,7 +9500,8 @@
       ],
       "occluded": false,
       "distractors": "8"
-    }
+    },
+    "image_index": 2274
   },
   {
     "annotation_id": "249129_1744205782166",
@@ -9093,7 +9535,8 @@
       ],
       "occluded": false,
       "distractors": "6"
-    }
+    },
+    "image_index": 2273
   },
   {
     "annotation_id": "336053_1744205846583",
@@ -9126,6 +9569,262 @@
       ],
       "occluded": false,
       "distractors": "2"
-    }
+    },
+    "image_index": 2272
+  },
+  {
+    "annotation_id": "12670_1744226471356",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the man who is on the phone",
+    "image": "val2017/000000012670.jpg",
+    "file_name": "000000012670.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the man who is on the phone.",
+    "solution": [
+      100,
+      122,
+      199,
+      275
+    ],
+    "normalized_solution": [
+      156,
+      285,
+      311,
+      643
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb"
+      ],
+      "occluded": true,
+      "distractors": "27"
+    },
+    "image_index": 2148
+  },
+  {
+    "annotation_id": "94185_1744226495946",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "black board that does not have a number on it",
+    "image": "val2017/000000094185.jpg",
+    "file_name": "000000094185.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: black board that does not have a number on it.",
+    "solution": [
+      551,
+      180,
+      604,
+      352
+    ],
+    "normalized_solution": [
+      861,
+      375,
+      944,
+      733
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "11"
+    },
+    "image_index": 2145
+  },
+  {
+    "annotation_id": "5001_1744226532170",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person behind the lady in orange",
+    "image": "val2017/000000005001.jpg",
+    "file_name": "000000005001.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person behind the lady in orange.",
+    "solution": [
+      425,
+      25,
+      506,
+      164
+    ],
+    "normalized_solution": [
+      664,
+      52,
+      791,
+      342
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial"
+      ],
+      "occluded": true,
+      "distractors": "14"
+    },
+    "image_index": 2142
+  },
+  {
+    "annotation_id": "85157_1744226870546",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "person wearing striped shirt without long hair",
+    "image": "val2017/000000085157.jpg",
+    "file_name": "000000085157.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: person wearing striped shirt without long hair.",
+    "solution": [
+      411.75,
+      88.22,
+      639.25,
+      439.28
+    ],
+    "normalized_solution": [
+      643,
+      184,
+      999,
+      915
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    },
+    "image_index": 2024
+  },
+  {
+    "annotation_id": "14439_1744226922300",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 404,
+    "width": 640,
+    "normal_caption": "the person sitting on the left side of the red chair",
+    "image": "val2017/000000014439.jpg",
+    "file_name": "000000014439.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person sitting on the left side of the red chair.",
+    "solution": [
+      25.16,
+      116.99,
+      65.54,
+      154.76
+    ],
+    "normalized_solution": [
+      39,
+      290,
+      102,
+      383
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "13"
+    },
+    "image_index": 2014
+  },
+  {
+    "annotation_id": "8629_1744235662523",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 640,
+    "normal_caption": "the image containing fork and knife",
+    "image": "val2017/000000008629.jpg",
+    "file_name": "000000008629.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the image containing fork and knife.",
+    "solution": [
+      430,
+      226,
+      621,
+      417
+    ],
+    "normalized_solution": [
+      672,
+      353,
+      970,
+      652
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    },
+    "image_index": 1873
+  },
+  {
+    "annotation_id": "885_1744235855018",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "letter X on the wall",
+    "image": "val2017/000000000885.jpg",
+    "file_name": "000000000885.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: letter X on the wall.",
+    "solution": null,
+    "normalized_solution": null,
+    "categories": {
+      "empty_case": true,
+      "hops": "2",
+      "type": [],
+      "occluded": false,
+      "distractors": "8"
+    },
+    "image_index": 1821
+  },
+  {
+    "annotation_id": "1000_1744238433793",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person standing to the right of the boy is not wearing a hat or holding a trophy",
+    "image": "val2017/000000001000.jpg",
+    "file_name": "000000001000.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person standing to the right of the boy is not wearing a hat or holding a trophy.",
+    "solution": [
+      386,
+      156,
+      461,
+      478
+    ],
+    "normalized_solution": [
+      603,
+      325,
+      720,
+      996
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "12"
+    },
+    "image_index": 1864
   }
 ]
