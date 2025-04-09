@@ -207,6 +207,32 @@ def get_last_saved_index() -> int:
 
     return last_index
 
+def get_last_created_annotation_index() -> int:
+    """Get the index of the image associated with the most recently created annotation.
+    
+    Returns:
+        int: Index of the image with the most recently created annotation
+    """
+    if not multiple_instances_data or not output_data:
+        return 0
+        
+    # Get the last annotation from the output_data list
+    last_annotation = output_data[-1] if output_data else None
+    
+    if not last_annotation:
+        return 0
+        
+    # Get the image path from the annotation
+    image_path = last_annotation.get("image", "")
+    
+    # Find the corresponding image in multiple_instances_data
+    for i, img in enumerate(multiple_instances_data["images"]):
+        if "val2017/" + img["file_name"] == image_path:
+            return i
+            
+    # If not found, return the first image
+    return 0
+
 def get_image_status() -> Dict[str, Any]:
     """Get image status information.
     

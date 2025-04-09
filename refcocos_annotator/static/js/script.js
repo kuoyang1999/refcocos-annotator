@@ -793,23 +793,23 @@
             return path;
         }
 
-        // Find the index of the last saved image based on the order in val2017_multiple_instance.json
-        function findLastSavedImageIndex() {
-            debug('Finding last saved image...');
+        // Find the index of the most recently created annotation image
+        function findLastCreatedAnnotationIndex() {
+            debug('Finding most recently created annotation image...');
 
             return new Promise((resolve, reject) => {
-                // Use the dedicated endpoint to get the last saved index directly
-                fetch(`/api/last_saved_index?cache=${cacheBuster}`)
+                // Use the new endpoint to get the index of the image with the most recently created annotation
+                fetch(`/api/last_created_annotation_index?cache=${cacheBuster}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data.error) {
-                            debug('Error getting last saved index:', data.error);
+                            debug('Error getting last created annotation index:', data.error);
                             resolve(0); // Default to first image
                             return;
                         }
 
                         const lastIndex = data.index;
-                        debug(`Last saved image found at index ${lastIndex}`);
+                        debug(`Most recently annotated image found at index ${lastIndex}`);
                         
                         // First load all saved data
                         return fetch(`/api/saved_data?cache=${cacheBuster}`)
@@ -822,7 +822,7 @@
                             });
                     })
                     .catch(err => {
-                        console.error('Error finding last saved image:', err);
+                        console.error('Error finding most recently annotated image:', err);
                         resolve(0); // Default to first image on error
                     });
             });
@@ -961,8 +961,8 @@
                             // Update the reference count
                             updateReferenceCount();
 
-                            // Now find the last saved image
-                            return findLastSavedImageIndex();
+                            // Now find the most recently created annotation image
+                            return findLastCreatedAnnotationIndex();
                         });
                 })
                 .then(index => {

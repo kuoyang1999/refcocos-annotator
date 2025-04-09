@@ -98,4 +98,14 @@ def get_last_saved_index():
         JSON response with the last saved index
     """
     index = data_service.get_last_saved_index()
+    return jsonify({"index": index})
+
+@api_bp.route('/last_created_annotation_index')
+def get_last_created_annotation_index():
+    """API endpoint to get the index of the image with the most recently created annotation.
+    
+    Returns:
+        JSON response with the index of the most recently created annotation
+    """
+    index = data_service.get_last_created_annotation_index()
     return jsonify({"index": index}) 
