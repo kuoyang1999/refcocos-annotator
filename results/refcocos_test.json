@@ -8403,5 +8403,729 @@
       "occluded": false,
       "distractors": "6"
     }
+  },
+  {
+    "annotation_id": "181796_1744201784534",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 360,
+    "width": 640,
+    "normal_caption": "the transparent cup next to the bread",
+    "image": "val2017/000000181796.jpg",
+    "file_name": "000000181796.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the transparent cup next to the bread.",
+    "solution": [
+      213.9,
+      60.5,
+      298.65,
+      154.13
+    ],
+    "normalized_solution": [
+      334,
+      168,
+      467,
+      428
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    }
+  },
+  {
+    "annotation_id": "146155_1744201991763",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 512,
+    "width": 640,
+    "normal_caption": "the person wearing a hat holding a glass in hand",
+    "image": "val2017/000000146155.jpg",
+    "file_name": "000000146155.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a hat holding a glass in hand.",
+    "solution": [
+      6.06,
+      110.29,
+      193.16,
+      512
+    ],
+    "normalized_solution": [
+      9,
+      215,
+      302,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    }
+  },
+  {
+    "annotation_id": "210520_1744202253260",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the spoon near the corn not in the bowl",
+    "image": "val2017/000000210520.jpg",
+    "file_name": "000000210520.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the spoon near the corn not in the bowl.",
+    "solution": [
+      420.68,
+      375.49,
+      449.69,
+      514.55
+    ],
+    "normalized_solution": [
+      687,
+      614,
+      735,
+      841
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    }
+  },
+  {
+    "annotation_id": "192904_1744203259978",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 436,
+    "width": 640,
+    "normal_caption": "the spoon next to an empty cup",
+    "image": "val2017/000000192904.jpg",
+    "file_name": "000000192904.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the spoon next to an empty cup.",
+    "solution": [
+      257.16,
+      185.54,
+      270.13000000000005,
+      266.48
+    ],
+    "normalized_solution": [
+      402,
+      426,
+      422,
+      611
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
+  },
+  {
+    "annotation_id": "117492_1744203929364",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the person holding two teddy bears",
+    "image": "val2017/000000117492.jpg",
+    "file_name": "000000117492.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person holding two teddy bears.",
+    "solution": [
+      186.59,
+      197.84,
+      298.15999999999997,
+      420.01
+    ],
+    "normalized_solution": [
+      292,
+      462,
+      466,
+      981
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "13"
+    }
+  },
+  {
+    "annotation_id": "462576_1744204022545",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the upside-down cup on the edge of a bowl",
+    "image": "val2017/000000462576.jpg",
+    "file_name": "000000462576.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the upside-down cup on the edge of a bowl.",
+    "solution": [
+      82.4,
+      21.56,
+      114.35000000000001,
+      58.78
+    ],
+    "normalized_solution": [
+      129,
+      45,
+      179,
+      122
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    }
+  },
+  {
+    "annotation_id": "173371_1744204132246",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the fork on a plate with pizza",
+    "image": "val2017/000000173371.jpg",
+    "file_name": "000000173371.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the fork on a plate with pizza.",
+    "solution": [
+      30.2,
+      352.26,
+      79.7,
+      573.65
+    ],
+    "normalized_solution": [
+      49,
+      576,
+      130,
+      937
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
+  },
+  {
+    "annotation_id": "192904_1744204193719",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 436,
+    "width": 640,
+    "normal_caption": "the spoon near a cup that is not empty",
+    "image": "val2017/000000192904.jpg",
+    "file_name": "000000192904.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the spoon near a cup that is not empty.",
+    "solution": [
+      296,
+      308.82,
+      423.53,
+      332.36
+    ],
+    "normalized_solution": [
+      463,
+      708,
+      662,
+      762
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
+  },
+  {
+    "annotation_id": "541634_1744204279053",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the transparent cup with a clear beverage inside",
+    "image": "val2017/000000541634.jpg",
+    "file_name": "000000541634.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the transparent cup with a clear beverage inside.",
+    "solution": [
+      0,
+      82.66,
+      117.63,
+      270.23
+    ],
+    "normalized_solution": [
+      0,
+      135,
+      192,
+      442
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
+  },
+  {
+    "annotation_id": "541634_1744204349247",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the transparent cup with a colored beverage inside",
+    "image": "val2017/000000541634.jpg",
+    "file_name": "000000541634.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the transparent cup with a colored beverage inside.",
+    "solution": [
+      78.94,
+      33.76,
+      224.81,
+      324.71
+    ],
+    "normalized_solution": [
+      129,
+      55,
+      367,
+      531
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
+  },
+  {
+    "annotation_id": "210520_1744204456777",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the spoon in the bowl close to a cup",
+    "image": "val2017/000000210520.jpg",
+    "file_name": "000000210520.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the spoon in the bowl close to a cup.",
+    "solution": [
+      424.21,
+      161.06,
+      571.51,
+      237.47
+    ],
+    "normalized_solution": [
+      693,
+      263,
+      934,
+      388
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    }
+  },
+  {
+    "annotation_id": "171190_1744204522770",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person in a white shirt holding a glass",
+    "image": "val2017/000000171190.jpg",
+    "file_name": "000000171190.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person in a white shirt holding a glass.",
+    "solution": [
+      491.87,
+      141.3,
+      593.26,
+      331.15
+    ],
+    "normalized_solution": [
+      769,
+      294,
+      927,
+      690
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    }
+  },
+  {
+    "annotation_id": "171190_1744204587148",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person in a white shirt not holding a glass",
+    "image": "val2017/000000171190.jpg",
+    "file_name": "000000171190.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person in a white shirt not holding a glass.",
+    "solution": [
+      202.79,
+      146.52,
+      277.21,
+      244.67000000000002
+    ],
+    "normalized_solution": [
+      317,
+      305,
+      433,
+      510
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    }
+  },
+  {
+    "annotation_id": "171190_1744204705735",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person on the left side of the person in a white shirt and not holding a glass",
+    "image": "val2017/000000171190.jpg",
+    "file_name": "000000171190.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on the left side of the person in a white shirt and not holding a glass.",
+    "solution": [
+      265.3,
+      138.48,
+      341.26,
+      260.28
+    ],
+    "normalized_solution": [
+      415,
+      289,
+      533,
+      542
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    }
+  },
+  {
+    "annotation_id": "57150_1744204899565",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 320,
+    "width": 240,
+    "normal_caption": "the person near the teddy bear wearing a white top",
+    "image": "val2017/000000057150.jpg",
+    "file_name": "000000057150.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person near the teddy bear wearing a white top.",
+    "solution": [
+      36.91,
+      85.86,
+      126.06,
+      268.81
+    ],
+    "normalized_solution": [
+      154,
+      268,
+      525,
+      840
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "12"
+    }
+  },
+  {
+    "annotation_id": "244750_1744205032925",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 500,
+    "width": 393,
+    "normal_caption": "the person covering their mouth and wearing a dark top",
+    "image": "val2017/000000244750.jpg",
+    "file_name": "000000244750.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person covering their mouth and wearing a dark top.",
+    "solution": [
+      230.49,
+      148.53,
+      296.45,
+      243.55
+    ],
+    "normalized_solution": [
+      586,
+      297,
+      754,
+      487
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "3"
+    }
+  },
+  {
+    "annotation_id": "470773_1744205146502",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the bowl with dark sauce next to the condiment bottles",
+    "image": "val2017/000000470773.jpg",
+    "file_name": "000000470773.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bowl with dark sauce next to the condiment bottles.",
+    "solution": [
+      126.1,
+      318.87,
+      182.62,
+      364.55
+    ],
+    "normalized_solution": [
+      197,
+      664,
+      285,
+      759
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    }
+  },
+  {
+    "annotation_id": "181796_1744205284491",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 360,
+    "width": 640,
+    "normal_caption": "the opaque cup near the bread",
+    "image": "val2017/000000181796.jpg",
+    "file_name": "000000181796.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the opaque cup near the bread.",
+    "solution": [
+      495.01,
+      47.84,
+      552.71,
+      98.78
+    ],
+    "normalized_solution": [
+      773,
+      133,
+      864,
+      274
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    }
+  },
+  {
+    "annotation_id": "483999_1744205488824",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the person with dark hair on the left side of the person in a blue top",
+    "image": "val2017/000000483999.jpg",
+    "file_name": "000000483999.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person with dark hair on the left side of the person in a blue top.",
+    "solution": [
+      113.49,
+      115.26,
+      206.79,
+      211.44
+    ],
+    "normalized_solution": [
+      177,
+      269,
+      323,
+      494
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "10"
+    }
+  },
+  {
+    "annotation_id": "268378_1744205637031",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 359,
+    "width": 640,
+    "normal_caption": "the person in a white top on the left side of the person in a red top",
+    "image": "val2017/000000268378.jpg",
+    "file_name": "000000268378.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person in a white top on the left side of the person in a red top.",
+    "solution": [
+      363.29,
+      128.8,
+      513.38,
+      297.52
+    ],
+    "normalized_solution": [
+      568,
+      359,
+      802,
+      829
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "8"
+    }
+  },
+  {
+    "annotation_id": "249129_1744205782166",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the teddy bear close to a window and not wearing a black top",
+    "image": "val2017/000000249129.jpg",
+    "file_name": "000000249129.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the teddy bear close to a window and not wearing a black top.",
+    "solution": [
+      402.11,
+      63.19,
+      511.25,
+      185.74
+    ],
+    "normalized_solution": [
+      628,
+      148,
+      799,
+      435
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    }
+  },
+  {
+    "annotation_id": "336053_1744205846583",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the empty glass in the middle of the plates",
+    "image": "val2017/000000336053.jpg",
+    "file_name": "000000336053.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the empty glass in the middle of the plates.",
+    "solution": [
+      84.13,
+      193.98,
+      173.66,
+      310.46999999999997
+    ],
+    "normalized_solution": [
+      131,
+      404,
+      271,
+      647
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    }
   }
 ]
