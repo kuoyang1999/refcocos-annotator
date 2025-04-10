@@ -94,6 +94,12 @@ data/
     └── ...
 ```
 
+4. Generate image list for multiple instances
+   ```bash
+   python find_multiple_instances.py
+   cd ../
+   ```
+
 ## Configuration
 
 The tool is configured via environment variables or by modifying `config.py`:
