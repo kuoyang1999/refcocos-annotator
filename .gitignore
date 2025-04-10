@@ -37,6 +37,8 @@ ENV/
 # templates/
 
 # data and results
+!results/refcocos_test.json
+!results/data-coco-multiple-instances.json
 *.json
 *.jpg
 
