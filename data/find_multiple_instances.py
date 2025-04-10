@@ -11,11 +11,11 @@ def parse_args():
     
     parser.add_argument('--min-instances', type=int, default=3,
                         help='Minimum number of instances of a category to be considered (default: 3)')
-    parser.add_argument('--annotation-file', type=str, default="./data/annotations/instances_val2017.json",
-                        help='Path to COCO annotation file (default: ./data/annotations/instances_val2017.json)')
-    parser.add_argument('--img-dir', type=str, default="./data/val2017",
-                        help='Path to image directory (default: ./data/val2017)')
-    parser.add_argument('--output-file', type=str, default="./data/val2017_multiple_instances.json",
+    parser.add_argument('--annotation-file', type=str, default="./annotations/instances_val2017.json",
+                        help='Path to COCO annotation file (default: ./annotations/instances_val2017.json)')
+    parser.add_argument('--img-dir', type=str, default="./val2017",
+                        help='Path to image directory (default: ./val2017)')
+    parser.add_argument('--output-file', type=str, default="./val2017_multiple_instances.json",
                         help='Path to output JSON file (default: val2017_multiple_instances.json)')
     
     return parser.parse_args()
