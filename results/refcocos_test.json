@@ -7733,10 +7733,10 @@
     "text_type": "caption",
     "height": 406,
     "width": 640,
-    "normal_caption": "the person wearing a white hat waving to the camera",
+    "normal_caption": "the person wearing a white hat looking towards the camera",
     "image": "val2017/000000211674.jpg",
     "file_name": "000000211674.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a white hat waving to the camera.",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a white hat looking towards the camera.",
     "solution": [
       376.96,
       11.12,
@@ -7871,10 +7871,10 @@
     "text_type": "caption",
     "height": 574,
     "width": 640,
-    "normal_caption": "the person with long hair sitting next to the bar",
+    "normal_caption": "the person with long hair sitting right by the bar",
     "image": "val2017/000000194875.jpg",
     "file_name": "000000194875.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person with long hair sitting next to the bar.",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person with long hair sitting right by the bar.",
     "solution": [
       389.66,
       154.47,
@@ -9826,5 +9826,876 @@
       "distractors": "12"
     },
     "image_index": 1864
+  },
+  {
+    "annotation_id": "315450_1744327840720",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the car that is in the shade of the bus",
+    "image": "val2017/000000315450.jpg",
+    "file_name": "000000315450.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the car that is in the shade of the bus.",
+    "solution": [
+      46.87,
+      230.53,
+      150.57,
+      299.18
+    ],
+    "normalized_solution": [
+      73,
+      539,
+      235,
+      699
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 299
+  },
+  {
+    "annotation_id": "538364_1744328007768",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person that is on the street and neither riding a motorcycle nor wearing blue shirt",
+    "image": "val2017/000000538364.jpg",
+    "file_name": "000000538364.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person that is on the street and neither riding a motorcycle nor wearing blue shirt.",
+    "solution": [
+      45.32,
+      122.27,
+      84.17,
+      268.05
+    ],
+    "normalized_solution": [
+      71,
+      255,
+      132,
+      558
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    },
+    "image_index": 300
+  },
+  {
+    "annotation_id": "260266_1744328197585",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 479,
+    "normal_caption": "the lightest-colored car among the three parked one behind the other near the roadside closest to the camera",
+    "image": "val2017/000000260266.jpg",
+    "file_name": "000000260266.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the lightest-colored car among the three parked one behind the other near the roadside closest to the camera.",
+    "solution": [
+      123.08,
+      523.04,
+      182.35,
+      557.02
+    ],
+    "normalized_solution": [
+      257,
+      817,
+      381,
+      870
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 302
+  },
+  {
+    "annotation_id": "26204_1744328255207",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the red car that is not waiting at the traffic light",
+    "image": "val2017/000000026204.jpg",
+    "file_name": "000000026204.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the red car that is not waiting at the traffic light.",
+    "solution": [
+      522.3,
+      259.99,
+      603.5999999999999,
+      307.64
+    ],
+    "normalized_solution": [
+      816,
+      609,
+      943,
+      720
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "4"
+    },
+    "image_index": 303
+  },
+  {
+    "annotation_id": "520009_1744328365906",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 412,
+    "width": 500,
+    "normal_caption": "the traffic light that is not farthest from the camera and does not have a no turning sign on it",
+    "image": "val2017/000000520009.jpg",
+    "file_name": "000000520009.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the traffic light that is not farthest from the camera and does not have a no turning sign on it.",
+    "solution": [
+      0.12,
+      226.24,
+      18.900000000000002,
+      264.96000000000004
+    ],
+    "normalized_solution": [
+      0,
+      549,
+      38,
+      643
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 306
+  },
+  {
+    "annotation_id": "284725_1744328533462",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the car that least should be parked where it is",
+    "image": "val2017/000000284725.jpg",
+    "file_name": "000000284725.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the car that least should be parked where it is.",
+    "solution": [
+      147.53,
+      290.17,
+      378.32,
+      376.28000000000003
+    ],
+    "normalized_solution": [
+      231,
+      680,
+      591,
+      881
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 307
+  },
+  {
+    "annotation_id": "446651_1744328643299",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 426,
+    "width": 640,
+    "normal_caption": "the person on the motorcycle but not holding the handlebar",
+    "image": "val2017/000000446651.jpg",
+    "file_name": "000000446651.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on the motorcycle but not holding the handlebar.",
+    "solution": [
+      182.98,
+      182.12,
+      325.92999999999995,
+      421.33000000000004
+    ],
+    "normalized_solution": [
+      286,
+      428,
+      509,
+      989
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 308
+  },
+  {
+    "annotation_id": "278848_1744328762601",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 480,
+    "normal_caption": "the person carrying a bag and holding an umbrella",
+    "image": "val2017/000000278848.jpg",
+    "file_name": "000000278848.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person carrying a bag and holding an umbrella.",
+    "solution": [
+      297.71,
+      428.58,
+      360.99,
+      616.99
+    ],
+    "normalized_solution": [
+      620,
+      670,
+      752,
+      964
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb"
+      ],
+      "occluded": true,
+      "distractors": "3"
+    },
+    "image_index": 309
+  },
+  {
+    "annotation_id": "463730_1744328879149",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the person walking away from the camera and closest to the roundabout sign",
+    "image": "val2017/000000463730.jpg",
+    "file_name": "000000463730.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person walking away from the camera and closest to the roundabout sign.",
+    "solution": [
+      39.01,
+      180.37,
+      81.08,
+      301.45
+    ],
+    "normalized_solution": [
+      61,
+      422,
+      127,
+      706
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "13"
+    },
+    "image_index": 310
+  },
+  {
+    "annotation_id": "480021_1744329561489",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 471,
+    "width": 640,
+    "normal_caption": "the person on the motorcycle that has only one rider on it",
+    "image": "val2017/000000480021.jpg",
+    "file_name": "000000480021.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on the motorcycle that has only one rider on it.",
+    "solution": [
+      99.47,
+      77.89,
+      223.5,
+      274.15
+    ],
+    "normalized_solution": [
+      155,
+      165,
+      349,
+      582
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 311
+  },
+  {
+    "annotation_id": "142472_1744329647742",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the silver car that is furthest from the red bus",
+    "image": "val2017/000000142472.jpg",
+    "file_name": "000000142472.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the silver car that is furthest from the red bus.",
+    "solution": [
+      350.82,
+      373.17,
+      390.62,
+      413.48
+    ],
+    "normalized_solution": [
+      548,
+      777,
+      610,
+      861
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "3"
+    },
+    "image_index": 312
+  },
+  {
+    "annotation_id": "203389_1744329949902",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person wearing a beanie with sunglasses hanging on their head",
+    "image": "val2017/000000203389.jpg",
+    "file_name": "000000203389.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a beanie with sunglasses hanging on their head.",
+    "solution": [
+      182.03,
+      198.98,
+      366.05,
+      480
+    ],
+    "normalized_solution": [
+      284,
+      415,
+      572,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "8"
+    },
+    "image_index": 326
+  },
+  {
+    "annotation_id": "226154_1744330060683",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 507,
+    "width": 640,
+    "normal_caption": "the person who is driving a vehicle but not a motorcycle",
+    "image": "val2017/000000226154.jpg",
+    "file_name": "000000226154.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person who is driving a vehicle but not a motorcycle.",
+    "solution": [
+      206.3,
+      170.02,
+      269.33000000000004,
+      224.63
+    ],
+    "normalized_solution": [
+      322,
+      335,
+      421,
+      443
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 328
+  },
+  {
+    "annotation_id": "308631_1744331093420",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 426,
+    "width": 640,
+    "normal_caption": "the person wearing jeans and a black top",
+    "image": "val2017/000000308631.jpg",
+    "file_name": "000000308631.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing jeans and a black top.",
+    "solution": [
+      163.44,
+      0,
+      242.95,
+      114.15
+    ],
+    "normalized_solution": [
+      255,
+      0,
+      380,
+      268
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "9"
+    },
+    "image_index": 334
+  },
+  {
+    "annotation_id": "7816_1744331248490",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the person sitting on the grass and not wearing white pants",
+    "image": "val2017/000000007816.jpg",
+    "file_name": "000000007816.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person sitting on the grass and not wearing white pants.",
+    "solution": [
+      415.88,
+      122.97,
+      479.89,
+      176.01999999999998
+    ],
+    "normalized_solution": [
+      650,
+      288,
+      750,
+      412
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "occluded": true,
+      "distractors": "9"
+    },
+    "image_index": 335
+  },
+  {
+    "annotation_id": "245448_1744331843990",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person facing the camera, wearing a reflective vest and a hat",
+    "image": "val2017/000000245448.jpg",
+    "file_name": "000000245448.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person facing the camera, wearing a reflective vest and a hat.",
+    "solution": [
+      378.33,
+      146.78,
+      422.58,
+      233.32
+    ],
+    "normalized_solution": [
+      591,
+      306,
+      660,
+      486
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "4"
+    },
+    "image_index": 339
+  },
+  {
+    "annotation_id": "534827_1744334130503",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "the red motorcycle ridden by a person not wearing a yellow shirt",
+    "image": "val2017/000000534827.jpg",
+    "file_name": "000000534827.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the red motorcycle ridden by a person not wearing a yellow shirt.",
+    "solution": [
+      296.66,
+      288.47,
+      376.75,
+      374.64000000000004
+    ],
+    "normalized_solution": [
+      485,
+      471,
+      616,
+      612
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "4"
+    },
+    "image_index": 342
+  },
+  {
+    "annotation_id": "433204_1744334318318",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person wearing a reflective vest with their back to the camera",
+    "image": "val2017/000000433204.jpg",
+    "file_name": "000000433204.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a reflective vest with their back to the camera.",
+    "solution": [
+      463.09,
+      236.85,
+      478.26,
+      288.87
+    ],
+    "normalized_solution": [
+      724,
+      493,
+      747,
+      602
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    },
+    "image_index": 346
+  },
+  {
+    "annotation_id": "131386_1744334761373",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the fifth plane from the top in the stack",
+    "image": "val2017/000000131386.jpg",
+    "file_name": "000000131386.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the fifth plane from the top in the stack.",
+    "solution": null,
+    "normalized_solution": null,
+    "categories": {
+      "empty_case": true,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "occluded": true,
+      "distractors": "4"
+    },
+    "image_index": 352
+  },
+  {
+    "annotation_id": "381639_1744335265743",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 584,
+    "normal_caption": "the person boarding the plane wearing a white shirt and carrying a backpack",
+    "image": "val2017/000000381639.jpg",
+    "file_name": "000000381639.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person boarding the plane wearing a white shirt and carrying a backpack.",
+    "solution": [
+      332.71,
+      98.77,
+      353.45,
+      162.24
+    ],
+    "normalized_solution": [
+      570,
+      154,
+      605,
+      254
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "occluded": true,
+      "distractors": "8"
+    },
+    "image_index": 357
+  },
+  {
+    "annotation_id": "99054_1744335659875",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 427,
+    "normal_caption": "the person wearing a reflective vest and standing under the airplane",
+    "image": "val2017/000000099054.jpg",
+    "file_name": "000000099054.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a reflective vest and standing under the airplane.",
+    "solution": [
+      298.66,
+      492.89,
+      330.19000000000005,
+      569.29
+    ],
+    "normalized_solution": [
+      699,
+      770,
+      773,
+      890
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": true,
+      "distractors": "2"
+    },
+    "image_index": 359
+  },
+  {
+    "annotation_id": "502599_1744335768630",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 426,
+    "width": 640,
+    "normal_caption": "the plane that is not orange and does not have \"U.S. AIR FORCE\" written on it",
+    "image": "val2017/000000502599.jpg",
+    "file_name": "000000502599.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the plane that is not orange and does not have \"U.S. AIR FORCE\" written on it.",
+    "solution": [
+      126.36,
+      291.69,
+      380.05,
+      403.69
+    ],
+    "normalized_solution": [
+      197,
+      685,
+      594,
+      948
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 362
+  },
+  {
+    "annotation_id": "163746_1744335861549",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 488,
+    "width": 640,
+    "normal_caption": "the person with long curly hair in the right image",
+    "image": "val2017/000000163746.jpg",
+    "file_name": "000000163746.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person with long curly hair in the right image.",
+    "solution": [
+      386.86,
+      218.45,
+      447.43,
+      400.15
+    ],
+    "normalized_solution": [
+      604,
+      448,
+      699,
+      820
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "10"
+    },
+    "image_index": 368
+  },
+  {
+    "annotation_id": "33114_1744335984747",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the orange-and-black signal light that is the second furthest from the camera",
+    "image": "val2017/000000033114.jpg",
+    "file_name": "000000033114.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the orange-and-black signal light that is the second furthest from the camera.",
+    "solution": [
+      349.84,
+      332.27,
+      394.22999999999996,
+      377.39
+    ],
+    "normalized_solution": [
+      547,
+      692,
+      616,
+      786
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    },
+    "image_index": 369
+  },
+  {
+    "annotation_id": "478862_1744336049408",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person standing near the nose of the plane wearing brown shorts",
+    "image": "val2017/000000478862.jpg",
+    "file_name": "000000478862.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person standing near the nose of the plane wearing brown shorts.",
+    "solution": [
+      80.84,
+      285.3,
+      116.75,
+      389.93
+    ],
+    "normalized_solution": [
+      126,
+      594,
+      182,
+      812
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "13"
+    },
+    "image_index": 371
+  },
+  {
+    "annotation_id": "579158_1744336231546",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the third suitcase that is about to enter the airplane cargo hold",
+    "image": "val2017/000000579158.jpg",
+    "file_name": "000000579158.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the third suitcase that is about to enter the airplane cargo hold.",
+    "solution": [
+      187.98,
+      322.2,
+      219.95,
+      345.53
+    ],
+    "normalized_solution": [
+      294,
+      671,
+      344,
+      720
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    },
+    "image_index": 372
   }
 ]
