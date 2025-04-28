@@ -466,37 +466,6 @@
   {
     "dataset": "refcocos_test",
     "text_type": "caption",
-    "height": 375,
-    "width": 500,
-    "normal_caption": "baby corn",
-    "image": "val2017/000000003845.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: baby corn.",
-    "solution": [
-      96.0,
-      163.0,
-      141.0,
-      240.0
-    ],
-    "normalized_solution": [
-      192,
-      434,
-      282,
-      640
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [],
-      "hidden": true,
-      "distractors": "5"
-    },
-    "image_index": 187,
-    "file_name": "000000003845.jpg",
-    "annotation_id": "000000003845_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
     "height": 500,
     "width": 375,
     "normal_caption": "the man farthest from the camera",
