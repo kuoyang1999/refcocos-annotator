@@ -35,40 +35,6 @@
   {
     "dataset": "refcocos_test",
     "text_type": "caption",
-    "height": 333,
-    "width": 500,
-    "normal_caption": "background person not leaning back",
-    "image": "val2017/000000006471.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: background person not leaning back.",
-    "solution": [
-      20.0,
-      98.0,
-      70.0,
-      149.0
-    ],
-    "normalized_solution": [
-      40,
-      294,
-      140,
-      447
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "spatial",
-        "verb"
-      ],
-      "hidden": true,
-      "distractors": "5"
-    },
-    "image_index": 1247,
-    "file_name": "000000006471.jpg",
-    "annotation_id": "000000006471_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
     "height": 427,
     "width": 640,
     "normal_caption": "non-glass cup",
@@ -632,39 +598,6 @@
   {
     "dataset": "refcocos_test",
     "text_type": "caption",
-    "height": 427,
-    "width": 640,
-    "normal_caption": "the glass behind the flower",
-    "image": "val2017/000000007818.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the glass behind the flower.",
-    "solution": [
-      402.0,
-      187.0,
-      445.0,
-      292.0
-    ],
-    "normalized_solution": [
-      628,
-      437,
-      695,
-      683
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "spatial"
-      ],
-      "hidden": false,
-      "distractors": "3"
-    },
-    "image_index": 2198,
-    "file_name": "000000007818.jpg",
-    "annotation_id": "000000007818_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
     "height": 480,
     "width": 640,
     "normal_caption": "person other than the man and his reflection",
@@ -744,39 +677,6 @@
   {
     "dataset": "refcocos_test",
     "text_type": "caption",
-    "height": 426,
-    "width": 640,
-    "normal_caption": "the person next to the stairs",
-    "image": "val2017/000000018380.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person next to the stairs.",
-    "solution": [
-      229.0,
-      36.0,
-      278.0,
-      120.0
-    ],
-    "normalized_solution": [
-      357,
-      84,
-      434,
-      281
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "spatial"
-      ],
-      "hidden": true,
-      "distractors": "5"
-    },
-    "image_index": 2283,
-    "file_name": "000000018380.jpg",
-    "annotation_id": "000000018380_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
     "height": 427,
     "width": 640,
     "normal_caption": "the person outside the fence who is not sitting",
@@ -841,39 +741,6 @@
     "image_index": 1841,
     "file_name": "000000081988.jpg",
     "annotation_id": "000000081988_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 275,
-    "width": 500,
-    "normal_caption": "a burned hotdog",
-    "image": "val2017/000000083531.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a burned hotdog.",
-    "solution": [
-      343.0,
-      159.0,
-      404.0,
-      178.0
-    ],
-    "normalized_solution": [
-      686,
-      578,
-      808,
-      647
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "verb"
-      ],
-      "hidden": false,
-      "distractors": "5"
-    },
-    "image_index": 1642,
-    "file_name": "000000083531.jpg",
-    "annotation_id": "000000083531_1744240036431"
   },
   {
     "dataset": "refcocos_test",
@@ -1071,27 +938,6 @@
     "image_index": 1160,
     "file_name": "000000100238.jpg",
     "annotation_id": "000000100238_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 375,
-    "width": 500,
-    "normal_caption": "ice cream next to the potato",
-    "image": "val2017/000000104669.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: ice cream next to the potato.",
-    "solution": null,
-    "normalized_solution": null,
-    "categories": {
-      "empty_case": true,
-      "hops": "2",
-      "type": [],
-      "hidden": false,
-      "distractors": "4"
-    },
-    "image_index": 1201,
-    "file_name": "000000104669.jpg",
-    "annotation_id": "000000104669_1744240036431"
   },
   {
     "dataset": "refcocos_test",
