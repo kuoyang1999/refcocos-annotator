@@ -1558,39 +1558,6 @@
   {
     "dataset": "refcocos_test",
     "text_type": "caption",
-    "height": 457,
-    "width": 640,
-    "normal_caption": "object under the wrench",
-    "image": "val2017/000000140556.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: object under the wrench.",
-    "solution": [
-      389.0,
-      244.0,
-      487.0,
-      456.0
-    ],
-    "normalized_solution": [
-      607,
-      533,
-      760,
-      997
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [
-        "spatial"
-      ],
-      "hidden": false,
-      "distractors": "3"
-    },
-    "image_index": 836,
-    "file_name": "000000140556.jpg",
-    "annotation_id": "000000140556_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
     "height": 426,
     "width": 640,
     "normal_caption": "object being cut by lady in middle",
@@ -3235,37 +3202,6 @@
     "image_index": 44,
     "file_name": "000000290768.jpg",
     "annotation_id": "000000290768_1744240036432"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 640,
-    "width": 480,
-    "normal_caption": "the ceramic bowl that is empty",
-    "image": "val2017/000000182611.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the ceramic bowl that is empty.",
-    "solution": [
-      136.4,
-      537.44,
-      185.67000000000002,
-      581.34
-    ],
-    "normalized_solution": [
-      284,
-      840,
-      387,
-      908
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "2",
-      "type": [],
-      "occluded": true,
-      "distractors": "10"
-    },
-    "image_index": 45,
-    "file_name": "000000182611.jpg",
-    "annotation_id": "000000182611_1744240036432"
   },
   {
     "dataset": "refcocos_test",
@@ -4974,29 +4910,6 @@
     "image_index": 127,
     "file_name": "000000455624.jpg",
     "annotation_id": "000000455624_1744240036432"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 453,
-    "width": 640,
-    "normal_caption": "red cat on the blue motor",
-    "image": "val2017/000000139099.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: red cat on the blue motor.",
-    "solution": null,
-    "normalized_solution": null,
-    "categories": {
-      "empty_case": true,
-      "hops": "2",
-      "type": [
-        "spatial"
-      ],
-      "occluded": false,
-      "distractors": "23"
-    },
-    "image_index": 122,
-    "file_name": "000000139099.jpg",
-    "annotation_id": "000000139099_1744240036432"
   },
   {
     "dataset": "refcocos_test",
