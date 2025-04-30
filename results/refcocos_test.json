@@ -1,14 +1,47 @@
 [
   {
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the computer screen on the middle layer",
+    "image": "val2017/000000547144.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the computer screen on the middle layer.",
+    "solution": [
+      297.0,
+      345.0,
+      427.0,
+      440.0
+    ],
+    "normalized_solution": [
+      464,
+      718,
+      667,
+      916
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "hidden": true,
+      "distractors": "5"
+    },
+    "image_index": 1901,
+    "file_name": "000000547144.jpg",
+    "annotation_id": "000000547144_1744240036431"
+  },
+  {
     "annotation_id": "000000547144_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 480,
     "width": 640,
-    "normal_caption": "the monitor farther from the laptop among the ones that are on",
+    "normal_caption": "one of the monitors that is turned on, and farther from the laptop",
     "image": "val2017/000000547144.jpg",
     "file_name": "000000547144.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the monitor farther from the laptop among the ones that are on.",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: one of the monitors that is turned on, and farther from the laptop.",
     "solution": [
       431,
       134,

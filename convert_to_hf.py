@@ -140,7 +140,7 @@ if __name__ == "__main__":
 
     # Push to Hub if requested
     if args.push_to_hub:
-        # hf_dataset.push_to_hub('dddraxxx/'+args.push_to_hub, split='test_1')
+        hf_dataset.push_to_hub('dddraxxx/'+args.push_to_hub, split='test_1')
         hf_dataset.push_to_hub('dddraxxx/'+args.push_to_hub, split='test')
         print(f"Dataset pushed to HuggingFace Hub: {args.push_to_hub}")
 
