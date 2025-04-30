@@ -127,9 +127,9 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description='Convert RefCOCOS JSON to HuggingFace dataset')
-    parser.add_argument('--json_path', type=str, required=True, help='Path to the RefCOCOS JSON file')
-    parser.add_argument('--output_dir', type=str, default='hf_dataset', help='Directory to save the HuggingFace dataset')
-    parser.add_argument('--image_root', type=str, default='', help='Root directory containing the images')
+    parser.add_argument('--json_path', '-j', type=str, required=True, help='Path to the RefCOCOS JSON file')
+    parser.add_argument('--output_dir', '-o', type=str, default='hf_dataset', help='Directory to save the HuggingFace dataset')
+    parser.add_argument('--image_root', '-i', type=str, default='', help='Root directory containing the images')
     parser.add_argument('--push_to_hub', '-p', type=str, default=None,
                        help='If provided, will push the dataset to this HuggingFace Hub repository')
 
@@ -140,9 +140,14 @@ if __name__ == "__main__":
 
     # Push to Hub if requested
     if args.push_to_hub:
+        # hf_dataset.push_to_hub('dddraxxx/'+args.push_to_hub, split='test_1')
         hf_dataset.push_to_hub('dddraxxx/'+args.push_to_hub, split='test')
         print(f"Dataset pushed to HuggingFace Hub: {args.push_to_hub}")
 
     # Print dataset information
     print(f"Dataset created with {len(hf_dataset)} examples")
     print(f"Dataset features: {hf_dataset.features}")
+
+"""
+python convert_to_hf.py -j /mnt/data/kuo/qh/refcocos-annotator/results/refcocos_test.json -i /mnt/data/kuo/qh/refcocos-annotator/images -p refcocos
+"""
