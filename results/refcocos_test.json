@@ -815,37 +815,38 @@
     "annotation_id": "000000091615_1744240036431"
   },
   {
+    "annotation_id": "000000091779_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 480,
     "width": 640,
-    "normal_caption": "hotdog without vegetables on it",
+    "normal_caption": "the hotdog with a red topping that isn\u2019t a paste or sauce",
     "image": "val2017/000000091779.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: hotdog without vegetables on it.",
+    "file_name": "000000091779.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the hotdog with a red topping that isn\u2019t a paste or sauce.",
     "solution": [
-      110.0,
-      99.0,
-      472.0,
-      320.0
+      211.42,
+      144.54,
+      640,
+      474.61
     ],
     "normalized_solution": [
-      171,
-      206,
-      737,
-      666
+      330,
+      301,
+      1000,
+      989
     ],
     "categories": {
       "empty_case": false,
-      "hops": "2",
+      "hops": "4",
       "type": [
-        "exclude"
+        "exclude",
+        "attr"
       ],
-      "hidden": false,
-      "distractors": "3"
+      "occluded": false,
+      "distractors": "2"
     },
-    "image_index": 1622,
-    "file_name": "000000091779.jpg",
-    "annotation_id": "000000091779_1744240036431"
+    "image_index": 1622
   },
   {
     "annotation_id": "000000092053_1744240036431",
@@ -1322,24 +1323,26 @@
     "annotation_id": "000000128148_1744240036431"
   },
   {
+    "annotation_id": "000000128476_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 427,
     "width": 640,
     "normal_caption": "the cake decorated with two white swan-like figures, noticeably further apart from each other compared to similar decorations on other cakes",
     "image": "val2017/000000128476.jpg",
+    "file_name": "000000128476.jpg",
     "problem": "Please provide the bounding box coordinate of the region this sentence describes: the cake decorated with two white swan-like figures, noticeably further apart from each other compared to similar decorations on other cakes.",
     "solution": [
-      307.0,
-      146.0,
-      593.0,
-      353.0
+      297.14,
+      126.68,
+      590.8199999999999,
+      341.65
     ],
     "normalized_solution": [
-      479,
-      341,
-      926,
-      826
+      464,
+      297,
+      923,
+      800
     ],
     "categories": {
       "empty_case": false,
@@ -1348,12 +1351,10 @@
         "spatial",
         "verb"
       ],
-      "hidden": false,
-      "distractors": "5"
+      "occluded": false,
+      "distractors": "7"
     },
-    "image_index": 1601,
-    "file_name": "000000128476.jpg",
-    "annotation_id": "000000128476_1744240036431"
+    "image_index": 1601
   },
   {
     "dataset": "refcocos_test",
@@ -16036,5 +16037,313 @@
       "distractors": "3"
     },
     "image_index": 1579
+  },
+  {
+    "annotation_id": "345469_1746140199761",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 480,
+    "normal_caption": "the outer row of four old-fashioned donuts",
+    "image": "val2017/000000345469.jpg",
+    "file_name": "000000345469.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the outer row of four old-fashioned donuts.",
+    "solution": [
+      372,
+      325,
+      448,
+      353
+    ],
+    "normalized_solution": [
+      775,
+      508,
+      933,
+      552
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "14"
+    },
+    "image_index": 1624
+  },
+  {
+    "annotation_id": "451150_1746141086929",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 480,
+    "normal_caption": "the donuts with chocolate base and glaze on the top",
+    "image": "val2017/000000451150.jpg",
+    "file_name": "000000451150.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the donuts with chocolate base and glaze on the top.",
+    "solution": [
+      241.55,
+      266.51,
+      435.79,
+      452.78999999999996
+    ],
+    "normalized_solution": [
+      503,
+      416,
+      908,
+      707
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1625
+  },
+  {
+    "annotation_id": "148957_1746141300467",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the chocolate frosted donuts in the corner of the box",
+    "image": "val2017/000000148957.jpg",
+    "file_name": "000000148957.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the chocolate frosted donuts in the corner of the box.",
+    "solution": [
+      47.1,
+      272.95,
+      266.36,
+      459.35
+    ],
+    "normalized_solution": [
+      74,
+      569,
+      416,
+      957
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1631
+  },
+  {
+    "annotation_id": "377814_1746141401060",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the French Cruller donuts in the corner of the box",
+    "image": "val2017/000000377814.jpg",
+    "file_name": "000000377814.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the French Cruller donuts in the corner of the box.",
+    "solution": [
+      388.99,
+      2.49,
+      556.05,
+      158.34
+    ],
+    "normalized_solution": [
+      608,
+      5,
+      869,
+      330
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1633
+  },
+  {
+    "annotation_id": "357978_1746142763206",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 375,
+    "width": 500,
+    "normal_caption": "the person wearing white socks behind a board",
+    "image": "val2017/000000357978.jpg",
+    "file_name": "000000357978.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing white socks behind a board.",
+    "solution": [
+      385,
+      243,
+      434,
+      319
+    ],
+    "normalized_solution": [
+      770,
+      648,
+      868,
+      851
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1655
+  },
+  {
+    "annotation_id": "396526_1746142852589",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 338,
+    "width": 500,
+    "normal_caption": "the vase on the table which is not next to a sofa",
+    "image": "val2017/000000396526.jpg",
+    "file_name": "000000396526.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the vase on the table which is not next to a sofa.",
+    "solution": [
+      196,
+      155,
+      216,
+      206
+    ],
+    "normalized_solution": [
+      392,
+      459,
+      432,
+      609
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "1"
+    },
+    "image_index": 1656
+  },
+  {
+    "annotation_id": "154358_1746142987412",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 427,
+    "normal_caption": "the vase on the table which is not next to the window",
+    "image": "val2017/000000154358.jpg",
+    "file_name": "000000154358.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the vase on the table which is not next to the window.",
+    "solution": [
+      63.58,
+      377.78,
+      78.45,
+      391
+    ],
+    "normalized_solution": [
+      149,
+      590,
+      184,
+      611
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1658
+  },
+  {
+    "annotation_id": "467176_1746143221406",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the person wearing a white shirt holding something in one hand",
+    "image": "val2017/000000467176.jpg",
+    "file_name": "000000467176.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a white shirt holding something in one hand.",
+    "solution": [
+      17.11,
+      190.52,
+      185.85000000000002,
+      428
+    ],
+    "normalized_solution": [
+      27,
+      445,
+      290,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1667
+  },
+  {
+    "annotation_id": "516916_1746143383125",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the turned on laptop, not between two monitors",
+    "image": "val2017/000000516916.jpg",
+    "file_name": "000000516916.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the turned on laptop, not between two monitors.",
+    "solution": [
+      369.73,
+      91.35,
+      540.54,
+      241.62
+    ],
+    "normalized_solution": [
+      578,
+      190,
+      845,
+      503
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 1673
   }
 ]
