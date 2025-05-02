@@ -16345,5 +16345,213 @@
       "distractors": "2"
     },
     "image_index": 1673
+  },
+  {
+    "annotation_id": "479248_1746143804340",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the golden frame with a portrait inside",
+    "image": "val2017/000000479248.jpg",
+    "file_name": "000000479248.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the golden frame with a portrait inside.",
+    "solution": [
+      87,
+      20,
+      159,
+      103
+    ],
+    "normalized_solution": [
+      136,
+      42,
+      248,
+      215
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "9"
+    },
+    "image_index": 1679
+  },
+  {
+    "annotation_id": "319935_1746143866738",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 398,
+    "width": 640,
+    "normal_caption": "the white long couch which is not on the balcony",
+    "image": "val2017/000000319935.jpg",
+    "file_name": "000000319935.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the white long couch which is not on the balcony.",
+    "solution": [
+      401.42,
+      239.66,
+      640,
+      392.86
+    ],
+    "normalized_solution": [
+      627,
+      602,
+      1000,
+      987
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 1682
+  },
+  {
+    "annotation_id": "325483_1746144069225",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the remote held in the right hand of a person with long hair",
+    "image": "val2017/000000325483.jpg",
+    "file_name": "000000325483.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the remote held in the right hand of a person with long hair.",
+    "solution": [
+      184.47,
+      167.47,
+      210.81,
+      236.78
+    ],
+    "normalized_solution": [
+      288,
+      349,
+      329,
+      493
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    },
+    "image_index": 1691
+  },
+  {
+    "annotation_id": "113720_1746144263396",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 426,
+    "width": 640,
+    "normal_caption": "the pizza on a plate not behind a glass with fork and knife in it",
+    "image": "val2017/000000113720.jpg",
+    "file_name": "000000113720.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the pizza on a plate not behind a glass with fork and knife in it.",
+    "solution": [
+      327.82,
+      252.98,
+      409.62,
+      286.53999999999996
+    ],
+    "normalized_solution": [
+      512,
+      594,
+      640,
+      673
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1695
+  },
+  {
+    "annotation_id": "402720_1746144360132",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 612,
+    "width": 612,
+    "normal_caption": "red wine glass with wine inside, not held by a person and not close to the wall",
+    "image": "val2017/000000402720.jpg",
+    "file_name": "000000402720.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: red wine glass with wine inside, not held by a person and not close to the wall.",
+    "solution": [
+      400.41,
+      380.04,
+      448.42,
+      501.21000000000004
+    ],
+    "normalized_solution": [
+      654,
+      621,
+      733,
+      819
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "5",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "5"
+    },
+    "image_index": 1696
+  },
+  {
+    "annotation_id": "474021_1746144429893",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 375,
+    "width": 500,
+    "normal_caption": "the remote held in the right hand of a person not wearing glasses",
+    "image": "val2017/000000474021.jpg",
+    "file_name": "000000474021.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the remote held in the right hand of a person not wearing glasses.",
+    "solution": [
+      261.33,
+      264.84,
+      290.47999999999996,
+      342.85999999999996
+    ],
+    "normalized_solution": [
+      523,
+      706,
+      581,
+      914
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1697
   }
 ]
