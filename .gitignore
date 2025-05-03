@@ -38,9 +38,12 @@ ENV/
 
 # data and results
 !results/refcocos_test.json
+!results/openimages_test.json
 !results/data-coco-multiple-instances.json
+*.csv
 *.json
 *.jpg
 
 # temp files
 trash/
+.trash/

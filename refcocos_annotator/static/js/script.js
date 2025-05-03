@@ -30,6 +30,7 @@
         const hopsOptions = document.querySelectorAll('input[name="hops"]');
         const typeOptions = document.querySelectorAll('input[name="type"]');
         const occludedOptions = document.querySelectorAll('input[name="occluded"]');
+        const attributeOptions = document.querySelectorAll('input[name="attribute"]');
 
         // Variables
         let currentIndex = 0;
@@ -207,6 +208,14 @@
                     updateStatusMessage();
                 });
             });
+
+            attributeOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    isSavedToFile = false;
+                    updateSaveStatus();
+                    updateStatusMessage();
+                });
+            });
         }
         
         // Call the setup function
@@ -328,6 +337,9 @@
                     .filter(cb => cb.checked)
                     .map(cb => cb.value),
                 occluded: getSelectedRadioValue(occludedOptions) === 'true',
+                attribute: Array.from(attributeOptions)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value),
                 distractors: distractor.textContent
             };
 
@@ -369,6 +381,16 @@
                     setRadioValue(occludedOptions, data.categories.occluded.toString());
                 }
 
+                // Set attribute (Handle new data format with arrays)
+                if (data.categories.attribute !== undefined && Array.isArray(data.categories.attribute)) {
+                    attributeOptions.forEach(option => {
+                        option.checked = data.categories.attribute.includes(option.value);
+                    });
+                } else {
+                     // Clear if data format is wrong or missing
+                     attributeOptions.forEach(option => option.checked = false);
+                }
+
                 // Distractors is auto-calculated
             } else {
                 // Initialize with default values
@@ -402,6 +424,9 @@
 
             // Set occluded to "No" by default
             setRadioValue(occludedOptions, 'false');
+
+            // Clear attribute selection
+            attributeOptions.forEach(checkbox => checkbox.checked = false);
 
             // Distractors is auto-calculated
             distractor.textContent = 'N/A';
@@ -637,6 +662,18 @@
                         customBoxCoords = null;
                         isDrawingCustomBox = false;
 
+                        // Auto-select attribute based on instance data
+                        const instanceAttributes = currentImageData.categories_with_multiple_instances[catIndex].instance_attributes[bboxIndex];
+                        for (const attrName in instanceAttributes) {
+                            if (instanceAttributes.hasOwnProperty(attrName) && instanceAttributes[attrName] === 1) {
+                                // Find the corresponding checkbox and check it
+                                const checkbox = document.getElementById(`attr-${attrName.substring(2).toLowerCase()}`);
+                                if (checkbox) {
+                                    checkbox.checked = true;
+                                }
+                            }
+                        }
+
                         // Update UI
                         updateEmptyCaseStatus(false);
                         calculateDistractors();
@@ -664,6 +701,7 @@
             const hasHops = getSelectedRadioValue(hopsOptions) !== null;
             const hasType = Array.from(typeOptions).some(cb => cb.checked);
             const hasOccluded = getSelectedRadioValue(occludedOptions) !== null;
+            // const hasAttribute = Array.from(attributeOptions).some(cb => cb.checked); // Removed: No longer checking if *an* attribute is selected
             
             // Build status message
             let message = "";
@@ -673,7 +711,8 @@
             if (!hasCaption) missing.push("caption");
             if (!hasHops) missing.push("hops value");
             if (!hasType) missing.push("type");
-            if (!hasOccluded) missing.push("occluded status");
+            if (!hasOccluded) missing.push("occluded status"); // Keep temporarily
+            // if (!hasAttribute || hasAttribute.length === 0) missing.push("attribute"); // Removed: Attribute is optional
             
             if (missing.length > 0) {
                 message = "Please select/provide " + missing.join(", ");
@@ -716,11 +755,11 @@
                 return false;
             }
 
-            // Check if occluded is selected
-            if (formData.occluded === null) {
-                alert('Please select whether it is occluded or not');
-                return false;
-            }
+            // Check if attribute is selected (Removed validation)
+            // if (!formData.attribute || formData.attribute.length === 0) { 
+            //     alert('Please select an attribute');
+            //     return false;
+            // }
 
             return true;
         }
@@ -918,6 +957,14 @@
                     currentAnnotationId = null;
                     currentAnnotationIndex = 0;
                     totalAnnotations = 0;
+
+                    // Default to Empty Case state initially
+                    updateEmptyCaseStatus(true); // Select Empty Case by default
+                    clearFormSelections();       // Clear forms
+                    calculateDistractors();      // Recalculate distractors for empty case
+                    isSavedToFile = false;       // Mark as unsaved
+                    updateSaveStatus();
+                    updateAnnotationProgress();  // Update annotation counter
 
                     // Update UI
                     progress.textContent = `Image ${index + 1}/${totalImages}`;
@@ -1306,12 +1353,12 @@
             updateProblemText();
             
             // Reset form values
-            clearFormSelections();
+            clearFormSelections(); // This will now clear attribute checkboxes too
             
             // Update status
             isSavedToFile = false;
             updateSaveStatus();
-            updateEmptyCaseStatus(false);
+            updateEmptyCaseStatus(true); // Explicitly set Empty Case for new annotation
             calculateDistractors();
             status.textContent = 'Please select a bounding box and provide a caption';
             

@@ -3,8 +3,8 @@ import os
 
 # Default configuration
 IMAGE_BASE_DIR = "."
-MULTIPLE_INSTANCES_FILE = "data/val2017_multiple_instances.json"
-OUTPUT_FILE = "results/refcocos_test.json"
+MULTIPLE_INSTANCES_FILE = "data/test_images_multiple_instances_converted.json"
+OUTPUT_FILE = "results/openimages_test.json"
 
 # Flask configuration
 DEBUG = True
