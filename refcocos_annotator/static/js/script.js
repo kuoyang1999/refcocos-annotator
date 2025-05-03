@@ -53,6 +53,7 @@
         let currentAnnotationIndex = 0;
         let totalAnnotations = 0;
         let currentAnnotationId = null;
+        let hiddenCategoryIndices = new Set();
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -457,6 +458,11 @@
 
             // Draw all bounding boxes
             currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
+                // Skip drawing if category is hidden
+                if (hiddenCategoryIndices.has(catIndex)) {
+                    return; // Don't draw this category
+                }
+
                 const color = catIndex === selectedCategoryIndex ? 'red' : 'rgba(0, 0, 255, 0.7)';
 
                 category.instances.forEach((bbox, bboxIndex) => {
@@ -568,6 +574,9 @@
                 customBoxCoords = null;
                 isDrawingCustomBox = false;
 
+                // Clear all attribute checkboxes for empty case
+                attributeOptions.forEach(checkbox => checkbox.checked = false);
+
                 // Update UI
                 updateEmptyCaseStatus(true);
                 calculateDistractors();
@@ -614,6 +623,9 @@
                 selectedCategoryIndex = -1;
                 selectedBboxIndex = -1;
                 selectedBbox = null;
+
+                // Clear all attribute checkboxes for custom box
+                attributeOptions.forEach(checkbox => checkbox.checked = false);
                 
                 // Update UI
                 updateEmptyCaseStatus(false);
@@ -634,7 +646,51 @@
             currentImageData.categories_with_multiple_instances.forEach((category, catIndex) => {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category-section';
-                categoryDiv.innerHTML = `<div style="margin: 10px 0; font-weight: bold; color: ${catIndex === selectedCategoryIndex ? 'red' : 'blue'};">${category.category_name} (${category.count} instances)</div>`;
+
+                // Create header container with flex layout
+                const headerDiv = document.createElement('div');
+                headerDiv.style.display = 'flex';
+                headerDiv.style.justifyContent = 'space-between';
+                headerDiv.style.alignItems = 'center';
+                headerDiv.style.margin = '10px 0';
+
+                // Category name and count
+                const categoryLabel = document.createElement('span');
+                categoryLabel.style.fontWeight = 'bold';
+                categoryLabel.style.color = catIndex === selectedCategoryIndex ? 'red' : 'blue';
+                categoryLabel.textContent = `${category.category_name} (${category.count} instances)`;
+                headerDiv.appendChild(categoryLabel);
+
+                // Add Hide/Show button with SVG icon
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-category-btn';
+                toggleBtn.dataset.catIndex = catIndex;
+                toggleBtn.style.background = 'none';
+                toggleBtn.style.border = 'none';
+                toggleBtn.style.cursor = 'pointer';
+                toggleBtn.style.padding = '0 5px';
+                toggleBtn.innerHTML = hiddenCategoryIndices.has(catIndex) ? 
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>` : // Eye-off icon
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`; // Eye icon
+                
+                // Toggle event listener
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent click from bubbling to category selection
+                    const index = parseInt(e.currentTarget.dataset.catIndex);
+                    if (hiddenCategoryIndices.has(index)) {
+                        hiddenCategoryIndices.delete(index);
+                        // Update icon to eye
+                        e.currentTarget.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+                    } else {
+                        hiddenCategoryIndices.add(index);
+                        // Update icon to eye-off
+                        e.currentTarget.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+                    }
+                    drawBboxes(); // Redraw canvas with updated visibility
+                });
+
+                headerDiv.appendChild(toggleBtn);
+                categoryDiv.appendChild(headerDiv);
 
                 // For each bbox in this category
                 category.instances.forEach((bbox, bboxIndex) => {
@@ -662,14 +718,18 @@
                         customBoxCoords = null;
                         isDrawingCustomBox = false;
 
-                        // Auto-select attribute based on instance data
-                        const instanceAttributes = currentImageData.categories_with_multiple_instances[catIndex].instance_attributes[bboxIndex];
-                        for (const attrName in instanceAttributes) {
-                            if (instanceAttributes.hasOwnProperty(attrName) && instanceAttributes[attrName] === 1) {
-                                // Find the corresponding checkbox and check it
-                                const checkbox = document.getElementById(`attr-${attrName.substring(2).toLowerCase()}`);
-                                if (checkbox) {
-                                    checkbox.checked = true;
+                        // Clear all attribute checkboxes first
+                        attributeOptions.forEach(checkbox => checkbox.checked = false);
+
+                        // Auto-select attributes based on instance data
+                        if (currentImageData.categories_with_multiple_instances[catIndex].instance_attributes) {
+                            const instanceAttributes = currentImageData.categories_with_multiple_instances[catIndex].instance_attributes[bboxIndex];
+                            for (const attrName in instanceAttributes) {
+                                if (instanceAttributes.hasOwnProperty(attrName) && instanceAttributes[attrName] === 1) {
+                                    const checkbox = document.getElementById(`attr-${attrName.substring(2).toLowerCase()}`);
+                                    if (checkbox) {
+                                        checkbox.checked = true;
+                                    }
                                 }
                             }
                         }
@@ -952,6 +1012,7 @@
                     customBoxCoords = null;
                     savedCustomBoxCoords = null;
                     isDrawingCustomBox = false;
+                    hiddenCategoryIndices = new Set();
                     
                     // Reset annotation variables - we'll set these after checking for saved data
                     currentAnnotationId = null;

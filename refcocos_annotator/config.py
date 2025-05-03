@@ -3,7 +3,7 @@ import os
 
 # Default configuration
 IMAGE_BASE_DIR = "."
-MULTIPLE_INSTANCES_FILE = "data/test_images_multiple_instances_converted.json"
+MULTIPLE_INSTANCES_FILE = "data/test_images_multiple_instances_filtered.json"
 OUTPUT_FILE = "results/openimages_test.json"
 
 # Flask configuration
