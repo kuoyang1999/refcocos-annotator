@@ -100,38 +100,38 @@
     "annotation_id": "000000009400_1744240036431"
   },
   {
+    "annotation_id": "000000010707_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 480,
     "width": 640,
-    "normal_caption": "the person helding nothing",
+    "normal_caption": "the person wearing black top not holding nothing",
     "image": "val2017/000000010707.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person helding nothing.",
+    "file_name": "000000010707.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing black top not holding nothing.",
     "solution": [
-      347.0,
-      190.0,
-      478.0,
-      477.0
+      228.16,
+      147.57,
+      397.13,
+      457.52
     ],
     "normalized_solution": [
-      542,
-      395,
-      746,
-      993
+      357,
+      307,
+      621,
+      953
     ],
     "categories": {
       "empty_case": false,
-      "hops": "2",
+      "hops": "3",
       "type": [
         "exclude",
         "verb"
       ],
-      "hidden": true,
-      "distractors": "3"
+      "occluded": false,
+      "distractors": "2"
     },
-    "image_index": 1701,
-    "file_name": "000000010707.jpg",
-    "annotation_id": "000000010707_1744240036431"
+    "image_index": 1701
   },
   {
     "dataset": "refcocos_test",
@@ -16553,5 +16553,144 @@
       "distractors": "3"
     },
     "image_index": 1697
+  },
+  {
+    "annotation_id": "209530_1746194960080",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 428,
+    "width": 640,
+    "normal_caption": "the person closest to the frame with a picture of fruit inside",
+    "image": "val2017/000000209530.jpg",
+    "file_name": "000000209530.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person closest to the frame with a picture of fruit inside.",
+    "solution": [
+      411.61,
+      82.42,
+      624.65,
+      395.71000000000004
+    ],
+    "normalized_solution": [
+      643,
+      193,
+      976,
+      925
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "6"
+    },
+    "image_index": 1704
+  },
+  {
+    "annotation_id": "13729_1746195062743",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "the person holding a remote in the hand and not wearing white top",
+    "image": "val2017/000000013729.jpg",
+    "file_name": "000000013729.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person holding a remote in the hand and not wearing white top.",
+    "solution": [
+      358.81,
+      54.07,
+      491.86,
+      432.43
+    ],
+    "normalized_solution": [
+      561,
+      113,
+      769,
+      901
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1707
+  },
+  {
+    "annotation_id": "570456_1746195331195",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 480,
+    "width": 640,
+    "normal_caption": "one of the chair with cushion on it, and closer to the window",
+    "image": "val2017/000000570456.jpg",
+    "file_name": "000000570456.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: one of the chair with cushion on it, and closer to the window.",
+    "solution": [
+      448.89,
+      223.9,
+      512.64,
+      302.75
+    ],
+    "normalized_solution": [
+      701,
+      466,
+      801,
+      631
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "2"
+    },
+    "image_index": 1716
+  },
+  {
+    "annotation_id": "182155_1746195593730",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 426,
+    "width": 640,
+    "normal_caption": "the remote held in the right hand of a person in white top",
+    "image": "val2017/000000182155.jpg",
+    "file_name": "000000182155.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the remote held in the right hand of a person in white top.",
+    "solution": [
+      490.8,
+      98.24,
+      510.69,
+      136.7
+    ],
+    "normalized_solution": [
+      767,
+      231,
+      798,
+      321
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1733
   }
 ]
