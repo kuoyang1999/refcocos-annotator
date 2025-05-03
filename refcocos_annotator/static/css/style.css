@@ -1,19 +1,44 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
+body { font-family: Arial, sans-serif; margin: 20px; overflow: hidden; }
 #canvas-container { border: 2px solid #333; margin: 10px 0; position: relative; display: inline-block; }
 canvas { display: block; }
 #status { font-weight: bold; color: blue; margin: 10px 0; }
 button { padding: 5px 10px; margin-right: 10px; }
 button:disabled { opacity: 0.5; }
 .form-section { margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; }
-.form-section h3 { margin-top: 0; }
+.form-section h3 { margin-top: 0; margin-bottom: 5px; }
 .option-group { margin: 10px 0; }
 .checkbox-group label { margin-right: 15px; display: inline-block; }
 .saved-indicator { color: green; font-weight: bold; display: none; }
 #main-container { display: flex; flex-wrap: nowrap; height: calc(100vh - 150px); }
-#left-panel { width: 350px; overflow-y: auto; padding-right: 15px; }
-#right-panel { flex: 1; display: flex; flex-direction: column; min-width: 500px; overflow: hidden; }
+#left-panel { 
+    width: 350px; /* Fixed width for left panel */
+    /* overflow-y: auto; */ /* Removed to make panel non-scrolling */
+    padding-right: 15px; 
+    border-right: 1px solid #ddd; /* Optional: separator */
+    display: flex; /* Ensure left panel is flex container */
+    flex-direction: column;
+}
+#middle-panel { flex: 1; display: flex; flex-direction: column; min-width: 500px; overflow: hidden; padding: 0 15px; }
+#right-panel { 
+    width: 300px; /* Fixed width for right panel */
+    /* overflow-y: auto; */ /* Removed to make panel non-scrolling */
+    padding-left: 15px; 
+    border-left: 1px solid #ddd; /* Optional: separator */
+}
 #coords { margin: 10px 0; }
-#bbox-selector { margin: 10px 0; max-height: 300px; overflow-y: auto; }
+#left-panel > .form-section:nth-child(3) { /* Assuming it's the 3rd child: caption div, problem div, bbox div */
+    flex: 1; /* Allow this section to grow */
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 20px; */ /* Removed margin from section */
+    min-height: 0; /* Important for flex shrinking/growing in some browsers */
+}
+#bbox-selector { 
+    margin: 0; /* Remove top/bottom margins if handled by parent */
+    /* max-height: calc(100vh - 300); */ /* Removed max-height */
+    overflow-y: auto; 
+    flex: 1; /* Allow bbox selector to grow within its parent section */
+}
 .bbox-option { margin: 5px 0; cursor: pointer; padding: 5px; border-radius: 3px; }
 .bbox-option:hover { background-color: #eee; }
 .bbox-option.selected { background-color: #dff0d8; border: 1px solid #d6e9c6; }
@@ -51,8 +76,8 @@ button:disabled { opacity: 0.5; }
     color: #5cb85c;
 }
 .button-group {
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #eee;
 }
 .danger-button {
@@ -92,4 +117,4 @@ button:disabled { opacity: 0.5; }
 
 #jump-btn {
     margin-right: 0;
-} 
+}
