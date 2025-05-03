@@ -67,24 +67,26 @@
     "annotation_id": "000000009590_1744240036431"
   },
   {
+    "annotation_id": "000000009400_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 480,
     "width": 640,
-    "normal_caption": "the woman looking at an apple laptop",
+    "normal_caption": "the person looking at an apple laptop",
     "image": "val2017/000000009400.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the woman looking at an apple laptop.",
+    "file_name": "000000009400.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person looking at an apple laptop.",
     "solution": [
-      1.0,
-      93.0,
-      114.0,
-      213.0
+      2.16,
+      95.43,
+      104.63,
+      192.51
     ],
     "normalized_solution": [
-      1,
-      193,
-      178,
-      443
+      3,
+      199,
+      163,
+      401
     ],
     "categories": {
       "empty_case": false,
@@ -92,12 +94,10 @@
       "type": [
         "verb"
       ],
-      "hidden": true,
-      "distractors": "3"
+      "occluded": false,
+      "distractors": "8"
     },
-    "image_index": 1808,
-    "file_name": "000000009400.jpg",
-    "annotation_id": "000000009400_1744240036431"
+    "image_index": 1808
   },
   {
     "annotation_id": "000000010707_1744240036431",
@@ -682,24 +682,26 @@
     "image_index": 1320
   },
   {
+    "annotation_id": "000000081988_1744240036431",
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 427,
     "width": 640,
     "normal_caption": "the person on the surfboard which is not pink or yellow",
     "image": "val2017/000000081988.jpg",
+    "file_name": "000000081988.jpg",
     "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on the surfboard which is not pink or yellow.",
     "solution": [
-      45.0,
-      284.0,
-      160.0,
-      394.0
+      47.12,
+      283.63,
+      158.94,
+      392.27
     ],
     "normalized_solution": [
-      70,
-      665,
-      250,
-      922
+      74,
+      664,
+      248,
+      919
     ],
     "categories": {
       "empty_case": false,
@@ -708,12 +710,10 @@
         "spatial",
         "exclude"
       ],
-      "hidden": false,
-      "distractors": "5"
+      "occluded": false,
+      "distractors": "4"
     },
-    "image_index": 1841,
-    "file_name": "000000081988.jpg",
-    "annotation_id": "000000081988_1744240036431"
+    "image_index": 1841
   },
   {
     "dataset": "refcocos_test",
@@ -16863,5 +16863,109 @@
       "distractors": "9"
     },
     "image_index": 1761
+  },
+  {
+    "annotation_id": "463918_1746300918318",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 359,
+    "width": 500,
+    "normal_caption": "the remote held in the left hand of a person with curly hair",
+    "image": "val2017/000000463918.jpg",
+    "file_name": "000000463918.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the remote held in the left hand of a person with curly hair.",
+    "solution": [
+      356.35,
+      190.94,
+      373.04,
+      202.42
+    ],
+    "normalized_solution": [
+      713,
+      532,
+      746,
+      564
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1798
+  },
+  {
+    "annotation_id": "21879_1746301148861",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 427,
+    "width": 640,
+    "normal_caption": "the person on sitting on the surfboard",
+    "image": "val2017/000000021879.jpg",
+    "file_name": "000000021879.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person on sitting on the surfboard.",
+    "solution": [
+      423.31,
+      20.95,
+      494.61,
+      78.88
+    ],
+    "normalized_solution": [
+      661,
+      49,
+      773,
+      185
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "distractors": "3"
+    },
+    "image_index": 1810
+  },
+  {
+    "annotation_id": "23899_1746301345232",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 425,
+    "width": 640,
+    "normal_caption": "the remote held in the right hand of the person wearing a black top",
+    "image": "val2017/000000023899.jpg",
+    "file_name": "000000023899.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the remote held in the right hand of the person wearing a black top.",
+    "solution": [
+      442.16,
+      289.79,
+      463.71000000000004,
+      306.43
+    ],
+    "normalized_solution": [
+      691,
+      682,
+      725,
+      721
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "distractors": "4"
+    },
+    "image_index": 1812
   }
 ]
