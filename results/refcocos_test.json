@@ -14537,10 +14537,10 @@
     "text_type": "caption",
     "height": 428,
     "width": 640,
-    "normal_caption": "the third book counting from the apple",
+    "normal_caption": "the third book to the left of the apple",
     "image": "val2017/000000017182.jpg",
     "file_name": "000000017182.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the third book counting from the apple.",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the third book to the left of the apple.",
     "solution": [
       320,
       228,
