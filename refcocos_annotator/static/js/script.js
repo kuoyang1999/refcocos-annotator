@@ -54,6 +54,13 @@
         let totalAnnotations = 0;
         let currentAnnotationId = null;
         let hiddenCategoryIndices = new Set();
+        let filterShowAnnotatedOnly = false; // State for annotated filter
+        let bannedCategories = new Set();    // State for banned categories
+        let allCategories = [];              // To store categories fetched from backend
+
+        // DOM elements for filters
+        const filterAnnotatedOnlyCheckbox = document.getElementById('filter-annotated-only');
+        const categoryFilterListDiv = document.getElementById('category-filter-list');
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -1662,4 +1669,123 @@
             }
             
             document.getElementById('reference-count-value').textContent = totalReferences;
+        }
+
+        // Function to load filter state and populate UI
+        async function loadFilters() {
+            debug('Loading filters...');
+            // 1. Load annotated only state (default false, no persistence needed for this example)
+            filterShowAnnotatedOnly = filterAnnotatedOnlyCheckbox.checked;
+
+            // 2. Load banned categories from localStorage
+            const savedBannedCategories = localStorage.getItem('bannedCategories');
+            if (savedBannedCategories) {
+                try {
+                    bannedCategories = new Set(JSON.parse(savedBannedCategories));
+                    debug('Loaded banned categories from localStorage:', bannedCategories);
+                } catch (e) {
+                    console.error('Error parsing banned categories from localStorage', e);
+                    bannedCategories = new Set(); // Reset on error
+                }
+            } else {
+                bannedCategories = new Set();
+                debug('No banned categories found in localStorage.');
+            }
+
+            // 3. Fetch all categories from the backend (ASSUMES new endpoint)
+            try {
+                // Use cache buster for categories as well if needed
+                const response = await fetch(`/api/categories?cache=${cacheBuster}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                allCategories = await response.json(); // Expecting an array of strings like ["Car", "Person", ...]
+                debug('Fetched categories:', allCategories);
+                populateCategoryFilters();
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+                categoryFilterListDiv.innerHTML = 'Error loading categories.';
+            }
+
+            // 4. Attach event listeners
+            filterAnnotatedOnlyCheckbox.addEventListener('change', handleAnnotatedFilterChange);
+            // Category checkbox listeners are added in populateCategoryFilters
+        }
+
+        // Function to create category filter checkboxes
+        function populateCategoryFilters() {
+            categoryFilterListDiv.innerHTML = ''; // Clear previous content
+            if (!allCategories || allCategories.length === 0) {
+                categoryFilterListDiv.innerHTML = 'No categories found.';
+                return;
+            }
+
+            allCategories.sort().forEach(categoryName => {
+                const div = document.createElement('div');
+                const checkboxId = `filter-cat-${categoryName.replace(/\s+/g, '-')}`; // Create a safe ID
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = checkboxId;
+                checkbox.value = categoryName;
+                checkbox.checked = bannedCategories.has(categoryName); // Check if category is banned
+                checkbox.addEventListener('change', handleCategoryFilterChange); // Add listener
+
+                const label = document.createElement('label');
+                label.htmlFor = checkboxId;
+                label.textContent = categoryName;
+                label.style.marginLeft = '5px';
+
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                categoryFilterListDiv.appendChild(div);
+            });
+            debug('Populated category filters.');
+        }
+
+        // Event handler for "Annotated Only" checkbox
+        function handleAnnotatedFilterChange(event) {
+            filterShowAnnotatedOnly = event.target.checked;
+            debug('Filter Annotated Only changed:', filterShowAnnotatedOnly);
+            applyFiltersAndReload();
+        }
+
+        // Event handler for category filter checkboxes
+        function handleCategoryFilterChange(event) {
+            const categoryName = event.target.value;
+            if (event.target.checked) {
+                bannedCategories.add(categoryName);
+            } else {
+                bannedCategories.delete(categoryName);
+            }
+            debug('Banned categories updated:', bannedCategories);
+            // Save updated set to localStorage
+            try {
+                localStorage.setItem('bannedCategories', JSON.stringify(Array.from(bannedCategories)));
+                debug('Saved banned categories to localStorage.');
+            } catch (e) {
+                console.error('Error saving banned categories to localStorage', e);
+            }
+            applyFiltersAndReload();
+        }
+
+        // Function to apply filters (Placeholder - requires backend)
+        function applyFiltersAndReload() {
+            debug('Applying filters (Placeholder)...');
+            debug('Current Filter State:', {
+                annotatedOnly: filterShowAnnotatedOnly,
+                banned: Array.from(bannedCategories)
+            });
+
+            // **IMPORTANT**: This is where the backend interaction is needed.
+            // 1. Send the filter state (filterShowAnnotatedOnly, bannedCategories) to the backend.
+            // 2. Backend returns the new total number of images matching the filters
+            //    and potentially a mapping from new index to original index.
+            // 3. Update `totalImages` variable with the new count.
+            // 4. Update the UI (e.g., progress indicator).
+            // 5. Load the image at the *new* index 0 (or the last viewed index within the filtered set).
+
+            // Since backend changes are not possible, we'll just log and reload image 0 as a simulation.
+            status.textContent = `Filters applied (Simulation: Reloading image 1). Banned: ${Array.from(bannedCategories).join(', ')}`;
+            loadImage(0); // Reload the first image to indicate something happened
         }
