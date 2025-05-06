@@ -139,8 +139,27 @@
             <!-- New Filters Section -->
             <div class="form-section" id="filters-section">
                 <h3>Filters</h3>
-                <!-- Placeholder content -->
-                <p>(Filter options will go here)</p>
+                
+                <!-- Show Only Annotated Filter -->
+                <div class="filter-option">
+                    <input type="checkbox" id="filter-annotated">
+                    <label for="filter-annotated">Show only annotated images</label>
+                </div>
+                
+                <!-- Exclude Categories Filter -->
+                <div class="filter-group">
+                    <p class="filter-header">Exclude Categories:</p>
+                    <div id="exclude-categories-container">
+                        <!-- Category checkboxes will be dynamically added here -->
+                        <p id="categories-loading">Loading categories...</p>
+                    </div>
+                </div>
+                
+                <!-- Apply Filter Button -->
+                <div class="filter-actions">
+                    <button id="apply-filters-btn">Apply Filters</button>
+                    <button id="reset-filters-btn">Reset</button>
+                </div>
             </div>
 
         </div>

@@ -118,3 +118,55 @@ button:disabled { opacity: 0.5; }
 #jump-btn {
     margin-right: 0;
 }
+
+/* Filter section styles */
+.filter-option {
+    margin: 10px 0;
+}
+
+.filter-header {
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.filter-group {
+    margin: 15px 0;
+}
+
+#exclude-categories-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.filter-category-option {
+    margin: 5px 0;
+}
+
+.filter-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-actions button {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.filter-actions button:first-child {
+    margin-left: 0;
+}
+
+.filter-actions button:last-child {
+    margin-right: 0;
+}
+
+/* Add style for filtered count display */
+.filtered-count {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-left: 5px;
+}

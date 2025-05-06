@@ -54,6 +54,17 @@
         let totalAnnotations = 0;
         let currentAnnotationId = null;
         let hiddenCategoryIndices = new Set();
+        
+        // Filter state variables
+        let filterSettings = {
+            showOnlyAnnotated: false,
+            excludedCategories: new Set()
+        };
+        let allImagesMetadata = []; // Store all image metadata for filtering
+        let filteredToRealIndexMap = []; // Maps filtered index → real index
+        let realToFilteredIndexMap = []; // Maps real index → filtered index (or -1 if filtered out)
+        let filteredTotalImages = 0; // Count of images after filtering
+        let currentFilteredIndex = 0; // Current position in filtered view
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -79,24 +90,51 @@
 
         // Button events
         prevBtn.addEventListener('click', function() {
-            if (currentIndex > 0) {
-                loadImage(currentIndex - 1);
+            if (filteredTotalImages > 0) {
+                // Using filtered navigation
+                if (currentFilteredIndex > 0) {
+                    loadFilteredImage(currentFilteredIndex - 1);
+                }
+            } else {
+                // Fallback to unfiltered navigation
+                if (currentIndex > 0) {
+                    loadImage(currentIndex - 1);
+                }
             }
         });
 
         nextBtn.addEventListener('click', function() {
-            if (currentIndex < totalImages - 1) {
-                loadImage(currentIndex + 1);
+            if (filteredTotalImages > 0) {
+                // Using filtered navigation
+                if (currentFilteredIndex < filteredTotalImages - 1) {
+                    loadFilteredImage(currentFilteredIndex + 1);
+                }
+            } else {
+                // Fallback to unfiltered navigation
+                if (currentIndex < totalImages - 1) {
+                    loadImage(currentIndex + 1);
+                }
             }
         });
 
         // Jump to button event
         jumpBtn.addEventListener('click', function() {
             const targetIndex = parseInt(jumpInput.value, 10);
-            if (!isNaN(targetIndex) && targetIndex >= 1 && targetIndex <= totalImages) {
-                loadImage(targetIndex - 1); // Convert from 1-indexed to 0-indexed
+            
+            if (filteredTotalImages > 0) {
+                // When filters are active, the input is for filtered indexes
+                if (!isNaN(targetIndex) && targetIndex >= 1 && targetIndex <= filteredTotalImages) {
+                    loadFilteredImage(targetIndex - 1); // Convert from 1-indexed to 0-indexed
+                } else {
+                    status.textContent = `Please enter a valid image number between 1 and ${filteredTotalImages}`;
+                }
             } else {
-                status.textContent = `Please enter a valid image number between 1 and ${totalImages}`;
+                // Unfiltered navigation fallback
+                if (!isNaN(targetIndex) && targetIndex >= 1 && targetIndex <= totalImages) {
+                    loadImage(targetIndex - 1); // Convert from 1-indexed to 0-indexed
+                } else {
+                    status.textContent = `Please enter a valid image number between 1 and ${totalImages}`;
+                }
             }
         });
 
@@ -1005,6 +1043,12 @@
                     currentImageData = data;
                     totalImages = data.total_images;
 
+                    // Update filtered index if we're using filters
+                    if (filteredTotalImages > 0) {
+                        currentFilteredIndex = realToFilteredIndexMap[index] !== -1 ? 
+                            realToFilteredIndexMap[index] : currentFilteredIndex;
+                    }
+
                     // Reset selection variables
                     selectedBbox = null;
                     selectedBboxIndex = -1;
@@ -1028,12 +1072,20 @@
                     updateAnnotationProgress();  // Update annotation counter
 
                     // Update UI
-                    progress.textContent = `Image ${index + 1}/${totalImages}`;
+                    updateProgressDisplay(); // Use the updated function instead of directly setting progress.textContent
                     const formattedPath = formatImagePath(data.path);
                     imagePath.textContent = `Image ${index + 1}/${totalImages}: ${formattedPath}`;
-                    prevBtn.disabled = currentIndex === 0;
-                    nextBtn.disabled = currentIndex === totalImages - 1;
-                    jumpInput.value = index + 1; // Set jump input to current image index (1-indexed)
+                    
+                    // Update navigation buttons for filtered or unfiltered navigation
+                    if (filteredTotalImages > 0) {
+                        prevBtn.disabled = currentFilteredIndex === 0;
+                        nextBtn.disabled = currentFilteredIndex === filteredTotalImages - 1;
+                        jumpInput.value = currentFilteredIndex + 1; // Set jump input to current filtered index (1-indexed)
+                    } else {
+                        prevBtn.disabled = currentIndex === 0;
+                        nextBtn.disabled = currentIndex === totalImages - 1;
+                        jumpInput.value = index + 1; // Set jump input to current image index (1-indexed)
+                    }
 
                     // Clear caption and problem text
                     captionInput.value = '';
@@ -1132,6 +1184,10 @@
                             // Update the reference count
                             updateReferenceCount();
 
+                            // Load all images metadata for filtering
+                            return loadAllImagesMetadata();
+                        })
+                        .then(() => {
                             // Now find the most recently created annotation image
                             return findLastCreatedAnnotationIndex();
                         });
@@ -1663,3 +1719,267 @@
             
             document.getElementById('reference-count-value').textContent = totalReferences;
         }
+
+        // Filter Functions
+        function applyFilters() {
+            updateFilteredIndexes();
+            
+            if (filteredTotalImages === 0) {
+                alert("No images match the current filters. Resetting filters.");
+                resetFilters();
+                return;
+            }
+            
+            // Find the filtered index for the current image
+            let newFilteredIndex = realToFilteredIndexMap[currentIndex];
+            
+            // If current image is filtered out, find nearest one that passes
+            if (newFilteredIndex === -1) {
+                newFilteredIndex = findNearestFilteredIndex(currentIndex);
+                
+                if (newFilteredIndex === -1) {
+                    // This should not happen since we check for empty results above
+                    alert("No images match the current filters. Resetting filters.");
+                    resetFilters();
+                    return;
+                }
+            }
+            
+            // Load the filtered image
+            loadFilteredImage(newFilteredIndex);
+            
+            // Update UI to reflect filtered state
+            status.textContent = `Filters applied: Showing ${filteredTotalImages} of ${totalImages} images`;
+        }
+
+        function resetFilters() {
+            // Reset filter settings
+            filterSettings.showOnlyAnnotated = false;
+            filterSettings.excludedCategories.clear();
+            
+            // Reset UI elements
+            document.getElementById('filter-annotated').checked = false;
+            
+            // Clear category checkboxes
+            const categoryCheckboxes = document.querySelectorAll('.exclude-category-checkbox');
+            categoryCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Clear filter mappings
+            filteredToRealIndexMap = [];
+            realToFilteredIndexMap = [];
+            filteredTotalImages = 0;
+            
+            // Load the current image without filtering
+            loadImage(currentIndex);
+            
+            status.textContent = "Filters reset";
+        }
+
+        function updateFilteredIndexes() {
+            filteredToRealIndexMap = [];
+            realToFilteredIndexMap = new Array(totalImages).fill(-1);
+            
+            // Loop through all images and include those that pass filters
+            for (let i = 0; i < totalImages; i++) {
+                if (passesFilters(i)) {
+                    realToFilteredIndexMap[i] = filteredToRealIndexMap.length;
+                    filteredToRealIndexMap.push(i);
+                }
+            }
+            
+            filteredTotalImages = filteredToRealIndexMap.length;
+            
+            // Update UI to reflect filtered counts
+            updateProgressDisplay();
+        }
+
+        function passesFilters(realIndex) {
+            // Get the image data for this index
+            const imageData = allImagesMetadata[realIndex];
+            if (!imageData) return true; // Default to show if no metadata available
+            
+            // Filter 1: Show only annotated images
+            if (filterSettings.showOnlyAnnotated) {
+                const hasAnnotation = savedData[imageData.image_id] && 
+                                     savedData[imageData.image_id].length > 0;
+                if (!hasAnnotation) return false;
+            }
+            
+            // Filter 2: Exclude by category
+            if (filterSettings.excludedCategories.size > 0 && 
+                imageData.categories_with_multiple_instances && 
+                imageData.categories_with_multiple_instances.length > 0) {
+                
+                // Check if any of the image's categories are in the excluded set
+                for (const category of imageData.categories_with_multiple_instances) {
+                    if (filterSettings.excludedCategories.has(category.category_id)) {
+                        return false;
+                    }
+                }
+            }
+            
+            return true;
+        }
+
+        function findNearestFilteredIndex(realIndex) {
+            if (realToFilteredIndexMap[realIndex] !== -1) {
+                return realToFilteredIndexMap[realIndex]; // This image passes the filter
+            }
+            
+            // Search forward and backward from the current index
+            let forwardIndex = realIndex;
+            let backwardIndex = realIndex;
+            
+            while (forwardIndex < totalImages - 1 || backwardIndex > 0) {
+                // Check forward
+                if (forwardIndex < totalImages - 1) {
+                    forwardIndex++;
+                    if (realToFilteredIndexMap[forwardIndex] !== -1) {
+                        return realToFilteredIndexMap[forwardIndex];
+                    }
+                }
+                
+                // Check backward
+                if (backwardIndex > 0) {
+                    backwardIndex--;
+                    if (realToFilteredIndexMap[backwardIndex] !== -1) {
+                        return realToFilteredIndexMap[backwardIndex];
+                    }
+                }
+            }
+            
+            return -1; // No valid images found
+        }
+
+        function loadFilteredImage(filteredIndex) {
+            if (filteredIndex >= 0 && filteredIndex < filteredToRealIndexMap.length) {
+                const realIndex = filteredToRealIndexMap[filteredIndex];
+                
+                // Store current filtered index
+                currentFilteredIndex = filteredIndex;
+                
+                // Load the real image
+                loadImage(realIndex);
+            } else {
+                status.textContent = "Invalid filtered image index";
+            }
+        }
+
+        function updateProgressDisplay() {
+            if (filteredTotalImages > 0 && filteredTotalImages < totalImages) {
+                // Show filtered count
+                progress.innerHTML = `Image ${currentFilteredIndex + 1}/${filteredTotalImages} <span class="filtered-count">(filtered from ${totalImages})</span>`;
+                
+                // Also update jump input placeholder to indicate the new range
+                jumpInput.setAttribute('max', filteredTotalImages);
+                jumpInput.setAttribute('placeholder', `1-${filteredTotalImages}`);
+            } else {
+                // Show normal count
+                progress.textContent = `Image ${currentIndex + 1}/${totalImages}`;
+                jumpInput.setAttribute('max', totalImages);
+                jumpInput.setAttribute('placeholder', `1-${totalImages}`);
+            }
+        }
+
+        // Populate category filter checkboxes
+        function populateCategoryFilters() {
+            // Get all unique categories across all images
+            const uniqueCategories = new Map(); // category_id -> {name, count}
+            
+            for (const imageData of allImagesMetadata) {
+                if (imageData.categories_with_multiple_instances) {
+                    for (const category of imageData.categories_with_multiple_instances) {
+                        if (!uniqueCategories.has(category.category_id)) {
+                            uniqueCategories.set(category.category_id, {
+                                name: category.category_name,
+                                count: 1
+                            });
+                        } else {
+                            const existing = uniqueCategories.get(category.category_id);
+                            existing.count++;
+                        }
+                    }
+                }
+            }
+            
+            // Clear loading message
+            const container = document.getElementById('exclude-categories-container');
+            container.innerHTML = '';
+            
+            if (uniqueCategories.size === 0) {
+                container.innerHTML = '<p>No categories found.</p>';
+                return;
+            }
+            
+            // Sort categories by name
+            const sortedCategories = Array.from(uniqueCategories.entries())
+                .sort((a, b) => a[1].name.localeCompare(b[1].name));
+            
+            // Create a checkbox for each category
+            for (const [categoryId, info] of sortedCategories) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'filter-category-option';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `exclude-category-${categoryId.replace(/[^a-zA-Z0-9]/g, '-')}`;
+                checkbox.className = 'exclude-category-checkbox';
+                checkbox.dataset.categoryId = categoryId;
+                
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        filterSettings.excludedCategories.add(this.dataset.categoryId);
+                    } else {
+                        filterSettings.excludedCategories.delete(this.dataset.categoryId);
+                    }
+                });
+                
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = `${info.name} (${info.count})`;
+                
+                categoryDiv.appendChild(checkbox);
+                categoryDiv.appendChild(label);
+                container.appendChild(categoryDiv);
+            }
+        }
+
+        // Add a function to load all image metadata for filtering
+        function loadAllImagesMetadata() {
+            return fetch(`/api/all_images_metadata?cache=${cacheBuster}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error('Error loading all images metadata:', data.error);
+                        return false;
+                    }
+                    
+                    allImagesMetadata = data;
+                    debug('Loaded metadata for', allImagesMetadata.length, 'images');
+                    
+                    // Populate category filters based on this data
+                    populateCategoryFilters();
+                    return true;
+                })
+                .catch(err => {
+                    console.error('Error loading all images metadata:', err);
+                    return false;
+                });
+        }
+
+        // Apply filters button event
+        document.getElementById('apply-filters-btn').addEventListener('click', function() {
+            applyFilters();
+        });
+
+        // Reset filters button event
+        document.getElementById('reset-filters-btn').addEventListener('click', function() {
+            resetFilters();
+        });
+
+        // Show annotated only filter checkbox event
+        document.getElementById('filter-annotated').addEventListener('change', function() {
+            filterSettings.showOnlyAnnotated = this.checked;
+        });

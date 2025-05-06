@@ -108,4 +108,14 @@ def get_last_created_annotation_index():
         JSON response with the index of the most recently created annotation
     """
     index = data_service.get_last_created_annotation_index()
-    return jsonify({"index": index}) 
+    return jsonify({"index": index})
+
+@api_bp.route('/all_images_metadata')
+def get_all_images_metadata():
+    """API endpoint to get metadata for all images for filtering.
+    
+    Returns:
+        JSON response with array of image metadata objects
+    """
+    metadata = data_service.get_all_images_metadata()
+    return jsonify(metadata) 

@@ -271,4 +271,16 @@ def get_image_status() -> Dict[str, Any]:
         "total_images": total_images,
         "saved_image_ids": saved_image_ids,
         "saved_annotations": saved_annotations
-    } 
+    }
+
+def get_all_images_metadata() -> List[Dict[str, Any]]:
+    """Get metadata for all images for filtering purposes.
+    
+    Returns:
+        List: List of image metadata objects
+    """
+    if not multiple_instances_data:
+        return []
+
+    # Return a simplified version of the images data without encoded image content
+    return multiple_instances_data["images"] 
