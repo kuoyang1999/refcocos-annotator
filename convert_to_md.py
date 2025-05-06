@@ -51,6 +51,9 @@ def convert_json_to_md(json_file_path, output_md_path):
     print(f"Conversion complete. Markdown file saved to: {output_md_path}")
 
 if __name__ == "__main__":
-    json_file_path = "results/refcocos_test_cleaned.json"
-    output_md_path = "results/refcocos_test_cleaned.md"
+    # json_file_path = "results/refcocos_test_cleaned.json"
+    # output_md_path = "results/refcocos_test_cleaned.md"
+
+    json_file_path = "results/refcocos_test.json"
+    output_md_path = "results/refcocos_test.md"
     convert_json_to_md(json_file_path, output_md_path)
