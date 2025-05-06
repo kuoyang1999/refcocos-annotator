@@ -8,7 +8,7 @@ OUTPUT_FILE = "results/openimages_test.json"
 
 # Flask configuration
 DEBUG = True
-PORT = int(os.environ.get('PORT', 5556))
+PORT = int(os.environ.get('PORT', 5555))
 HOST = '0.0.0.0'
 
 # Configure paths based on package location

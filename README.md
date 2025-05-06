@@ -60,45 +60,44 @@ pip install refcocos-annotator
 
 ## Data Preparation
 
-Before running the annotator, you need to download the COCO dataset files:
+Before running the annotator, you need to download the test image set from Open Images V7:
 
-1. Create a `data` directory in the project root:
-   ```bash
-   mkdir data
-   cd data
-   ```
+1.  Create a `data` directory in the project root if it doesn't exist:
+    ```bash
+    mkdir -p data
+    ```
 
-2. Download the required files:
-   ```bash
-   # Download annotations
-   wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
-   
-   # Download validation images
-   wget http://images.cocodataset.org/zips/val2017.zip
-   ```
+2.  Download the CSV file containing the test image IDs:
+    ```bash
+    # Use wget or curl, or download manually via browser
+    wget https://storage.googleapis.com/openimages/2018_04/test/test-images-with-rotation.csv -O data/test-images-with-rotation.csv
+    # Or using curl:
+    # curl https://storage.googleapis.com/openimages/2018_04/test/test-images-with-rotation.csv -o data/test-images-with-rotation.csv
+    ```
+    Make sure the downloaded file is saved as `data/test-images-with-rotation.csv`.
 
-3. Extract the downloaded files:
-   ```bash
-   unzip annotations_trainval2017.zip
-   unzip val2017.zip
-   ```
+3.  Run the download script. This script reads the CSV, generates a list of image files to download (prefixed with `test/`), and downloads them into the `data/test_images/` directory using multiple processes. Ensure you have the `downloader.py` script (and its dependencies like `boto3`) available as it's imported by `download_test_images.py`.
+    ```bash
+    python data/download_test_images.py
+    ```
+    This will download the images specified in the CSV file into the `data/test_images/` directory.
 
-The directory structure should look like this:
+4.  Generate the JSON file with multiple instances (if needed for your annotation task). This step might depend on your specific workflow and whether you pre-filter images.
+    *Example (assuming you have a script like `find_multiple_instances.py` adapted for this dataset):*
+    ```bash
+    # This step might need adjustment based on your actual scripts
+    # python find_multiple_instances.py --input_csv data/test-images-with-rotation.csv --output_json data/test_images_multiple_instances.json --image_dir data/test_images
+    ```
+
+The final directory structure for the data should look like this:
 ```
 data/
-├── annotations/
-│   ├── instances_val2017.json
+├── test-images-with-rotation.csv
+├── test_images/                 # Images downloaded by the script
+│   ├── 0000c64e1253d68f.jpg
 │   └── ...
-└── val2017/
-    ├── 000000000009.jpg
-    └── ...
+└── test_images_multiple_instances.json # Optional: generated file
 ```
-
-4. Generate image list for multiple instances
-   ```bash
-   python find_multiple_instances.py
-   cd ../
-   ```
 
 ## Configuration
 

@@ -110,5 +110,42 @@
       "distractors": "3"
     },
     "image_index": 1
+  },
+  {
+    "annotation_id": "2_1746495296537",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "an adult who is not wearing a blue striped shirt",
+    "image": "open_image_v7/0003d84e0165d630.jpg",
+    "file_name": "0003d84e0165d630.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an adult who is not wearing a blue striped shirt.",
+    "solution": [
+      452.8,
+      27.199999488,
+      524.8,
+      228.80001024
+    ],
+    "normalized_solution": [
+      442,
+      35,
+      513,
+      298
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 2
   }
 ]
