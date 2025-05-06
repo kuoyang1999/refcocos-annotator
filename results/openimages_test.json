@@ -1,0 +1,114 @@
+[
+  {
+    "annotation_id": "0_1746491459654",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "A car with a number which is neither 74 nor 69",
+    "image": "val2017/0000c64e1253d68f.jpg",
+    "file_name": "0000c64e1253d68f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: A car with a number which is neither 74 nor 69.",
+    "solution": [
+      16.613569536,
+      203.99335847999998,
+      274.87905792,
+      315.81194654
+    ],
+    "normalized_solution": [
+      16,
+      299,
+      268,
+      462
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 0
+  },
+  {
+    "annotation_id": "0_1746491638217",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "A car whose number is not 74 and whose color is neither black nor white",
+    "image": "val2017/0000c64e1253d68f.jpg",
+    "file_name": "0000c64e1253d68f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: A car whose number is not 74 and whose color is neither black nor white.",
+    "solution": [
+      770.2654976,
+      226.6592872,
+      1024,
+      448.78539412
+    ],
+    "normalized_solution": [
+      752,
+      332,
+      1000,
+      657
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 0
+  },
+  {
+    "annotation_id": "1_1746492927940",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a woman placing her hand on another person's shoulder",
+    "image": "val2017/000132c20b84269b.jpg",
+    "file_name": "000132c20b84269b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a woman placing her hand on another person's shoulder.",
+    "solution": [
+      580.8,
+      129.60000000000002,
+      864,
+      768.0000000000001
+    ],
+    "normalized_solution": [
+      567,
+      169,
+      844,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 1
+  }
+]
