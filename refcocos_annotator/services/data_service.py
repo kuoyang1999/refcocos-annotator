@@ -5,9 +5,13 @@ from typing import Dict, List, Tuple, Any
 
 from refcocos_annotator.config import MULTIPLE_INSTANCES_FILE, OUTPUT_FILE
 
+# Define the file to store excluded categories
+EXCLUDED_CATEGORIES_FILE = "data/excluded_categories.json"
+
 # Global variables
 multiple_instances_data = None
 output_data = []
+excluded_categories = []
 
 def load_data() -> Tuple[bool, str]:
     """Load multiple instances data and any existing output data.
@@ -15,7 +19,7 @@ def load_data() -> Tuple[bool, str]:
     Returns:
         Tuple[bool, str]: Success status and message
     """
-    global multiple_instances_data, output_data
+    global multiple_instances_data, output_data, excluded_categories
 
     try:
         # Load multiple instances data
@@ -30,6 +34,17 @@ def load_data() -> Tuple[bool, str]:
         # If output file doesn't exist yet, initialize with empty array
         if not isinstance(output_data, list):
             output_data = []
+            
+        # Load excluded categories if file exists
+        if os.path.exists(EXCLUDED_CATEGORIES_FILE):
+            try:
+                with open(EXCLUDED_CATEGORIES_FILE, "r") as f:
+                    excluded_categories = json.load(f)
+                    
+                if not isinstance(excluded_categories, list):
+                    excluded_categories = []
+            except:
+                excluded_categories = []
 
         return True, f"Loaded {len(multiple_instances_data['images'])} images with multiple instances"
     except Exception as e:
@@ -283,4 +298,41 @@ def get_all_images_metadata() -> List[Dict[str, Any]]:
         return []
 
     # Return a simplified version of the images data without encoded image content
-    return multiple_instances_data["images"] 
+    return multiple_instances_data["images"]
+
+def get_excluded_categories() -> List[str]:
+    """Get list of excluded category IDs.
+    
+    Returns:
+        List: List of excluded category IDs
+    """
+    global excluded_categories
+    
+    # Return the current list of excluded categories
+    return excluded_categories
+
+def save_excluded_categories(categories: List[str]) -> Tuple[bool, str]:
+    """Save list of excluded category IDs.
+    
+    Args:
+        categories: List of category IDs to exclude
+        
+    Returns:
+        Tuple[bool, str]: Success status and message
+    """
+    global excluded_categories
+    
+    try:
+        # Update global variable
+        excluded_categories = categories
+        
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(EXCLUDED_CATEGORIES_FILE), exist_ok=True)
+        
+        # Save to file
+        with open(EXCLUDED_CATEGORIES_FILE, "w") as f:
+            json.dump(excluded_categories, f)
+            
+        return True, "Excluded categories saved successfully"
+    except Exception as e:
+        return False, f"Failed to save excluded categories: {str(e)}" 

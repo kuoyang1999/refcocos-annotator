@@ -65,6 +65,7 @@
         let realToFilteredIndexMap = []; // Maps real index → filtered index (or -1 if filtered out)
         let filteredTotalImages = 0; // Count of images after filtering
         let currentFilteredIndex = 0; // Current position in filtered view
+        let isFilterDataInitialized = false; // Track if excluded categories have been loaded
 
         // Add cache-busting parameter to all API requests
         const cacheBuster = Date.now();
@@ -798,8 +799,7 @@
             const hasCaption = captionInput.value.trim() !== '';
             const hasHops = getSelectedRadioValue(hopsOptions) !== null;
             const hasType = Array.from(typeOptions).some(cb => cb.checked);
-            const hasOccluded = getSelectedRadioValue(occludedOptions) !== null;
-            // const hasAttribute = Array.from(attributeOptions).some(cb => cb.checked); // Removed: No longer checking if *an* attribute is selected
+            const hasAttribute = Array.from(attributeOptions).some(cb => cb.checked);
             
             // Build status message
             let message = "";
@@ -808,9 +808,6 @@
             if (!hasBbox) missing.push("bounding box");
             if (!hasCaption) missing.push("caption");
             if (!hasHops) missing.push("hops value");
-            if (!hasType) missing.push("type");
-            if (!hasOccluded) missing.push("occluded status"); // Keep temporarily
-            // if (!hasAttribute || hasAttribute.length === 0) missing.push("attribute"); // Removed: Attribute is optional
             
             if (missing.length > 0) {
                 message = "Please select/provide " + missing.join(", ");
@@ -853,11 +850,7 @@
                 return false;
             }
 
-            // Check if attribute is selected (Removed validation)
-            // if (!formData.attribute || formData.attribute.length === 0) { 
-            //     alert('Please select an attribute');
-            //     return false;
-            // }
+            // Type and Attribute are now optional and multi-choice, so we remove the validation
 
             return true;
         }
@@ -1184,18 +1177,51 @@
                             // Update the reference count
                             updateReferenceCount();
 
-                            // Load all images metadata for filtering
-                            return loadAllImagesMetadata();
+                            // Load excluded categories from server
+                            return loadExcludedCategories()
+                                .then(() => {
+                                    debug('Loaded excluded categories, count:', filterSettings.excludedCategories.size);
+                                    
+                                    // Load all images metadata for filtering
+                                    return loadAllImagesMetadata();
+                                });
                         })
                         .then(() => {
-                            // Now find the most recently created annotation image
-                            return findLastCreatedAnnotationIndex();
+                            isFilterDataInitialized = true;
+                            
+                            // Find the most recently created annotation image first
+                            return findLastCreatedAnnotationIndex()
+                                .then(index => {
+                                    debug('Starting with image at index:', index);
+                                    
+                                    // Load the image first
+                                    return new Promise(resolve => {
+                                        loadImage(index, () => {
+                                            debug('Initial image loaded');
+                                            resolve(index);
+                                        });
+                                    });
+                                })
+                                .then(index => {
+                                    // Only apply filters after the initial image is loaded
+                                    if (filterSettings.excludedCategories.size > 0) {
+                                        debug('Applying saved filters');
+                                        applyFilters();
+                                    }
+                                    
+                                    updateSaveStatus();
+                                    return index;
+                                });
                         });
                 })
                 .then(index => {
                     debug('Starting with image at index:', index);
                     loadImage(index);
                     updateSaveStatus();
+                })
+                .then(index => {
+                    // No-op, already handled in the chain above
+                    debug('Initialization completed successfully');
                 })
                 .catch(err => {
                     console.error('Error during initialization:', err);
@@ -1722,11 +1748,23 @@
 
         // Filter Functions
         function applyFilters() {
+            // Don't apply filters until metadata is loaded
+            if (!allImagesMetadata || allImagesMetadata.length === 0) {
+                debug('Cannot apply filters: metadata not loaded yet');
+                return;
+            }
+            
             updateFilteredIndexes();
             
             if (filteredTotalImages === 0) {
-                alert("No images match the current filters. Resetting filters.");
-                resetFilters();
+                // Only show alert if this isn't during initial page load
+                if (isFilterDataInitialized) {
+                    alert("No images match the current filters. Resetting filters.");
+                    resetFilters();
+                } else {
+                    debug('No images match filters during initialization, resetting silently');
+                    resetFilters();
+                }
                 return;
             }
             
@@ -1739,7 +1777,9 @@
                 
                 if (newFilteredIndex === -1) {
                     // This should not happen since we check for empty results above
-                    alert("No images match the current filters. Resetting filters.");
+                    if (isFilterDataInitialized) {
+                        alert("No images match the current filters. Resetting filters.");
+                    }
                     resetFilters();
                     return;
                 }
@@ -1748,8 +1788,8 @@
             // Load the filtered image
             loadFilteredImage(newFilteredIndex);
             
-            // Update UI to reflect filtered state
-            status.textContent = `Filters applied: Showing ${filteredTotalImages} of ${totalImages} images`;
+            // Comment out status update as requested
+            // status.textContent = `Filters applied: Showing ${filteredTotalImages} of ${totalImages} images`;
         }
 
         function resetFilters() {
@@ -1770,6 +1810,9 @@
             filteredToRealIndexMap = [];
             realToFilteredIndexMap = [];
             filteredTotalImages = 0;
+            
+            // Save excluded categories (empty now)
+            saveExcludedCategories();
             
             // Load the current image without filtering
             loadImage(currentIndex);
@@ -1800,22 +1843,29 @@
             const imageData = allImagesMetadata[realIndex];
             if (!imageData) return true; // Default to show if no metadata available
             
+            // Check if the image has annotations
+            const hasAnnotation = savedData[imageData.image_id] && 
+                                 savedData[imageData.image_id].length > 0;
+            
             // Filter 1: Show only annotated images
-            if (filterSettings.showOnlyAnnotated) {
-                const hasAnnotation = savedData[imageData.image_id] && 
-                                     savedData[imageData.image_id].length > 0;
-                if (!hasAnnotation) return false;
+            if (filterSettings.showOnlyAnnotated && !hasAnnotation) {
+                return false;
             }
             
             // Filter 2: Exclude by category
-            if (filterSettings.excludedCategories.size > 0 && 
-                imageData.categories_with_multiple_instances && 
-                imageData.categories_with_multiple_instances.length > 0) {
-                
-                // Check if any of the image's categories are in the excluded set
-                for (const category of imageData.categories_with_multiple_instances) {
-                    if (filterSettings.excludedCategories.has(category.category_id)) {
-                        return false;
+            // Only apply category exclusion if either:
+            // a) "Show only annotated" is off, or
+            // b) "Show only annotated" is on but this image has no annotations
+            if (!filterSettings.showOnlyAnnotated || !hasAnnotation) {
+                if (filterSettings.excludedCategories.size > 0 && 
+                    imageData.categories_with_multiple_instances && 
+                    imageData.categories_with_multiple_instances.length > 0) {
+                    
+                    // Check if any of the image's categories are in the excluded set
+                    for (const category of imageData.categories_with_multiple_instances) {
+                        if (filterSettings.excludedCategories.has(category.category_id)) {
+                            return false;
+                        }
                     }
                 }
             }
@@ -1928,12 +1978,23 @@
                 checkbox.className = 'exclude-category-checkbox';
                 checkbox.dataset.categoryId = categoryId;
                 
+                // Check the box if this category is in the excluded set
+                if (filterSettings.excludedCategories.has(categoryId)) {
+                    checkbox.checked = true;
+                }
+                
                 checkbox.addEventListener('change', function() {
                     if (this.checked) {
                         filterSettings.excludedCategories.add(this.dataset.categoryId);
                     } else {
                         filterSettings.excludedCategories.delete(this.dataset.categoryId);
                     }
+                    
+                    // Save excluded categories when changed
+                    saveExcludedCategories();
+                    
+                    // Apply filters immediately
+                    applyFilters();
                 });
                 
                 const label = document.createElement('label');
@@ -1982,4 +2043,58 @@
         // Show annotated only filter checkbox event
         document.getElementById('filter-annotated').addEventListener('change', function() {
             filterSettings.showOnlyAnnotated = this.checked;
+            // Apply filters immediately
+            applyFilters();
         });
+
+        // New function to save excluded categories to server
+        function saveExcludedCategories() {
+            const excludedCategoriesArray = Array.from(filterSettings.excludedCategories);
+            
+            fetch(`/api/save_excluded_categories?cache=${cacheBuster}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    excluded_categories: excludedCategoriesArray,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    console.error('Failed to save excluded categories:', data.message);
+                }
+            })
+            .catch(err => {
+                console.error('Error saving excluded categories:', err);
+            });
+        }
+
+        // New function to load excluded categories from server
+        function loadExcludedCategories() {
+            return fetch(`/api/excluded_categories?cache=${cacheBuster}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.excluded_categories) {
+                        // Clear current set
+                        filterSettings.excludedCategories.clear();
+                        
+                        // Add each category from the server
+                        data.excluded_categories.forEach(category => {
+                            filterSettings.excludedCategories.add(category);
+                        });
+                        return true;
+                    }
+                    return false;
+                })
+                .catch(err => {
+                    console.error('Error loading excluded categories:', err);
+                    return false;
+                });
+        }
+
+        // Function to toggle show only annotated images filter (called directly from HTML)
+        function toggleShowAnnotated(checked) {
+            debug('Toggle show annotated:', checked);
+            filterSettings.showOnlyAnnotated = checked;
+            applyFilters();
+        }

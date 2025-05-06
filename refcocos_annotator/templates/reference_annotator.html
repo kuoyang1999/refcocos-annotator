@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="option-group">
-                    <label><b>2. Type:</b></label><br>
+                    <label><b>2. Type:</b></label> <span class="optional-label">(optional, multi-select)</span><br>
                     <div id="type-options" class="checkbox-group">
                         <label><input type="checkbox" name="type" value="spatial"> Spatial</label>
                         <label><input type="checkbox" name="type" value="exclude"> Exclude</label>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="option-group">
-                    <label><b>3. Attribute:</b></label><br>
+                    <label><b>3. Attribute:</b></label> <span class="optional-label">(optional, multi-select)</span><br>
                     <div id="attribute-options" class="checkbox-group"> 
                         <div>
                             <input type="checkbox" id="attr-occluded" name="attribute" value="IsOccluded">
@@ -142,8 +142,8 @@
                 
                 <!-- Show Only Annotated Filter -->
                 <div class="filter-option">
-                    <input type="checkbox" id="filter-annotated">
-                    <label for="filter-annotated">Show only annotated images</label>
+                    <input type="checkbox" id="filter-annotated" onclick="toggleShowAnnotated(this.checked)">
+                    <label for="filter-annotated" style="cursor: pointer;">Show only annotated images</label>
                 </div>
                 
                 <!-- Exclude Categories Filter -->
@@ -153,12 +153,6 @@
                         <!-- Category checkboxes will be dynamically added here -->
                         <p id="categories-loading">Loading categories...</p>
                     </div>
-                </div>
-                
-                <!-- Apply Filter Button -->
-                <div class="filter-actions">
-                    <button id="apply-filters-btn">Apply Filters</button>
-                    <button id="reset-filters-btn">Reset</button>
                 </div>
             </div>
 

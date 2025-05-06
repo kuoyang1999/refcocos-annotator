@@ -118,4 +118,30 @@ def get_all_images_metadata():
         JSON response with array of image metadata objects
     """
     metadata = data_service.get_all_images_metadata()
-    return jsonify(metadata) 
+    return jsonify(metadata)
+
+@api_bp.route('/excluded_categories')
+def get_excluded_categories():
+    """API endpoint to get list of excluded categories.
+    
+    Returns:
+        JSON response with list of excluded category IDs
+    """
+    categories = data_service.get_excluded_categories()
+    return jsonify({"excluded_categories": categories})
+
+@api_bp.route('/save_excluded_categories', methods=['POST'])
+def save_excluded_categories():
+    """API endpoint to save list of excluded categories.
+    
+    Returns:
+        JSON response with success status
+    """
+    try:
+        data = request.json
+        excluded_categories = data.get('excluded_categories', [])
+        
+        success, message = data_service.save_excluded_categories(excluded_categories)
+        return jsonify({"success": success, "message": message})
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)}), 500 

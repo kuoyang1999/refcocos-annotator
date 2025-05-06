@@ -23,7 +23,10 @@ button:disabled { opacity: 0.5; }
     width: 300px; /* Fixed width for right panel */
     /* overflow-y: auto; */ /* Removed to make panel non-scrolling */
     padding-left: 15px; 
+    padding-bottom: 10px; /* Add padding to bottom */
     border-left: 1px solid #ddd; /* Optional: separator */
+    display: flex; /* Add flex for layout */
+    flex-direction: column; /* Stack children vertically */
 }
 #coords { margin: 10px 0; }
 #left-panel > .form-section:nth-child(3) { /* Assuming it's the 3rd child: caption div, problem div, bbox div */
@@ -121,7 +124,7 @@ button:disabled { opacity: 0.5; }
 
 /* Filter section styles */
 .filter-option {
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 .filter-header {
@@ -130,19 +133,31 @@ button:disabled { opacity: 0.5; }
 }
 
 .filter-group {
-    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take available space */
+    min-height: 0; /* Important for flex shrinking */
 }
 
 #exclude-categories-container {
-    max-height: 200px;
+    max-height: 30vh; /* Change to viewport height units for dynamic sizing */
     overflow-y: auto;
     border: 1px solid #eee;
     padding: 5px;
     margin-top: 5px;
+   /* margin-bottom: 10px; Add margin to bottom */
 }
 
 .filter-category-option {
     margin: 5px 0;
+}
+
+/* Style for optional field labels */
+.optional-label {
+    font-size: 0.8em;
+    color: #666;
+    font-weight: normal;
+    font-style: italic;
 }
 
 .filter-actions {
@@ -169,4 +184,13 @@ button:disabled { opacity: 0.5; }
     color: #6c757d;
     font-size: 0.9em;
     margin-left: 5px;
+}
+
+/* Make the filters section flex with auto sizing and padding */
+#filters-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allow it to grow/shrink */
+    min-height: 0; /* Important for flex shrinking */
+    margin-bottom: 0; /* Add margin to bottom of filters section */
 }
