@@ -38,9 +38,15 @@ def download_images_from_csv(csv_path, download_folder, num_processes=5):
             split="test",
             label_types=[],  # Don't download any labels
             image_ids=list(image_ids),
-            dataset_dir=str(dl_path)
+            dataset_name="open-images-test-custom"
         )
         print("Download process completed.")
+        # Export images to the desired directory
+        dataset.export(
+            export_dir=download_folder,
+            dataset_type=fo.types.ImageDirectory
+        )
+        print(f"Images exported to {download_folder}")
     except Exception as e:
         print(f"Error during download: {e}")
 
