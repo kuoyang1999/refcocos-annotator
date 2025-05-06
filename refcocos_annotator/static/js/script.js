@@ -881,7 +881,7 @@
                 height: currentImageData.height,
                 width: currentImageData.width,
                 normal_caption: caption,
-                image: "val2017/" + currentImageData.file_name,
+                image: "open_image_v7/" + currentImageData.file_name,
                 file_name: currentImageData.file_name,
                 problem: `Please provide the bounding box coordinate of the region this sentence describes: ${caption}.`,
                 solution: customBoxCoords || selectedBbox,
@@ -973,12 +973,12 @@
             return [norm_x1, norm_y1, norm_x2, norm_y2];
         }
 
-        // Format image path to val2017/xxxxx
+        // Format image path to open_image_v7/xxxxx
         function formatImagePath(path) {
             const regex = /.*\/([^\/]+)$/;
             const match = path.match(regex);
             if (match && match[1]) {
-                return "val2017/" + match[1];
+                return "open_image_v7/" + match[1];
             }
             return path;
         }

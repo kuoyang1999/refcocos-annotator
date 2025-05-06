@@ -80,7 +80,7 @@ def save_reference_annotation(image_id: str, annotation: Dict[str, Any]) -> Tupl
         else:
             # Generate a new annotation ID if not provided
             if not annotation_id:
-                annotation["annotation_id"] = f"{image_id}_{len([a for a in output_data if a.get('image') == 'val2017/' + annotation['file_name']])}"
+                annotation["annotation_id"] = f"{image_id}_{len([a for a in output_data if a.get('image') == 'open_image_v7/' + annotation['file_name']])}"
             output_data.append(annotation)
 
         # Save to file
@@ -177,7 +177,7 @@ def get_saved_data() -> Dict[str, List[Dict[str, Any]]]:
         if image_path:
             # Try to find matching image from multiple_instances_data
             for img in multiple_instances_data["images"]:
-                if "val2017/" + img["file_name"] == image_path:
+                if "open_image_v7/" + img["file_name"] == image_path:
                     if img["image_id"] not in saved_data:
                         saved_data[img["image_id"]] = []
                     
@@ -210,7 +210,7 @@ def get_last_saved_index() -> int:
         image_path = item.get("image", "")
         if image_path:
             for img in multiple_instances_data["images"]:
-                if "val2017/" + img["file_name"] == image_path:
+                if "open_image_v7/" + img["file_name"] == image_path:
                     saved_image_ids.add(img["image_id"])
                     break
 
@@ -242,7 +242,7 @@ def get_last_created_annotation_index() -> int:
     
     # Find the corresponding image in multiple_instances_data
     for i, img in enumerate(multiple_instances_data["images"]):
-        if "val2017/" + img["file_name"] == image_path:
+        if "open_image_v7/" + img["file_name"] == image_path:
             return i
             
     # If not found, return the first image
@@ -270,7 +270,7 @@ def get_image_status() -> Dict[str, Any]:
         if image_path:
             # Try to find matching image from multiple_instances_data
             for img in multiple_instances_data["images"]:
-                if "val2017/" + img["file_name"] == image_path:
+                if "open_image_v7/" + img["file_name"] == image_path:
                     img_id = img["image_id"]
                     if img_id not in saved_image_ids:
                         saved_image_ids.append(img_id)

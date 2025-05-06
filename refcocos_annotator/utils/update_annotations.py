@@ -33,7 +33,7 @@ def update_annotations():
     # Create a mapping from image path to index
     image_path_to_index = {}
     for i, img in enumerate(multiple_instances_data["images"]):
-        image_path = "val2017/" + img["file_name"]
+        image_path = "open_image_v7/" + img["file_name"]
         image_path_to_index[image_path] = i
     
     # Update annotations with image_index
@@ -112,7 +112,7 @@ def force_update_annotations():
     # Create a mapping from image path to index
     image_path_to_index = {}
     for i, img in enumerate(multiple_instances_data["images"]):
-        image_path = "val2017/" + img["file_name"]
+        image_path = "open_image_v7/" + img["file_name"]
         image_path_to_index[image_path] = i
     
     # Update all annotations regardless of image_index

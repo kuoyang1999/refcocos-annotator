@@ -6,7 +6,7 @@
     "height": 683,
     "width": 1024,
     "normal_caption": "A car with a number which is neither 74 nor 69",
-    "image": "val2017/0000c64e1253d68f.jpg",
+    "image": "open_image_v7/0000c64e1253d68f.jpg",
     "file_name": "0000c64e1253d68f.jpg",
     "problem": "Please provide the bounding box coordinate of the region this sentence describes: A car with a number which is neither 74 nor 69.",
     "solution": [
@@ -43,7 +43,7 @@
     "height": 683,
     "width": 1024,
     "normal_caption": "A car whose number is not 74 and whose color is neither black nor white",
-    "image": "val2017/0000c64e1253d68f.jpg",
+    "image": "open_image_v7/0000c64e1253d68f.jpg",
     "file_name": "0000c64e1253d68f.jpg",
     "problem": "Please provide the bounding box coordinate of the region this sentence describes: A car whose number is not 74 and whose color is neither black nor white.",
     "solution": [
@@ -80,7 +80,7 @@
     "height": 768,
     "width": 1024,
     "normal_caption": "a woman placing her hand on another person's shoulder",
-    "image": "val2017/000132c20b84269b.jpg",
+    "image": "open_image_v7/000132c20b84269b.jpg",
     "file_name": "000132c20b84269b.jpg",
     "problem": "Please provide the bounding box coordinate of the region this sentence describes: a woman placing her hand on another person's shoulder.",
     "solution": [
@@ -107,7 +107,7 @@
         "IsOccluded",
         "IsTruncated"
       ],
-      "distractors": "4"
+      "distractors": "3"
     },
     "image_index": 1
   }
