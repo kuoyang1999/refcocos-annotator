@@ -147,5 +147,893 @@
       "distractors": "3"
     },
     "image_index": 2
+  },
+  {
+    "annotation_id": "7_1746567985079",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 678,
+    "width": 1024,
+    "normal_caption": "the person wearing a white dress carrying something in the hand",
+    "image": "open_image_v7/000aa0b1c8fd5ddf.jpg",
+    "file_name": "000aa0b1c8fd5ddf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a white dress carrying something in the hand.",
+    "solution": [
+      285.69750528,
+      355.57334388,
+      425.53890816,
+      592.11999774
+    ],
+    "normalized_solution": [
+      279,
+      524,
+      416,
+      873
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "6"
+    },
+    "image_index": 7
+  },
+  {
+    "annotation_id": "3_1746568026980",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the chicken with tail feathers that are not black and chest feathers that are not white",
+    "image": "open_image_v7/000411001ff7dd4f.jpg",
+    "file_name": "000411001ff7dd4f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the chicken with tail feathers that are not black and chest feathers that are not white.",
+    "solution": [
+      955.2,
+      307.20000000000005,
+      1024,
+      495.99997440000004
+    ],
+    "normalized_solution": [
+      933,
+      400,
+      1000,
+      646
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 3
+  },
+  {
+    "annotation_id": "135_1746571452852",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 819,
+    "width": 1024,
+    "normal_caption": "the giraffe standing straighter in the pair leaning against each other",
+    "image": "open_image_v7/0822a8518276eb8f.jpg",
+    "file_name": "0822a8518276eb8f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the giraffe standing straighter in the pair leaning against each other.",
+    "solution": [
+      777.5121408,
+      451.69091604,
+      855.2633344,
+      706.49089875
+    ],
+    "normalized_solution": [
+      759,
+      552,
+      835,
+      863
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 135
+  },
+  {
+    "annotation_id": "33_1746572762158",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the glass with yellow liquid inside in front of two fingers",
+    "image": "open_image_v7/00acebd371e3c042.jpg",
+    "file_name": "00acebd371e3c042.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the glass with yellow liquid inside in front of two fingers.",
+    "solution": [
+      598,
+      24,
+      962,
+      630
+    ],
+    "normalized_solution": [
+      584,
+      31,
+      939,
+      820
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 33
+  },
+  {
+    "annotation_id": "33_1746572814673",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the glass with brown liquid inside farthest from the camera",
+    "image": "open_image_v7/00acebd371e3c042.jpg",
+    "file_name": "00acebd371e3c042.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the glass with brown liquid inside farthest from the camera.",
+    "solution": [
+      347,
+      386,
+      511,
+      474
+    ],
+    "normalized_solution": [
+      339,
+      503,
+      499,
+      617
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 33
+  },
+  {
+    "annotation_id": "34_1746572888164",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the taco with yellow sauce on it not near a lime",
+    "image": "open_image_v7/00ad00e25bf4a7bc.jpg",
+    "file_name": "00ad00e25bf4a7bc.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the taco with yellow sauce on it not near a lime.",
+    "solution": [
+      158,
+      174,
+      410,
+      596
+    ],
+    "normalized_solution": [
+      154,
+      227,
+      400,
+      776
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 34
+  },
+  {
+    "annotation_id": "36_1746573018070",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the brownie topped with cream in the taller stack",
+    "image": "open_image_v7/00bb54adfd385e3e.jpg",
+    "file_name": "00bb54adfd385e3e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the brownie topped with cream in the taller stack.",
+    "solution": [
+      450,
+      52,
+      975,
+      289
+    ],
+    "normalized_solution": [
+      439,
+      68,
+      952,
+      376
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 36
+  },
+  {
+    "annotation_id": "36_1746573121364",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the brownie not at the bottom of the lower stack of brownies",
+    "image": "open_image_v7/00bb54adfd385e3e.jpg",
+    "file_name": "00bb54adfd385e3e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the brownie not at the bottom of the lower stack of brownies.",
+    "solution": [
+      36,
+      297,
+      410,
+      517
+    ],
+    "normalized_solution": [
+      35,
+      387,
+      400,
+      673
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 36
+  },
+  {
+    "annotation_id": "46_1746573380983",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 798,
+    "width": 1024,
+    "normal_caption": "the person with a white shirt next to someone wearing a black helmet",
+    "image": "open_image_v7/0106cda91c80b149.jpg",
+    "file_name": "0106cda91c80b149.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person with a white shirt next to someone wearing a black helmet.",
+    "solution": [
+      488,
+      210,
+      643,
+      677
+    ],
+    "normalized_solution": [
+      477,
+      263,
+      628,
+      848
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 46
+  },
+  {
+    "annotation_id": "55_1746573511235",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 686,
+    "width": 1024,
+    "normal_caption": "the fashion accessory worn on the person's right arm but not on the wrist",
+    "image": "open_image_v7/0159c0e9e26e49ce.jpg",
+    "file_name": "0159c0e9e26e49ce.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the fashion accessory worn on the person's right arm but not on the wrist.",
+    "solution": [
+      680.6499328,
+      466.41942620000003,
+      745.6898048,
+      523.9646734
+    ],
+    "normalized_solution": [
+      665,
+      680,
+      728,
+      764
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 55
+  },
+  {
+    "annotation_id": "59_1746573585952",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the sushi topped with shrimp that is closer to the corner of the plate",
+    "image": "open_image_v7/0190e6fd954a8c6c.jpg",
+    "file_name": "0190e6fd954a8c6c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the sushi topped with shrimp that is closer to the corner of the plate.",
+    "solution": [
+      119,
+      375,
+      380,
+      590
+    ],
+    "normalized_solution": [
+      116,
+      488,
+      371,
+      768
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 59
+  },
+  {
+    "annotation_id": "60_1746573681235",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 685,
+    "width": 1024,
+    "normal_caption": "a poster with a white background that does not have a pie chart on it",
+    "image": "open_image_v7/01ac16fdb1e4b983.jpg",
+    "file_name": "01ac16fdb1e4b983.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a poster with a white background that does not have a pie chart on it.",
+    "solution": [
+      121.00443136,
+      384.083884,
+      431.07827712,
+      591.2472695
+    ],
+    "normalized_solution": [
+      118,
+      561,
+      421,
+      863
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 60
+  },
+  {
+    "annotation_id": "61_1746573734778",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 670,
+    "width": 1024,
+    "normal_caption": "the sheep showing its face not stepping on a stone",
+    "image": "open_image_v7/01ad3ff1d94eb557.jpg",
+    "file_name": "01ad3ff1d94eb557.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the sheep showing its face not stepping on a stone.",
+    "solution": [
+      463.41604352,
+      288.63839190000004,
+      615.89489664,
+      539.888412
+    ],
+    "normalized_solution": [
+      453,
+      431,
+      601,
+      806
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 61
+  },
+  {
+    "annotation_id": "72_1746573915549",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the ski on the left foot of the skier wearing a red jacket",
+    "image": "open_image_v7/0223e84e1407580e.jpg",
+    "file_name": "0223e84e1407580e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the ski on the left foot of the skier wearing a red jacket.",
+    "solution": [
+      38.400000000000006,
+      556.8,
+      89.60000256000001,
+      600
+    ],
+    "normalized_solution": [
+      50,
+      544,
+      117,
+      586
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 72
+  },
+  {
+    "annotation_id": "104_1746574218751",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the coin that has more than one creature depicted on it farthest from the camera",
+    "image": "open_image_v7/040e9fd538bfb6cf.jpg",
+    "file_name": "040e9fd538bfb6cf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the coin that has more than one creature depicted on it farthest from the camera.",
+    "solution": [
+      513.6,
+      22.400000256,
+      761.6,
+      240
+    ],
+    "normalized_solution": [
+      502,
+      29,
+      744,
+      313
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 104
+  },
+  {
+    "annotation_id": "105_1746574350364",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "the smaller yellow vegetable",
+    "image": "open_image_v7/044ea27690e7bca0.jpg",
+    "file_name": "044ea27690e7bca0.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the smaller yellow vegetable.",
+    "solution": [
+      0,
+      578.54150656,
+      787.4079744,
+      951.91332864
+    ],
+    "normalized_solution": [
+      0,
+      565,
+      769,
+      930
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 105
+  },
+  {
+    "annotation_id": "108_1746574412342",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a bowl with black exterior that does not contain rice",
+    "image": "open_image_v7/04bcc24c07f719a5.jpg",
+    "file_name": "04bcc24c07f719a5.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a bowl with black exterior that does not contain rice.",
+    "solution": [
+      0,
+      376.00000511999997,
+      164.8,
+      670.39997952
+    ],
+    "normalized_solution": [
+      0,
+      490,
+      161,
+      873
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 108
+  },
+  {
+    "annotation_id": "134_1746574844904",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 682,
+    "normal_caption": "the penguin facing the right side of the image and not lowering its head",
+    "image": "open_image_v7/07ca230691eec10e.jpg",
+    "file_name": "07ca230691eec10e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the penguin facing the right side of the image and not lowering its head.",
+    "solution": [
+      270.08407139999997,
+      220.50737152,
+      558.2743562,
+      995.3038336
+    ],
+    "normalized_solution": [
+      396,
+      215,
+      819,
+      972
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 134
+  },
+  {
+    "annotation_id": "136_1746574946060",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the yellow grapefruit next to the limes but not close to the pink or orange grapefruit",
+    "image": "open_image_v7/086ad91410243048.jpg",
+    "file_name": "086ad91410243048.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the yellow grapefruit next to the limes but not close to the pink or orange grapefruit.",
+    "solution": [
+      0,
+      540.7999872,
+      158.4,
+      768
+    ],
+    "normalized_solution": [
+      0,
+      704,
+      155,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "7"
+    },
+    "image_index": 136
+  },
+  {
+    "annotation_id": "137_1746575026880",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 691,
+    "width": 1024,
+    "normal_caption": "the billboard without numbers among the three billboards on one pole",
+    "image": "open_image_v7/08c501f7a5dce47c.jpg",
+    "file_name": "08c501f7a5dce47c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the billboard without numbers among the three billboards on one pole.",
+    "solution": [
+      322.08902144,
+      142.75604631000002,
+      521.1157504,
+      221.72747883000002
+    ],
+    "normalized_solution": [
+      315,
+      207,
+      509,
+      321
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 137
+  },
+  {
+    "annotation_id": "137_1746575076641",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 691,
+    "width": 1024,
+    "normal_caption": "the lowest billboard among a group of three billboards",
+    "image": "open_image_v7/08c501f7a5dce47c.jpg",
+    "file_name": "08c501f7a5dce47c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the lowest billboard among a group of three billboards.",
+    "solution": [
+      376.78339072,
+      312.84835666,
+      469.45992704,
+      353.85276654
+    ],
+    "normalized_solution": [
+      368,
+      453,
+      458,
+      512
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "occluded": false,
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 137
+  },
+  {
+    "annotation_id": "143_1746575312410",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the hotdog that has mustard on it but not forming the word spicy",
+    "image": "open_image_v7/09465e94c72c0f32.jpg",
+    "file_name": "09465e94c72c0f32.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the hotdog that has mustard on it but not forming the word spicy.",
+    "solution": [
+      192,
+      225.6,
+      595.2,
+      412.8
+    ],
+    "normalized_solution": [
+      250,
+      220,
+      775,
+      403
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 143
+  },
+  {
+    "annotation_id": "146_1746575452704",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the football displaying flags including a french flag and a canadian flag",
+    "image": "open_image_v7/09a49cb92c6cdbb0.jpg",
+    "file_name": "09a49cb92c6cdbb0.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the football displaying flags including a french flag and a canadian flag.",
+    "solution": [
+      422.40000000000003,
+      440,
+      768,
+      1024
+    ],
+    "normalized_solution": [
+      550,
+      430,
+      1000,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 146
+  },
+  {
+    "annotation_id": "143_1746642962499",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the hotdog closer to the person with mustard forming the word spicy",
+    "image": "open_image_v7/09465e94c72c0f32.jpg",
+    "file_name": "09465e94c72c0f32.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the hotdog closer to the person with mustard forming the word spicy.",
+    "solution": [
+      158.39999999999998,
+      432,
+      564.7999872,
+      624
+    ],
+    "normalized_solution": [
+      206,
+      422,
+      735,
+      609
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 143
+  },
+  {
+    "annotation_id": "147_1746643447521",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the alpaca without an ear tag among the two alpacas sitting close together",
+    "image": "open_image_v7/09e382a83978039b.jpg",
+    "file_name": "09e382a83978039b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the alpaca without an ear tag among the two alpacas sitting close together.",
+    "solution": [
+      585.6,
+      403.20000000000005,
+      761.6,
+      625.60002048
+    ],
+    "normalized_solution": [
+      572,
+      525,
+      744,
+      815
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 147
   }
 ]

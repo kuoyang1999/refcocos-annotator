@@ -319,34 +319,46 @@
         function setupDistractorEdit() {
             const distractorContainer = document.getElementById('distractors-container');
             
-            // Clear existing content
-            distractorContainer.innerHTML = '';
+            // 'distractor' is the global const distractor = document.getElementById('distractors-value');
+            // originalCalculateDistractors (called via the patched calculateDistractors) 
+            // has just updated distractor.textContent with the suggested value.
+            const suggestedDisplayValue = (distractor.textContent === 'N/A' || distractor.textContent === '') ? '0' : distractor.textContent;
+
+            let inputField = document.getElementById('distractors-input');
+            let labelElement = distractorContainer.querySelector('span#distractor-suggestion-label'); 
+
+            if (!inputField) {
+                distractorContainer.innerHTML = ''; // Clear only if we need to create elements from scratch
+
+                inputField = document.createElement('input');
+                inputField.type = 'number';
+                inputField.min = '0';
+                inputField.id = 'distractors-input';
+                // Value will be set by setFormValues or remain empty for new annotations.
+                // Placeholder will be shown if value is empty.
+                inputField.placeholder = 'Enter #'; 
+                inputField.style.width = '60px';
+                inputField.style.marginRight = '10px';
+                
+                labelElement = document.createElement('span');
+                labelElement.id = 'distractor-suggestion-label'; // Add an ID for easier targeting
+                
+                inputField.addEventListener('input', function() {
+                    isSavedToFile = false;
+                    updateSaveStatus();
+                    updateStatusMessage(); // To re-check validation status
+                });
+                
+                distractorContainer.appendChild(inputField);
+                distractorContainer.appendChild(labelElement);
+            }
             
-            // Create input field for manual editing
-            const inputField = document.createElement('input');
-            inputField.type = 'number';
-            inputField.min = '0';
-            inputField.id = 'distractors-input';
-            inputField.value = distractor.textContent === 'N/A' ? '0' : distractor.textContent;
-            inputField.style.width = '60px';
-            inputField.style.marginRight = '10px';
-            
-            // Add label and auto-calculated info
-            const label = document.createElement('span');
-            label.innerHTML = '(auto: <span id="auto-distractor-value">' + 
-                (distractor.textContent === 'N/A' ? '0' : distractor.textContent) + 
-                '</span>)';
-            
-            // Add event listener for input changes
-            inputField.addEventListener('input', function() {
-                distractor.textContent = this.value;
-                isSavedToFile = false;
-                updateSaveStatus();
-            });
-            
-            // Append elements to container
-            distractorContainer.appendChild(inputField);
-            distractorContainer.appendChild(label);
+            // Always update the suggestion text in the label
+            if (labelElement) { // Ensure labelElement exists before setting innerHTML
+                labelElement.innerHTML = '(suggest: <span id="suggested-distractor-value">' + 
+                    suggestedDisplayValue + 
+                    '</span>)';
+            }
         }
 
         // Update setupDistractorEdit call after calculateDistractors
@@ -370,17 +382,18 @@
 
         // Get all form data as an object
         function getFormData() {
+            const distractorsInputElement = document.getElementById('distractors-input');
             const formData = {
                 empty_case: emptyCase.textContent === 'Yes',
                 hops: getSelectedRadioValue(hopsOptions),
                 type: Array.from(typeOptions)
                     .filter(cb => cb.checked)
                     .map(cb => cb.value),
-                occluded: getSelectedRadioValue(occludedOptions) === 'true',
-                attribute: Array.from(attributeOptions)
-                    .filter(cb => cb.checked)
-                    .map(cb => cb.value),
-                distractors: distractor.textContent
+                attribute: Array.from(attributeOptions) 
+                            .filter(cb => cb.checked)
+                            .map(cb => cb.value),
+                // occluded: getSelectedRadioValue(occludedOptions) === 'true', // Keep temporarily, may need adjustment based on how data is saved/loaded
+                distractors: distractorsInputElement ? distractorsInputElement.value.trim() : '' // Read from input field, trim whitespace
             };
 
             return formData;
@@ -398,6 +411,15 @@
 
         // Set form values based on loaded data
         function setFormValues(data) {
+            // Ensure the input field exists because setupDistractorEdit might not have run yet
+            // if this is called very early, though calculateDistractors should ensure it runs.
+            let distractorsInputElement = document.getElementById('distractors-input');
+            if (!distractorsInputElement && document.getElementById('distractors-container')) {
+                 // If input doesn't exist but container does, force setup
+                 setupDistractorEdit(); 
+                 distractorsInputElement = document.getElementById('distractors-input');
+            }
+
             if (data && data.categories) {
                 currentCategories = data.categories;
 
@@ -414,36 +436,45 @@
                     typeOptions.forEach(option => {
                         option.checked = data.categories.type.includes(option.value);
                     });
-                }
-
-                // Set occluded
-                if (data.categories.occluded !== undefined) {
-                    setRadioValue(occludedOptions, data.categories.occluded.toString());
+                } else { // Ensure it's cleared if not in saved data or wrong format
+                    typeOptions.forEach(option => option.checked = false);
                 }
 
                 // Set attribute (Handle new data format with arrays)
                 if (data.categories.attribute !== undefined && Array.isArray(data.categories.attribute)) {
-                    attributeOptions.forEach(option => {
+                    attributeOptions.forEach(option => { 
                         option.checked = data.categories.attribute.includes(option.value);
                     });
                 } else {
                      // Clear if data format is wrong or missing
                      attributeOptions.forEach(option => option.checked = false);
                 }
+                
+                // Set distractors from saved data into the input field
+                if (distractorsInputElement) {
+                    if (data.categories.distractors !== undefined && data.categories.distractors !== null) {
+                        distractorsInputElement.value = data.categories.distractors;
+                    } else {
+                        distractorsInputElement.value = ''; // Clear if not in saved data
+                    }
+                } else {
+                    console.warn('Distractors input field not found when trying to set value.');
+                }
 
-                // Distractors is auto-calculated
+                // Distractors suggestion is updated later by calculateDistractors
             } else {
                 // Initialize with default values
                 currentCategories = {
                     empty_case: false,
                     hops: null,
                     type: [],
-                    occluded: false,
+                    attribute: [], // Default to empty array for checkboxes
+                    // occluded: false, // Keep temporarily for old data?
                     distractors: null
                 };
 
                 // Clear all form selections
-                clearFormSelections();
+                clearFormSelections(); // This will clear distractors input too
             }
         }
 
@@ -462,14 +493,20 @@
             // Clear type
             typeOptions.forEach(checkbox => checkbox.checked = false);
 
-            // Set occluded to "No" by default
-            setRadioValue(occludedOptions, 'false');
-
+            // Set occluded to "No" by default (Keep temporarily)
+            // setRadioValue(occludedOptions, 'false'); 
+            
             // Clear attribute selection
             attributeOptions.forEach(checkbox => checkbox.checked = false);
 
-            // Distractors is auto-calculated
-            distractor.textContent = 'N/A';
+            // Clear distractors input field
+            const distractorsInputElement = document.getElementById('distractors-input');
+            if (distractorsInputElement) {
+                distractorsInputElement.value = '';
+            }
+
+            // Distractors suggestion is updated separately by calculateDistractors/setupDistractorEdit
+            // distractor.textContent = 'N/A'; // No longer needed to set the span here
         }
 
         // Convert COCO bbox format [x, y, width, height] to [x1, y1, x2, y2]
@@ -798,9 +835,13 @@
             const hasBbox = selectedBbox !== null || customBoxCoords !== null;
             const hasCaption = captionInput.value.trim() !== '';
             const hasHops = getSelectedRadioValue(hopsOptions) !== null;
-            const hasType = Array.from(typeOptions).some(cb => cb.checked);
-            const hasAttribute = Array.from(attributeOptions).some(cb => cb.checked);
+            const hasType = Array.from(typeOptions).some(cb => cb.checked); // Still useful to know if any selected
+            const hasAttribute = Array.from(attributeOptions).some(cb => cb.checked); // Still useful to know if any selected
             
+            // Check distractors input
+            const distractorsInputElement = document.getElementById('distractors-input');
+            const hasDistractors = distractorsInputElement && distractorsInputElement.value.trim() !== '';
+
             // Build status message
             let message = "";
             let missing = [];
@@ -808,6 +849,11 @@
             if (!hasBbox) missing.push("bounding box");
             if (!hasCaption) missing.push("caption");
             if (!hasHops) missing.push("hops value");
+            if (!hasDistractors) missing.push("distractors value"); // Add distractors
+            
+            // Type and Attribute are now optional, so don't add them to missing list
+            // if (!hasType) missing.push("type");
+            // if (!hasAttribute) missing.push("attribute");
             
             if (missing.length > 0) {
                 message = "Please select/provide " + missing.join(", ");
@@ -828,7 +874,7 @@
             }
 
             // Get form data
-            const formData = getFormData();
+            const formData = getFormData(); // Ensure this reads from the input field now
 
             // For empty cases, selectedBbox should be null
             if (formData.empty_case) {
@@ -839,7 +885,7 @@
             } else {
                 // For non-empty cases, selectedBbox should not be null
                 if (selectedBbox === null && customBoxCoords === null) {
-                    alert('Please select a bounding box');
+                    alert('Please select or draw a bounding box');
                     return false;
                 }
             }
@@ -850,7 +896,18 @@
                 return false;
             }
 
-            // Type and Attribute are now optional and multi-choice, so we remove the validation
+            // Check if distractors is provided and is a valid non-negative number
+            if (formData.distractors === '' || formData.distractors === null) { // Check if empty or null
+                alert('Please enter the number of distractors.');
+                return false;
+            }
+            const distractorsVal = parseInt(formData.distractors, 10);
+            if (isNaN(distractorsVal) || distractorsVal < 0) {
+                alert('Please enter a valid non-negative number for distractors.');
+                return false;
+            }
+
+            // Type and Attribute are optional and multi-choice, so validation removed earlier.
 
             return true;
         }
