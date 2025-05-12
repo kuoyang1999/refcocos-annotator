@@ -100,40 +100,6 @@
     "image_index": 1808
   },
   {
-    "annotation_id": "000000010707_1744240036431",
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 480,
-    "width": 640,
-    "normal_caption": "the person wearing black top not holding nothing",
-    "image": "val2017/000000010707.jpg",
-    "file_name": "000000010707.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing black top not holding nothing.",
-    "solution": [
-      228.16,
-      147.57,
-      397.13,
-      457.52
-    ],
-    "normalized_solution": [
-      357,
-      307,
-      621,
-      953
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "exclude",
-        "verb"
-      ],
-      "occluded": false,
-      "distractors": "2"
-    },
-    "image_index": 1701
-  },
-  {
     "dataset": "refcocos_test",
     "text_type": "caption",
     "height": 480,
@@ -1262,9 +1228,9 @@
     "text_type": "caption",
     "height": 480,
     "width": 640,
-    "normal_caption": "the surfboard overlapping two other surfboards",
+    "normal_caption": "the surfboard overlapping two other surfboards, positioned on the front",
     "image": "val2017/000000127517.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the surfboard overlapping two other surfboards.",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the surfboard overlapping two other surfboards, positioned on the front.",
     "solution": [
       507.0,
       75.0,
@@ -1287,40 +1253,6 @@
     "image_index": 1640,
     "file_name": "000000127517.jpg",
     "annotation_id": "000000127517_1744240036431"
-  },
-  {
-    "dataset": "refcocos_test",
-    "text_type": "caption",
-    "height": 428,
-    "width": 640,
-    "normal_caption": "object behind the couch not facing camera horizontally",
-    "image": "val2017/000000128148.jpg",
-    "problem": "Please provide the bounding box coordinate of the region this sentence describes: object behind the couch not facing camera horizontally.",
-    "solution": [
-      1.0,
-      189.0,
-      96.0,
-      311.0
-    ],
-    "normalized_solution": [
-      1,
-      441,
-      150,
-      726
-    ],
-    "categories": {
-      "empty_case": false,
-      "hops": "3",
-      "type": [
-        "spatial",
-        "exclude"
-      ],
-      "hidden": true,
-      "distractors": "3"
-    },
-    "image_index": 1654,
-    "file_name": "000000128148.jpg",
-    "annotation_id": "000000128148_1744240036431"
   },
   {
     "annotation_id": "000000128476_1744240036431",
