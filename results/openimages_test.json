@@ -1035,5 +1035,4872 @@
       "distractors": "3"
     },
     "image_index": 147
+  },
+  {
+    "annotation_id": "148_1746644021053",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 781,
+    "width": 1024,
+    "normal_caption": "the watch that is not green displaying a date that is not in april",
+    "image": "open_image_v7/09ea48613632d92c.jpg",
+    "file_name": "09ea48613632d92c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the watch that is not green displaying a date that is not in april.",
+    "solution": [
+      560.45428736,
+      101.65909930000001,
+      725.1987456,
+      742.2727091999999
+    ],
+    "normalized_solution": [
+      547,
+      130,
+      708,
+      950
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 148
+  },
+  {
+    "annotation_id": "152_1746644120976",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 678,
+    "width": 1024,
+    "normal_caption": "a canoe that is neither orange nor yellow",
+    "image": "open_image_v7/0b1ec01b1063caac.jpg",
+    "file_name": "0b1ec01b1063caac.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a canoe that is neither orange nor yellow.",
+    "solution": [
+      290.20852224,
+      269.0953524,
+      915.7356544,
+      604.3370153400001
+    ],
+    "normalized_solution": [
+      283,
+      397,
+      894,
+      891
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 152
+  },
+  {
+    "annotation_id": "153_1746644180805",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the jellyfish swimming downward and farther from the bottom",
+    "image": "open_image_v7/0b57c82db631f5b6.jpg",
+    "file_name": "0b57c82db631f5b6.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the jellyfish swimming downward and farther from the bottom.",
+    "solution": [
+      627.2,
+      0,
+      891.2,
+      328.00000511999997
+    ],
+    "normalized_solution": [
+      613,
+      0,
+      870,
+      427
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 153
+  },
+  {
+    "annotation_id": "156_1746644384966",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a goat with black front legs and white rear legs",
+    "image": "open_image_v7/0bfd8ef96228aeee.jpg",
+    "file_name": "0bfd8ef96228aeee.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a goat with black front legs and white rear legs.",
+    "solution": [
+      327.740416,
+      99.7300891,
+      684.1769984,
+      352.07741609999994
+    ],
+    "normalized_solution": [
+      320,
+      146,
+      668,
+      515
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 156
+  },
+  {
+    "annotation_id": "164_1746644535614",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 430,
+    "width": 1024,
+    "normal_caption": "the third horse in the row with dark coat",
+    "image": "open_image_v7/0d511ce79ae7cd96.jpg",
+    "file_name": "0d511ce79ae7cd96.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the third horse in the row with dark coat.",
+    "solution": [
+      704.2245632,
+      222.7855198,
+      788.0607744,
+      301.8384269
+    ],
+    "normalized_solution": [
+      688,
+      518,
+      770,
+      702
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 164
+  },
+  {
+    "annotation_id": "174_1746644735203",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the stack of chips with the highest total value",
+    "image": "open_image_v7/0f86534d72ab5df3.jpg",
+    "file_name": "0f86534d72ab5df3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the stack of chips with the highest total value.",
+    "solution": [
+      649,
+      240,
+      830,
+      359
+    ],
+    "normalized_solution": [
+      634,
+      313,
+      811,
+      467
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsGroupOf"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 174
+  },
+  {
+    "annotation_id": "181_1746644910247",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 896,
+    "width": 1024,
+    "normal_caption": "the taller owl on the poster",
+    "image": "open_image_v7/126ebc35bcc6e423.jpg",
+    "file_name": "126ebc35bcc6e423.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the taller owl on the poster.",
+    "solution": [
+      861.4053888,
+      69.18918719999999,
+      963.4594816,
+      299.24324864
+    ],
+    "normalized_solution": [
+      841,
+      77,
+      941,
+      334
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsDepiction"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 181
+  },
+  {
+    "annotation_id": "187_1746645588896",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the blue vehicle that does not have an american flag on it",
+    "image": "open_image_v7/13a9861ac17f21e3.jpg",
+    "file_name": "13a9861ac17f21e3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the blue vehicle that does not have an american flag on it.",
+    "solution": [
+      678.4,
+      107.19999744,
+      798.4,
+      171.19999488
+    ],
+    "normalized_solution": [
+      663,
+      140,
+      780,
+      223
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "10"
+    },
+    "image_index": 187
+  },
+  {
+    "annotation_id": "189_1746645701098",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 762,
+    "width": 1024,
+    "normal_caption": "the left boot with white fur lining inside",
+    "image": "open_image_v7/13ee0efbfc21d99f.jpg",
+    "file_name": "13ee0efbfc21d99f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the left boot with white fur lining inside.",
+    "solution": [
+      477.86667008,
+      0,
+      733.86663936,
+      735.46269468
+    ],
+    "normalized_solution": [
+      467,
+      0,
+      717,
+      965
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 189
+  },
+  {
+    "annotation_id": "191_1746645775762",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "a cup containing coffee without a spoon inside",
+    "image": "open_image_v7/1458c97c052c1724.jpg",
+    "file_name": "1458c97c052c1724.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a cup containing coffee without a spoon inside.",
+    "solution": [
+      249.53068544,
+      103.50902272,
+      606.26714624,
+      317.9205632
+    ],
+    "normalized_solution": [
+      244,
+      101,
+      592,
+      310
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 191
+  },
+  {
+    "annotation_id": "195_1746645900316",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a magpie on the ground facing the right side of the image",
+    "image": "open_image_v7/158ffc2db1da1f76.jpg",
+    "file_name": "158ffc2db1da1f76.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a magpie on the ground facing the right side of the image.",
+    "solution": [
+      305.6,
+      367.8922811,
+      462.4,
+      460.66509315
+    ],
+    "normalized_solution": [
+      298,
+      539,
+      452,
+      674
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 195
+  },
+  {
+    "annotation_id": "200_1746646276087",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the leopard closer to the edge of the image among the two leopards playing with each other",
+    "image": "open_image_v7/1728d27e56111e6a.jpg",
+    "file_name": "1728d27e56111e6a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the leopard closer to the edge of the image among the two leopards playing with each other.",
+    "solution": [
+      481.79351552,
+      0,
+      1001.3451264,
+      418.56413989
+    ],
+    "normalized_solution": [
+      471,
+      0,
+      978,
+      613
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 200
+  },
+  {
+    "annotation_id": "201_1746646424399",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the chest of drawers that does not have the greatest number of doors and is not on the top level",
+    "image": "open_image_v7/17a19273286e8b0d.jpg",
+    "file_name": "17a19273286e8b0d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the chest of drawers that does not have the greatest number of doors and is not on the top level.",
+    "solution": [
+      216,
+      315.2,
+      593.6000256,
+      643.2
+    ],
+    "normalized_solution": [
+      281,
+      308,
+      773,
+      628
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 201
+  },
+  {
+    "annotation_id": "208_1746646560402",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 685,
+    "width": 1024,
+    "normal_caption": "the red bicycle shoe with english letters on it",
+    "image": "open_image_v7/191ab647fef2780f.jpg",
+    "file_name": "191ab647fef2780f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the red bicycle shoe with english letters on it.",
+    "solution": [
+      531.04132096,
+      346.72839539999995,
+      998.6115584,
+      651.1728505
+    ],
+    "normalized_solution": [
+      519,
+      506,
+      975,
+      951
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 208
+  },
+  {
+    "annotation_id": "212_1746646728019",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the camera whose lens is not the largest and whose body does not have red letters",
+    "image": "open_image_v7/1a363f9daddcac43.jpg",
+    "file_name": "1a363f9daddcac43.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the camera whose lens is not the largest and whose body does not have red letters.",
+    "solution": [
+      724.9557504,
+      341.5,
+      993.793536,
+      518.29424948
+    ],
+    "normalized_solution": [
+      708,
+      500,
+      971,
+      759
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 212
+  },
+  {
+    "annotation_id": "213_1746646906031",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "a knife engraved with chinese characters and whose handle is not black",
+    "image": "open_image_v7/1a99bc516d16b705.jpg",
+    "file_name": "1a99bc516d16b705.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a knife engraved with chinese characters and whose handle is not black.",
+    "solution": [
+      85.02526976,
+      3.6967508992,
+      236.59205632000004,
+      964.8520192
+    ],
+    "normalized_solution": [
+      83,
+      4,
+      231,
+      942
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 213
+  },
+  {
+    "annotation_id": "213_1746646930381",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "a knife with holes on the blade and a black handle",
+    "image": "open_image_v7/1a99bc516d16b705.jpg",
+    "file_name": "1a99bc516d16b705.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a knife with holes on the blade and a black handle.",
+    "solution": [
+      460.24548352,
+      160.80867328,
+      587.7833728,
+      898.31048192
+    ],
+    "normalized_solution": [
+      449,
+      157,
+      574,
+      877
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 213
+  },
+  {
+    "annotation_id": "216_1746647175112",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 765,
+    "width": 1024,
+    "normal_caption": "the conditioner in the second row of the left column in the image",
+    "image": "open_image_v7/1c3f14583bc60451.jpg",
+    "file_name": "1c3f14583bc60451.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the conditioner in the second row of the left column in the image.",
+    "solution": [
+      289.14819072,
+      54.30062565,
+      375.41342208,
+      543.0062565
+    ],
+    "normalized_solution": [
+      282,
+      71,
+      367,
+      710
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "6"
+    },
+    "image_index": 216
+  },
+  {
+    "annotation_id": "217_1746647369594",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 731,
+    "width": 1024,
+    "normal_caption": "the bigger candle not placed in a bowl",
+    "image": "open_image_v7/1c69796e598de62d.jpg",
+    "file_name": "1c69796e598de62d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bigger candle not placed in a bowl.",
+    "solution": [
+      167.27939072,
+      57.79273573,
+      383.0228992,
+      390.49144993000004
+    ],
+    "normalized_solution": [
+      163,
+      79,
+      374,
+      534
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 217
+  },
+  {
+    "annotation_id": "231_1746647539799",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 469,
+    "width": 1024,
+    "normal_caption": "the syringe whose scale at the image's cropped position is greater than 2 and less than 5",
+    "image": "open_image_v7/23e87e620f03ad91.jpg",
+    "file_name": "23e87e620f03ad91.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the syringe whose scale at the image's cropped position is greater than 2 and less than 5.",
+    "solution": [
+      82.52014592,
+      277.64799999999997,
+      1020.249088,
+      463.99733176999996
+    ],
+    "normalized_solution": [
+      81,
+      592,
+      996,
+      989
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 231
+  },
+  {
+    "annotation_id": "233_1746651416116",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the paddle board whose surface is not black and ridden by a female",
+    "image": "open_image_v7/2429c8f6cae64fb3.jpg",
+    "file_name": "2429c8f6cae64fb3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the paddle board whose surface is not black and ridden by a female.",
+    "solution": [
+      738.5486336,
+      318.83407128,
+      850.312704,
+      338.47787526
+    ],
+    "normalized_solution": [
+      721,
+      467,
+      830,
+      496
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 233
+  },
+  {
+    "annotation_id": "252_1746704040461",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the black keyboard next to a white mouse",
+    "image": "open_image_v7/2a7f66464242753b.jpg",
+    "file_name": "2a7f66464242753b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the black keyboard next to a white mouse.",
+    "solution": [
+      959.0560256,
+      551.5375943,
+      1024,
+      645.2234749
+    ],
+    "normalized_solution": [
+      937,
+      808,
+      1000,
+      945
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 252
+  },
+  {
+    "annotation_id": "261_1746704212595",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 683,
+    "normal_caption": "the person wearing sunglasses and not wearing black shorts",
+    "image": "open_image_v7/2fb50b407f0b021a.jpg",
+    "file_name": "2fb50b407f0b021a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing sunglasses and not wearing black shorts.",
+    "solution": [
+      636.1570597,
+      345.86431488,
+      683,
+      537.67554048
+    ],
+    "normalized_solution": [
+      931,
+      338,
+      1000,
+      525
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 261
+  },
+  {
+    "annotation_id": "268_1746704338025",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1019,
+    "normal_caption": "the toothbrush with a white head and bristles facing right",
+    "image": "open_image_v7/30e7e37ba1f55924.jpg",
+    "file_name": "30e7e37ba1f55924.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the toothbrush with a white head and bristles facing right.",
+    "solution": [
+      623.9528572,
+      282.29189632,
+      830.7065306,
+      547.9783936
+    ],
+    "normalized_solution": [
+      612,
+      276,
+      815,
+      535
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 268
+  },
+  {
+    "annotation_id": "269_1746704392667",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 884,
+    "width": 1024,
+    "normal_caption": "the aircraft that is not flying and does not have a number displayed on its body",
+    "image": "open_image_v7/3155469596c5ec35.jpg",
+    "file_name": "3155469596c5ec35.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the aircraft that is not flying and does not have a number displayed on its body.",
+    "solution": [
+      116.83221504,
+      595.06612932,
+      383.14092544,
+      791.1283744
+    ],
+    "normalized_solution": [
+      114,
+      673,
+      374,
+      895
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 269
+  },
+  {
+    "annotation_id": "271_1746704493469",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the mouse with a dark color and not placed on a mouse pad",
+    "image": "open_image_v7/3226f563d30d7129.jpg",
+    "file_name": "3226f563d30d7129.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the mouse with a dark color and not placed on a mouse pad.",
+    "solution": [
+      585.6,
+      460.79999999999995,
+      740.8,
+      644.8000051199999
+    ],
+    "normalized_solution": [
+      572,
+      600,
+      723,
+      840
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 271
+  },
+  {
+    "annotation_id": "288_1746704648566",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 881,
+    "width": 1024,
+    "normal_caption": "the handgun lying in the box with muzzle facing left",
+    "image": "open_image_v7/3923ea85d3b93dbc.jpg",
+    "file_name": "3923ea85d3b93dbc.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the handgun lying in the box with muzzle facing left.",
+    "solution": [
+      42.881073152,
+      359.9416243,
+      504.2813952,
+      858.7179242
+    ],
+    "normalized_solution": [
+      42,
+      409,
+      492,
+      975
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 288
+  },
+  {
+    "annotation_id": "289_1746704771603",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the crocodile with paws not pushing on the ground and mouth closed",
+    "image": "open_image_v7/3a68d84da6e7e7ba.jpg",
+    "file_name": "3a68d84da6e7e7ba.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the crocodile with paws not pushing on the ground and mouth closed.",
+    "solution": [
+      0,
+      156.80000256,
+      987.2,
+      547.2
+    ],
+    "normalized_solution": [
+      0,
+      204,
+      964,
+      713
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb"
+      ],
+      "attribute": [
+        "IsTruncated",
+        "IsGroupOf"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 289
+  },
+  {
+    "annotation_id": "307_1746705166154",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 689,
+    "width": 1024,
+    "normal_caption": "the bird facing left, and showing the one side of its face",
+    "image": "open_image_v7/480775e5269d870c.jpg",
+    "file_name": "480775e5269d870c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bird facing left, and showing the one side of its face.",
+    "solution": [
+      304.92443648,
+      71.32819447,
+      694.80297472,
+      391.54626355000005
+    ],
+    "normalized_solution": [
+      298,
+      104,
+      679,
+      568
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 307
+  },
+  {
+    "annotation_id": "309_1746705328190",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the white bird on the ground facing right displaying markings near its eyes",
+    "image": "open_image_v7/4a108ea57c9d467b.jpg",
+    "file_name": "4a108ea57c9d467b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the white bird on the ground facing right displaying markings near its eyes.",
+    "solution": [
+      274,
+      438,
+      485,
+      583
+    ],
+    "normalized_solution": [
+      268,
+      570,
+      474,
+      759
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "9"
+    },
+    "image_index": 309
+  },
+  {
+    "annotation_id": "313_1746705456654",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 550,
+    "width": 1024,
+    "normal_caption": "the seal lying down on the dock in a group of three seals",
+    "image": "open_image_v7/4ec2c6e443822aa8.jpg",
+    "file_name": "4ec2c6e443822aa8.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the seal lying down on the dock in a group of three seals.",
+    "solution": [
+      418.5396736,
+      238.4236525,
+      1024,
+      438.916247
+    ],
+    "normalized_solution": [
+      409,
+      433,
+      1000,
+      798
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 313
+  },
+  {
+    "annotation_id": "346_1746706386819",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 820,
+    "width": 1024,
+    "normal_caption": "the handbag with embroidered pattern, not double shoulder straps, and gold accessories on it",
+    "image": "open_image_v7/7d230791dc68875a.jpg",
+    "file_name": "7d230791dc68875a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the handbag with embroidered pattern, not double shoulder straps, and gold accessories on it.",
+    "solution": [
+      607.121152,
+      79.3548358,
+      933.014528,
+      529.032266
+    ],
+    "normalized_solution": [
+      593,
+      97,
+      911,
+      645
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "5",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 346
+  },
+  {
+    "annotation_id": "376_1746706825725",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the ping-pong ball pressed by a paddle whose handle is visible and hollow and whose upward-facing side is red",
+    "image": "open_image_v7/c8e1cbfa81c66052.jpg",
+    "file_name": "c8e1cbfa81c66052.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the ping-pong ball pressed by a paddle whose handle is visible and hollow and whose upward-facing side is red.",
+    "solution": [
+      311.1268352,
+      433.67478408,
+      471.221248,
+      592.33628512
+    ],
+    "normalized_solution": [
+      304,
+      635,
+      460,
+      867
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 376
+  },
+  {
+    "annotation_id": "382_1746716044258",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 935,
+    "width": 1024,
+    "normal_caption": "the football on the left side of the footballer and not bouncing above the ground",
+    "image": "open_image_v7/d7f7b7a4ed8d2f42.jpg",
+    "file_name": "d7f7b7a4ed8d2f42.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the football on the left side of the footballer and not bouncing above the ground.",
+    "solution": [
+      37.13989632,
+      456.01132775,
+      118.49395712,
+      533.7807101000001
+    ],
+    "normalized_solution": [
+      36,
+      488,
+      116,
+      571
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 382
+  },
+  {
+    "annotation_id": "386_1746716857338",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 682,
+    "width": 1024,
+    "normal_caption": "the wrench pair that does not have 18 or 15 marked on any side",
+    "image": "open_image_v7/ed280425a08b288a.jpg",
+    "file_name": "ed280425a08b288a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the wrench pair that does not have 18 or 15 marked on any side.",
+    "solution": [
+      663.5640832,
+      34.703539310000004,
+      849.060352,
+      580.9070717999999
+    ],
+    "normalized_solution": [
+      648,
+      51,
+      829,
+      852
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsGroupOf"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 386
+  },
+  {
+    "annotation_id": "387_1746717066522",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 768,
+    "normal_caption": "the beehive that has four layers, whose bottom layer is not yellow and does not have the number 9 on it",
+    "image": "open_image_v7/f020294ec9f8766e.jpg",
+    "file_name": "f020294ec9f8766e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the beehive that has four layers, whose bottom layer is not yellow and does not have the number 9 on it.",
+    "solution": [
+      375.6823296,
+      278.64261120000003,
+      508.76536319999997,
+      489.35741952
+    ],
+    "normalized_solution": [
+      489,
+      363,
+      662,
+      637
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 387
+  },
+  {
+    "annotation_id": "393_1746717181242",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a clock pointing to a time after 12 and before 6",
+    "image": "open_image_v7/fc9b8a01e93fae58.jpg",
+    "file_name": "fc9b8a01e93fae58.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a clock pointing to a time after 12 and before 6.",
+    "solution": [
+      60.8,
+      235.20000000000002,
+      388.8,
+      540.7999872
+    ],
+    "normalized_solution": [
+      59,
+      306,
+      380,
+      704
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 393
+  },
+  {
+    "annotation_id": "396_1746717471863",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 681,
+    "width": 1024,
+    "normal_caption": "the car parked on the grass whose color is not red and whose license plate is not visible",
+    "image": "open_image_v7/001547e7ef44a7d8.jpg",
+    "file_name": "001547e7ef44a7d8.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the car parked on the grass whose color is not red and whose license plate is not visible.",
+    "solution": [
+      0,
+      203.84701242,
+      265.42563328,
+      452.9933685
+    ],
+    "normalized_solution": [
+      0,
+      299,
+      259,
+      665
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 396
+  },
+  {
+    "annotation_id": "398_1746717780273",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 575,
+    "width": 1024,
+    "normal_caption": "the little ostrich not walking under the shade of the larger ostrich",
+    "image": "open_image_v7/001f0b7197c54078.jpg",
+    "file_name": "001f0b7197c54078.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the little ostrich not walking under the shade of the larger ostrich.",
+    "solution": [
+      636.0162304,
+      266.024095,
+      753.7970176,
+      394.87952499999994
+    ],
+    "normalized_solution": [
+      621,
+      463,
+      736,
+      687
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 398
+  },
+  {
+    "annotation_id": "409_1746718072685",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a domed building having no posters on it",
+    "image": "open_image_v7/006d78202b55d9e2.jpg",
+    "file_name": "006d78202b55d9e2.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a domed building having no posters on it.",
+    "solution": [
+      774.4,
+      310.40000256,
+      1024,
+      569.6000256
+    ],
+    "normalized_solution": [
+      756,
+      404,
+      1000,
+      742
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 409
+  },
+  {
+    "annotation_id": "414_1746718178088",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 679,
+    "width": 1024,
+    "normal_caption": "the bronze sculpture not covering its eyes or mouth with its hands",
+    "image": "open_image_v7/177b678a5fa9573f.jpg",
+    "file_name": "177b678a5fa9573f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bronze sculpture not covering its eyes or mouth with its hands.",
+    "solution": [
+      376.4705792,
+      36.13303932,
+      674.6353152,
+      597.7006819000001
+    ],
+    "normalized_solution": [
+      368,
+      53,
+      659,
+      880
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 414
+  },
+  {
+    "annotation_id": "428_1746719221692",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a person wearing a scarf but not holding papers in their hands",
+    "image": "open_image_v7/006f9f35450c49b9.jpg",
+    "file_name": "006f9f35450c49b9.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a person wearing a scarf but not holding papers in their hands.",
+    "solution": [
+      170.66667008,
+      225.14823166,
+      285.45132544,
+      565.13718295
+    ],
+    "normalized_solution": [
+      167,
+      330,
+      279,
+      827
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 428
+  },
+  {
+    "annotation_id": "465_1746719455278",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a suit jacket with a red inside and stripes on the outside",
+    "image": "open_image_v7/e68156472556233f.jpg",
+    "file_name": "e68156472556233f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a suit jacket with a red inside and stripes on the outside.",
+    "solution": [
+      3.02064896,
+      0,
+      457.62832384,
+      676.9557505199999
+    ],
+    "normalized_solution": [
+      3,
+      0,
+      447,
+      991
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 465
+  },
+  {
+    "annotation_id": "480_1746720340615",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 769,
+    "width": 1024,
+    "normal_caption": "the fruit that is not a pumpkin and whose light on the table is not green",
+    "image": "open_image_v7/3c02f16f6567141c.jpg",
+    "file_name": "3c02f16f6567141c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the fruit that is not a pumpkin and whose light on the table is not green.",
+    "solution": [
+      752,
+      530,
+      981,
+      756
+    ],
+    "normalized_solution": [
+      734,
+      689,
+      958,
+      983
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "6"
+    },
+    "image_index": 480
+  },
+  {
+    "annotation_id": "485_1746721062391",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the red bowling ball in the second row from the camera",
+    "image": "open_image_v7/05a86145092ca60f.jpg",
+    "file_name": "05a86145092ca60f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the red bowling ball in the second row from the camera.",
+    "solution": [
+      425,
+      407,
+      465,
+      450
+    ],
+    "normalized_solution": [
+      415,
+      530,
+      454,
+      586
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "12"
+    },
+    "image_index": 485
+  },
+  {
+    "annotation_id": "488_1746722412662",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 701,
+    "width": 1024,
+    "normal_caption": "a red drum that is not striped",
+    "image": "open_image_v7/0e7d2d1e2ebde0ee.jpg",
+    "file_name": "0e7d2d1e2ebde0ee.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a red drum that is not striped.",
+    "solution": [
+      65.71940864,
+      260.19650704000003,
+      336.2387968,
+      652.021831
+    ],
+    "normalized_solution": [
+      64,
+      371,
+      328,
+      930
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 488
+  },
+  {
+    "annotation_id": "519_1746722574841",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the chief who is not wearing gloves and whose name tag on the chest is visible",
+    "image": "open_image_v7/0a747bf5042835bf.jpg",
+    "file_name": "0a747bf5042835bf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the chief who is not wearing gloves and whose name tag on the chest is visible.",
+    "solution": [
+      498.40707584,
+      205.50442768,
+      1020.9793740800001,
+      679.97789575
+    ],
+    "normalized_solution": [
+      487,
+      301,
+      997,
+      996
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 519
+  },
+  {
+    "annotation_id": "531_1746722890750",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 567,
+    "width": 1024,
+    "normal_caption": "an ambulance whose license plate does not start with \"SPVL\"",
+    "image": "open_image_v7/5cd4c033bdb6903b.jpg",
+    "file_name": "5cd4c033bdb6903b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an ambulance whose license plate does not start with \"SPVL\".",
+    "solution": [
+      16.516128768,
+      68.81067774,
+      564.3011072,
+      366.07283370000005
+    ],
+    "normalized_solution": [
+      16,
+      121,
+      551,
+      646
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 531
+  },
+  {
+    "annotation_id": "534_1746723034501",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 683,
+    "normal_caption": "the volleyball that is thrown in the air and that is not on the same side of the net as the camera",
+    "image": "open_image_v7/19ad73a14d324952.jpg",
+    "file_name": "19ad73a14d324952.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the volleyball that is thrown in the air and that is not on the same side of the net as the camera.",
+    "solution": [
+      160.17256341,
+      0,
+      231.19248114000004,
+      70.985252864
+    ],
+    "normalized_solution": [
+      235,
+      0,
+      338,
+      69
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 534
+  },
+  {
+    "annotation_id": "535_1746723239693",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 681,
+    "width": 1024,
+    "normal_caption": "the alpaca that is the darker-furred of the two standing very close together",
+    "image": "open_image_v7/160f58a67d2e290d.jpg",
+    "file_name": "160f58a67d2e290d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the alpaca that is the darker-furred of the two standing very close together.",
+    "solution": [
+      576.094208,
+      252.16629824999998,
+      719.3637888,
+      460.54324776
+    ],
+    "normalized_solution": [
+      563,
+      370,
+      703,
+      676
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 535
+  },
+  {
+    "annotation_id": "536_1746723311537",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 555,
+    "width": 1024,
+    "normal_caption": "the dolphin that is half-submerged in water and located in the lower part of the picture",
+    "image": "open_image_v7/2cd0b3c04d50aa68.jpg",
+    "file_name": "2cd0b3c04d50aa68.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the dolphin that is half-submerged in water and located in the lower part of the picture.",
+    "solution": [
+      660.4255232,
+      287.0220462,
+      920.5106176,
+      404.0073438
+    ],
+    "normalized_solution": [
+      645,
+      517,
+      899,
+      728
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 536
+  },
+  {
+    "annotation_id": "543_1746791051968",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the sitting goat with a yellow tag on the neck",
+    "image": "open_image_v7/1fe7a99c23f64885.jpg",
+    "file_name": "1fe7a99c23f64885.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the sitting goat with a yellow tag on the neck.",
+    "solution": [
+      518.4,
+      427.20000000000005,
+      635.2,
+      537.6
+    ],
+    "normalized_solution": [
+      506,
+      556,
+      620,
+      700
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "verb",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 543
+  },
+  {
+    "annotation_id": "550_1746791168302",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the brown mule not next to a tree and not carrying people",
+    "image": "open_image_v7/332658837760b624.jpg",
+    "file_name": "332658837760b624.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the brown mule not next to a tree and not carrying people.",
+    "solution": [
+      737.038336,
+      275.01326938,
+      933.3805568,
+      386.8318711
+    ],
+    "normalized_solution": [
+      720,
+      403,
+      912,
+      566
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "5",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 550
+  },
+  {
+    "annotation_id": "561_1746791278684",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the dice showing six on the upper side",
+    "image": "open_image_v7/119e9883c826b3a8.jpg",
+    "file_name": "119e9883c826b3a8.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the dice showing six on the upper side.",
+    "solution": [
+      453.09734912,
+      231.19248114,
+      593.557504,
+      386.83187110000006
+    ],
+    "normalized_solution": [
+      442,
+      338,
+      580,
+      566
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 561
+  },
+  {
+    "annotation_id": "565_1746799344433",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the empty bottle next to the glass containing the most beverage",
+    "image": "open_image_v7/18644f58bcc42cff.jpg",
+    "file_name": "18644f58bcc42cff.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the empty bottle next to the glass containing the most beverage.",
+    "solution": [
+      838,
+      1,
+      1023,
+      461
+    ],
+    "normalized_solution": [
+      818,
+      1,
+      999,
+      600
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 565
+  },
+  {
+    "annotation_id": "575_1746800451457",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "the coffee with marshmallow topping closest to the coffee machine",
+    "image": "open_image_v7/4926e25e3e35f715.jpg",
+    "file_name": "4926e25e3e35f715.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the coffee with marshmallow topping closest to the coffee machine.",
+    "solution": [
+      0,
+      574.84478464,
+      149.71841536,
+      929.73285376
+    ],
+    "normalized_solution": [
+      0,
+      561,
+      146,
+      908
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 575
+  },
+  {
+    "annotation_id": "579_1746813035644",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the camel ridden by a person in a blue shirt",
+    "image": "open_image_v7/6462ccd515cf8ccd.jpg",
+    "file_name": "6462ccd515cf8ccd.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the camel ridden by a person in a blue shirt.",
+    "solution": [
+      612.8,
+      172.8,
+      763.2,
+      675.1999948800001
+    ],
+    "normalized_solution": [
+      598,
+      225,
+      745,
+      879
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 579
+  },
+  {
+    "annotation_id": "584_1746814227492",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 680,
+    "width": 1024,
+    "normal_caption": "the cheetah neither eating nor being brushed",
+    "image": "open_image_v7/6a951ffda4eb0a0b.jpg",
+    "file_name": "6a951ffda4eb0a0b.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the cheetah neither eating nor being brushed.",
+    "solution": [
+      0,
+      366.385836,
+      590.3058944,
+      680
+    ],
+    "normalized_solution": [
+      0,
+      539,
+      576,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 584
+  },
+  {
+    "annotation_id": "590_1746814310910",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 765,
+    "width": 1024,
+    "normal_caption": "the foot in smaller-sized green socks",
+    "image": "open_image_v7/206ac44d0240b801.jpg",
+    "file_name": "206ac44d0240b801.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the foot in smaller-sized green socks.",
+    "solution": [
+      674.1466624,
+      306.63882855,
+      825.9095552,
+      386.492688
+    ],
+    "normalized_solution": [
+      658,
+      401,
+      807,
+      505
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 590
+  },
+  {
+    "annotation_id": "591_1746814593781",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the helmet that is not pure black, does not have goggles, and whose brand name is not \"bell\" or \"raider\"",
+    "image": "open_image_v7/3678eab1cf7a385f.jpg",
+    "file_name": "3678eab1cf7a385f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the helmet that is not pure black, does not have goggles, and whose brand name is not \"bell\" or \"raider\".",
+    "solution": [
+      709,
+      273,
+      1008,
+      636
+    ],
+    "normalized_solution": [
+      692,
+      400,
+      984,
+      931
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 591
+  },
+  {
+    "annotation_id": "592_1746814906684",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 678,
+    "width": 1024,
+    "normal_caption": "the camera with a silver body, its lens facing towards the left side of the image",
+    "image": "open_image_v7/1f24c8eb249fea2a.jpg",
+    "file_name": "1f24c8eb249fea2a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the camera with a silver body, its lens facing towards the left side of the image.",
+    "solution": [
+      645.0748928,
+      195.43236774,
+      1024,
+      678
+    ],
+    "normalized_solution": [
+      630,
+      288,
+      1000,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 592
+  },
+  {
+    "annotation_id": "600_1746824023282",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 684,
+    "width": 1024,
+    "normal_caption": "the traffic sign showing neither \"bike lane\" nor \"stop sign ahead\"",
+    "image": "open_image_v7/6a45a745afb68f73.jpg",
+    "file_name": "6a45a745afb68f73.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the traffic sign showing neither \"bike lane\" nor \"stop sign ahead\".",
+    "solution": [
+      225.03834624,
+      213.37167960000002,
+      416.84955136,
+      391.93804656
+    ],
+    "normalized_solution": [
+      220,
+      312,
+      407,
+      573
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 600
+  },
+  {
+    "annotation_id": "605_1746824114920",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "a foldable knife with a black handle",
+    "image": "open_image_v7/57cfc70956fc4b75.jpg",
+    "file_name": "57cfc70956fc4b75.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a foldable knife with a black handle.",
+    "solution": [
+      526.7869696,
+      243.9855616,
+      848.4043776,
+      848.4043776
+    ],
+    "normalized_solution": [
+      514,
+      238,
+      829,
+      829
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 605
+  },
+  {
+    "annotation_id": "615_1746824243483",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the one on the left of two calculators of the same model",
+    "image": "open_image_v7/3f6d0332a4980962.jpg",
+    "file_name": "3f6d0332a4980962.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the one on the left of two calculators of the same model.",
+    "solution": [
+      380.8,
+      99.19999487999999,
+      665.6,
+      656.0000256
+    ],
+    "normalized_solution": [
+      372,
+      129,
+      650,
+      854
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 615
+  },
+  {
+    "annotation_id": "617_1746824432528",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a computer monitor with neither its screen nor its brand visible",
+    "image": "open_image_v7/403c0bde381da99d.jpg",
+    "file_name": "403c0bde381da99d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a computer monitor with neither its screen nor its brand visible.",
+    "solution": [
+      880.519168,
+      55.909289932,
+      1024,
+      339.98894445999997
+    ],
+    "normalized_solution": [
+      860,
+      82,
+      1000,
+      498
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 617
+  },
+  {
+    "annotation_id": "618_1746824525291",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the coffee table with no one sitting at it, with something on it, and fewer than three empty chairs visible around it",
+    "image": "open_image_v7/3f3c9d25dc3f295d.jpg",
+    "file_name": "3f3c9d25dc3f295d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the coffee table with no one sitting at it, with something on it, and fewer than three empty chairs visible around it.",
+    "solution": [
+      0,
+      425.6000256,
+      233.6,
+      694.39997952
+    ],
+    "normalized_solution": [
+      0,
+      554,
+      228,
+      904
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 618
+  },
+  {
+    "annotation_id": "620_1746824854767",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the keyboard on a laptop whose arrow keys are not visible",
+    "image": "open_image_v7/89d8c4de1f2f3f07.jpg",
+    "file_name": "89d8c4de1f2f3f07.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the keyboard on a laptop whose arrow keys are not visible.",
+    "solution": [
+      504,
+      0,
+      1024,
+      134.39999999999998
+    ],
+    "normalized_solution": [
+      492,
+      0,
+      1000,
+      175
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 620
+  },
+  {
+    "annotation_id": "622_1746825095512",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 680,
+    "width": 1024,
+    "normal_caption": "the container that has a design showing buildings on it and is not a windmill",
+    "image": "open_image_v7/3c4867c203781b5a.jpg",
+    "file_name": "3c4867c203781b5a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the container that has a design showing buildings on it and is not a windmill.",
+    "solution": [
+      679.1529472,
+      94.9889144,
+      1024,
+      565.4101876
+    ],
+    "normalized_solution": [
+      663,
+      140,
+      1000,
+      831
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 622
+  },
+  {
+    "annotation_id": "634_1746825210368",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 793,
+    "normal_caption": "the non-yellow one of two suitcases of the same shape",
+    "image": "open_image_v7/59504e2c8517aff3.jpg",
+    "file_name": "59504e2c8517aff3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the non-yellow one of two suitcases of the same shape.",
+    "solution": [
+      389.17248968,
+      364.66771968,
+      721.3531637000001,
+      874.2257664
+    ],
+    "normalized_solution": [
+      491,
+      356,
+      910,
+      854
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsDepiction"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 634
+  },
+  {
+    "annotation_id": "645_1746825416634",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a weapon visibly without a gunstock and not a handgun",
+    "image": "open_image_v7/810d0df93a0ea5f5.jpg",
+    "file_name": "810d0df93a0ea5f5.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a weapon visibly without a gunstock and not a handgun.",
+    "solution": [
+      1,
+      625,
+      261,
+      765
+    ],
+    "normalized_solution": [
+      1,
+      814,
+      255,
+      996
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 645
+  },
+  {
+    "annotation_id": "647_1746825494815",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 677,
+    "normal_caption": "the cabinet handle on the lower level and closer to the cross",
+    "image": "open_image_v7/4e80992d0969178a.jpg",
+    "file_name": "4e80992d0969178a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the cabinet handle on the lower level and closer to the cross.",
+    "solution": [
+      276.81777176,
+      675.148288,
+      293.36667118,
+      684.1703424
+    ],
+    "normalized_solution": [
+      409,
+      659,
+      433,
+      668
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 647
+  },
+  {
+    "annotation_id": "648_1746825609503",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 731,
+    "width": 1024,
+    "normal_caption": "a yellow bird on the lower level of the bird feeder",
+    "image": "open_image_v7/ad93bea2b87c7e68.jpg",
+    "file_name": "ad93bea2b87c7e68.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a yellow bird on the lower level of the bird feeder.",
+    "solution": [
+      792.6228992,
+      298.33546415,
+      1014.6198528,
+      498.26710014
+    ],
+    "normalized_solution": [
+      774,
+      408,
+      991,
+      682
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 648
+  },
+  {
+    "annotation_id": "682_1746841371871",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 906,
+    "width": 1024,
+    "normal_caption": "the plate with something on it but not a mug",
+    "image": "open_image_v7/65f92ec8b7fe9c02.jpg",
+    "file_name": "65f92ec8b7fe9c02.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the plate with something on it but not a mug.",
+    "solution": [
+      349.44653312,
+      346.05373962,
+      914.4719872,
+      792.9673494
+    ],
+    "normalized_solution": [
+      341,
+      382,
+      893,
+      875
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 682
+  },
+  {
+    "annotation_id": "725_1746841590592",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the man with a white swimming hat not touching the ball",
+    "image": "open_image_v7/6a9bb06320a811de.jpg",
+    "file_name": "6a9bb06320a811de.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the man with a white swimming hat not touching the ball.",
+    "solution": [
+      672,
+      287,
+      1022,
+      521
+    ],
+    "normalized_solution": [
+      656,
+      420,
+      998,
+      763
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 725
+  },
+  {
+    "annotation_id": "729_1746841663480",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 709,
+    "width": 1024,
+    "normal_caption": "the pillow in the direction of the dog\u2019s head",
+    "image": "open_image_v7/0db98063ea0e1d30.jpg",
+    "file_name": "0db98063ea0e1d30.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the pillow in the direction of the dog\u2019s head.",
+    "solution": [
+      764.1561088,
+      67.67028521,
+      1007.087104,
+      259.91540833
+    ],
+    "normalized_solution": [
+      746,
+      95,
+      983,
+      367
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 729
+  },
+  {
+    "annotation_id": "733_1747094444178",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the person wearing neither glasses nor a black jacket",
+    "image": "open_image_v7/1af85124c41e59d6.jpg",
+    "file_name": "1af85124c41e59d6.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing neither glasses nor a black jacket.",
+    "solution": [
+      37.758113792,
+      84.61946881499999,
+      256.75515904,
+      679.97789575
+    ],
+    "normalized_solution": [
+      37,
+      124,
+      251,
+      996
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 733
+  },
+  {
+    "annotation_id": "735_1747374788985",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 575,
+    "width": 1024,
+    "normal_caption": "the one of two people who are close together in a tree, whose clothes are not black",
+    "image": "open_image_v7/00cba61a3e3d1c05.jpg",
+    "file_name": "00cba61a3e3d1c05.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the one of two people who are close together in a tree, whose clothes are not black.",
+    "solution": [
+      269,
+      86,
+      343,
+      206
+    ],
+    "normalized_solution": [
+      263,
+      150,
+      335,
+      358
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 735
+  },
+  {
+    "annotation_id": "737_1747374927860",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the bottle that neither contains the most wine nor is next to the glass that contains the most wine",
+    "image": "open_image_v7/0bcf21f43f327741.jpg",
+    "file_name": "0bcf21f43f327741.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bottle that neither contains the most wine nor is next to the glass that contains the most wine.",
+    "solution": [
+      60.8,
+      46.39999872,
+      225.60000000000002,
+      704.0000256
+    ],
+    "normalized_solution": [
+      59,
+      60,
+      220,
+      917
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 737
+  },
+  {
+    "annotation_id": "749_1747375061311",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 714,
+    "normal_caption": "the person wearing neither a white headscarf nor a grey dress",
+    "image": "open_image_v7/05386cd3059825b2.jpg",
+    "file_name": "05386cd3059825b2.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing neither a white headscarf nor a grey dress.",
+    "solution": [
+      500.72727180000004,
+      268.7420928,
+      714,
+      948.319744
+    ],
+    "normalized_solution": [
+      701,
+      262,
+      1000,
+      926
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 749
+  },
+  {
+    "annotation_id": "754_1747375179283",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 807,
+    "normal_caption": "the second red bell pepper from the top",
+    "image": "open_image_v7/1203fd819b888585.jpg",
+    "file_name": "1203fd819b888585.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the second red bell pepper from the top.",
+    "solution": [
+      191.90853009,
+      208.4102656,
+      621.6524364,
+      361.0256384
+    ],
+    "normalized_solution": [
+      238,
+      204,
+      770,
+      353
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 754
+  },
+  {
+    "annotation_id": "775_1747375429626",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the bus that is not next to the bus whose headlights are round",
+    "image": "open_image_v7/2f40ab58547016e5.jpg",
+    "file_name": "2f40ab58547016e5.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the bus that is not next to the bus whose headlights are round.",
+    "solution": [
+      596.8,
+      276.80001024,
+      977.6,
+      502.39997952000004
+    ],
+    "normalized_solution": [
+      583,
+      360,
+      955,
+      654
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 775
+  },
+  {
+    "annotation_id": "795_1747375713678",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 750,
+    "normal_caption": "the waste container that is full and on the side",
+    "image": "open_image_v7/47dc77b7fd44dcf1.jpg",
+    "file_name": "47dc77b7fd44dcf1.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the waste container that is full and on the side.",
+    "solution": [
+      436.70887500000003,
+      408.33386496,
+      750,
+      970.18853376
+    ],
+    "normalized_solution": [
+      582,
+      399,
+      1000,
+      947
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 795
+  },
+  {
+    "annotation_id": "796_1747376108550",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 779,
+    "width": 1024,
+    "normal_caption": "the mask that has a nose, showing neither teeth nor horns",
+    "image": "open_image_v7/09bb774ce4bdfc82.jpg",
+    "file_name": "09bb774ce4bdfc82.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the mask that has a nose, showing neither teeth nor horns.",
+    "solution": [
+      226,
+      1,
+      578,
+      236
+    ],
+    "normalized_solution": [
+      221,
+      1,
+      564,
+      303
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "10"
+    },
+    "image_index": 796
+  },
+  {
+    "annotation_id": "797_1747376155518",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 756,
+    "width": 1024,
+    "normal_caption": "an upside-down bowl whose bottom is not red",
+    "image": "open_image_v7/27266488d4ea4203.jpg",
+    "file_name": "27266488d4ea4203.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an upside-down bowl whose bottom is not red.",
+    "solution": [
+      494.93331968,
+      296.93904912,
+      981.3332992,
+      752.5868868
+    ],
+    "normalized_solution": [
+      483,
+      393,
+      958,
+      995
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 797
+  },
+  {
+    "annotation_id": "800_1747376221214",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a knife that has a string tied to it and is not blue",
+    "image": "open_image_v7/5a97e8180dab9ad7.jpg",
+    "file_name": "5a97e8180dab9ad7.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a knife that has a string tied to it and is not blue.",
+    "solution": [
+      88,
+      295.99999488000003,
+      993.6,
+      470.40000000000003
+    ],
+    "normalized_solution": [
+      86,
+      385,
+      970,
+      613
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 800
+  },
+  {
+    "annotation_id": "801_1747376426912",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a slice of watermelon that is not on the same plate as other pieces of watermelon or a knife",
+    "image": "open_image_v7/0ea06f0fd99eeb68.jpg",
+    "file_name": "0ea06f0fd99eeb68.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a slice of watermelon that is not on the same plate as other pieces of watermelon or a knife.",
+    "solution": [
+      11.2,
+      0,
+      480,
+      137.59999488
+    ],
+    "normalized_solution": [
+      11,
+      0,
+      469,
+      179
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 801
+  },
+  {
+    "annotation_id": "805_1747376607343",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the microphone which is not red, and right in front of a person who is on the other side of the mirror as viewed from the camera",
+    "image": "open_image_v7/1eb73ab03ead67db.jpg",
+    "file_name": "1eb73ab03ead67db.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the microphone which is not red, and right in front of a person who is on the other side of the mirror as viewed from the camera.",
+    "solution": [
+      497.6,
+      286.40000256,
+      529.6,
+      313.59999744000004
+    ],
+    "normalized_solution": [
+      486,
+      373,
+      517,
+      408
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsInside"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 805
+  },
+  {
+    "annotation_id": "836_1747377211196",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 773,
+    "width": 1024,
+    "normal_caption": "a grown alpaca whose fur is not black",
+    "image": "open_image_v7/4150b5e0bc88f7ee.jpg",
+    "file_name": "4150b5e0bc88f7ee.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a grown alpaca whose fur is not black.",
+    "solution": [
+      633.3688832,
+      342.30560339000004,
+      916.29510656,
+      604.2578103999999
+    ],
+    "normalized_solution": [
+      619,
+      443,
+      895,
+      782
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 836
+  },
+  {
+    "annotation_id": "840_1747377368022",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 819,
+    "width": 1024,
+    "normal_caption": "the suit that is worn by a female and whose cuff embroidery is not gold",
+    "image": "open_image_v7/2598d424d4253ca0.jpg",
+    "file_name": "2598d424d4253ca0.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the suit that is worn by a female and whose cuff embroidery is not gold.",
+    "solution": [
+      201.82230016,
+      292.85453106,
+      416.878848,
+      815.6909124
+    ],
+    "normalized_solution": [
+      197,
+      358,
+      407,
+      996
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 840
+  },
+  {
+    "annotation_id": "843_1747377453326",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 678,
+    "width": 1024,
+    "normal_caption": "the jellyfish that neither has a face on it nor is the shortest one",
+    "image": "open_image_v7/3040d0a6190c5f1c.jpg",
+    "file_name": "3040d0a6190c5f1c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the jellyfish that neither has a face on it nor is the shortest one.",
+    "solution": [
+      465.31765248,
+      148.8292716,
+      655.0588416,
+      655.4500929000001
+    ],
+    "normalized_solution": [
+      454,
+      220,
+      640,
+      967
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 843
+  },
+  {
+    "annotation_id": "844_1747377565077",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the goat that is on a rock and is not entirely black",
+    "image": "open_image_v7/321e326fc4a9a566.jpg",
+    "file_name": "321e326fc4a9a566.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the goat that is on a rock and is not entirely black.",
+    "solution": [
+      368,
+      89.60000256000001,
+      540.8,
+      256.00000511999997
+    ],
+    "normalized_solution": [
+      359,
+      117,
+      528,
+      333
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 844
+  },
+  {
+    "annotation_id": "848_1747377700902",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 589,
+    "normal_caption": "the butterfly that has yellow on its wings and whose two wings are fully visible",
+    "image": "open_image_v7/899d2f973daf6378.jpg",
+    "file_name": "899d2f973daf6378.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the butterfly that has yellow on its wings and whose two wings are fully visible.",
+    "solution": [
+      269.25714454,
+      311.4082304,
+      504.85715043000005,
+      569.5123456
+    ],
+    "normalized_solution": [
+      457,
+      304,
+      857,
+      556
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 848
+  },
+  {
+    "annotation_id": "849_1747377815319",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 773,
+    "width": 1024,
+    "normal_caption": "a clock whose minute hand is between 7 and 10",
+    "image": "open_image_v7/687aaf8c3676cbdd.jpg",
+    "file_name": "687aaf8c3676cbdd.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a clock whose minute hand is between 7 and 10.",
+    "solution": [
+      372.9481728,
+      4.8212058699,
+      607.6483584,
+      244.27443909000002
+    ],
+    "normalized_solution": [
+      364,
+      6,
+      593,
+      316
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "5"
+    },
+    "image_index": 849
+  },
+  {
+    "annotation_id": "850_1747377930503",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 948,
+    "width": 1024,
+    "normal_caption": "a black horse ridden by a person in a black hat",
+    "image": "open_image_v7/154cd0a8c596af31.jpg",
+    "file_name": "154cd0a8c596af31.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a black horse ridden by a person in a black hat.",
+    "solution": [
+      632.2086912,
+      275.68478952,
+      1004.4104704,
+      827.0543969999999
+    ],
+    "normalized_solution": [
+      617,
+      291,
+      981,
+      872
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 850
+  },
+  {
+    "annotation_id": "854_1747378015842",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a canoe that is red and loaded with bags",
+    "image": "open_image_v7/1a675b0addf2d53f.jpg",
+    "file_name": "1a675b0addf2d53f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a canoe that is red and loaded with bags.",
+    "solution": [
+      320,
+      243.19999488,
+      772.8,
+      526.39997952
+    ],
+    "normalized_solution": [
+      313,
+      317,
+      755,
+      685
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 854
+  },
+  {
+    "annotation_id": "859_1747378388297",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "a die whose top number is not 4 or 5",
+    "image": "open_image_v7/232f0be7e0e02c93.jpg",
+    "file_name": "232f0be7e0e02c93.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a die whose top number is not 4 or 5.",
+    "solution": [
+      0,
+      102.75221384,
+      302.06490624,
+      438.20795069999997
+    ],
+    "normalized_solution": [
+      0,
+      150,
+      295,
+      642
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 859
+  },
+  {
+    "annotation_id": "863_1747378817687",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 768,
+    "normal_caption": "the drink with a flower on it whose color is not orange",
+    "image": "open_image_v7/1e8c9a0f68845ff4.jpg",
+    "file_name": "1e8c9a0f68845ff4.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the drink with a flower on it whose color is not orange.",
+    "solution": [
+      54.39999744,
+      272,
+      302.40000000000003,
+      800
+    ],
+    "normalized_solution": [
+      71,
+      266,
+      394,
+      781
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 863
+  },
+  {
+    "annotation_id": "883_1747378943031",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 683,
+    "normal_caption": "the doll that is neither an elephant nor a rabbit",
+    "image": "open_image_v7/5040c1ddd04d0415.jpg",
+    "file_name": "5040c1ddd04d0415.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the doll that is neither an elephant nor a rabbit.",
+    "solution": [
+      170.75,
+      152.5427712,
+      315.81194654,
+      282.4306688
+    ],
+    "normalized_solution": [
+      250,
+      149,
+      462,
+      276
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 883
+  },
+  {
+    "annotation_id": "887_1747379002267",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 550,
+    "width": 1024,
+    "normal_caption": "the longer sock worn on a left foot",
+    "image": "open_image_v7/728148aaf80e4d0d.jpg",
+    "file_name": "728148aaf80e4d0d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the longer sock worn on a left foot.",
+    "solution": [
+      712.08013824,
+      8.20895515,
+      1009.6352256,
+      531.529845
+    ],
+    "normalized_solution": [
+      695,
+      15,
+      986,
+      966
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 887
+  },
+  {
+    "annotation_id": "902_1747379112968",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 471,
+    "width": 1024,
+    "normal_caption": "an unsheathed sword that is not the shortest",
+    "image": "open_image_v7/82cb70df5790df84.jpg",
+    "file_name": "82cb70df5790df84.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an unsheathed sword that is not the shortest.",
+    "solution": [
+      129.09669376,
+      233.61599999999999,
+      867.3292288,
+      296.4159843
+    ],
+    "normalized_solution": [
+      126,
+      496,
+      847,
+      629
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 902
+  },
+  {
+    "annotation_id": "904_1747379199876",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 576,
+    "width": 1024,
+    "normal_caption": "the fork that is not the shortest and whose handle is not carved",
+    "image": "open_image_v7/6a7bc156999b4612.jpg",
+    "file_name": "6a7bc156999b4612.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the fork that is not the shortest and whose handle is not carved.",
+    "solution": [
+      171.82138368,
+      59.68192896,
+      241.10419968,
+      530.1975744
+    ],
+    "normalized_solution": [
+      168,
+      104,
+      235,
+      920
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 904
+  },
+  {
+    "annotation_id": "906_1747379313534",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 853,
+    "width": 1024,
+    "normal_caption": "a brown model gun with neither a scope nor a magazine",
+    "image": "open_image_v7/c6e573d1100602f2.jpg",
+    "file_name": "c6e573d1100602f2.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a brown model gun with neither a scope nor a magazine.",
+    "solution": [
+      47.235584,
+      84.4554447,
+      440.30313472,
+      182.42376567000002
+    ],
+    "normalized_solution": [
+      46,
+      99,
+      430,
+      214
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "9"
+    },
+    "image_index": 906
+  },
+  {
+    "annotation_id": "910_1747379640957",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 746,
+    "width": 1024,
+    "normal_caption": "the parachute that is neither green or orange",
+    "image": "open_image_v7/375e84d28f0d3cbc.jpg",
+    "file_name": "375e84d28f0d3cbc.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the parachute that is neither green or orange.",
+    "solution": [
+      553.81200896,
+      432.14377520000005,
+      711.59320576,
+      621.403826
+    ],
+    "normalized_solution": [
+      541,
+      579,
+      695,
+      833
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 910
+  },
+  {
+    "annotation_id": "915_1747380386051",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the computer screen that has a non-blue desktop and is not a laptop screen",
+    "image": "open_image_v7/ad7048596f0e7a5f.jpg",
+    "file_name": "ad7048596f0e7a5f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the computer screen that has a non-blue desktop and is not a laptop screen.",
+    "solution": [
+      356,
+      59,
+      708,
+      338
+    ],
+    "normalized_solution": [
+      348,
+      77,
+      691,
+      440
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 915
+  },
+  {
+    "annotation_id": "916_1747380433530",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 682,
+    "width": 1024,
+    "normal_caption": "the non-white headphone on the top",
+    "image": "open_image_v7/840889f692dd1a0f.jpg",
+    "file_name": "840889f692dd1a0f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the non-white headphone on the top.",
+    "solution": [
+      193.77230848,
+      18.900693614,
+      467.88922368,
+      324.46188873999995
+    ],
+    "normalized_solution": [
+      189,
+      28,
+      457,
+      476
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 916
+  },
+  {
+    "annotation_id": "920_1747381775381",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 684,
+    "width": 1024,
+    "normal_caption": "the turtle that is not in the water or is stacked with another turtle",
+    "image": "open_image_v7/6a3444bb2712d559.jpg",
+    "file_name": "6a3444bb2712d559.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the turtle that is not in the water or is stacked with another turtle.",
+    "solution": [
+      561.84070144,
+      66.584073024,
+      919.7876224,
+      460.03538339999994
+    ],
+    "normalized_solution": [
+      549,
+      97,
+      898,
+      673
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 920
+  },
+  {
+    "annotation_id": "922_1747381898578",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 708,
+    "normal_caption": "the air-ship built no earlier than 1910 and without an 'R34' sign on it",
+    "image": "open_image_v7/8897899bded1b6d7.jpg",
+    "file_name": "8897899bded1b6d7.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the air-ship built no earlier than 1910 and without an 'R34' sign on it.",
+    "solution": [
+      39.930586164,
+      299.8198272,
+      285.65726976,
+      424.3603456
+    ],
+    "normalized_solution": [
+      56,
+      293,
+      403,
+      414
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsDepiction"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 922
+  },
+  {
+    "annotation_id": "926_1747382735520",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 542,
+    "width": 1024,
+    "normal_caption": "the washing machine that has the number 125 on its display and whose label is not 030",
+    "image": "open_image_v7/9baa2412a1b56a5c.jpg",
+    "file_name": "9baa2412a1b56a5c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the washing machine that has the number 125 on its display and whose label is not 030.",
+    "solution": [
+      0,
+      2.689826218,
+      343.12747008,
+      542
+    ],
+    "normalized_solution": [
+      0,
+      5,
+      335,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 926
+  },
+  {
+    "annotation_id": "930_1747382869155",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 682,
+    "normal_caption": "the pen with a black cap, a silver barrel, and whose brand is not shanpie",
+    "image": "open_image_v7/488924fdbe266aa7.jpg",
+    "file_name": "488924fdbe266aa7.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the pen with a black cap, a silver barrel, and whose brand is not shanpie.",
+    "solution": [
+      227.8362856,
+      49.767303168,
+      682,
+      711.8232576
+    ],
+    "normalized_solution": [
+      334,
+      49,
+      1000,
+      695
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 930
+  },
+  {
+    "annotation_id": "942_1747383268798",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 813,
+    "normal_caption": "the folded knife with its side facing the screen",
+    "image": "open_image_v7/67be3c762691bf68.jpg",
+    "file_name": "67be3c762691bf68.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the folded knife with its side facing the screen.",
+    "solution": [
+      44.525353929,
+      164.89532416,
+      471.63894209999995,
+      329.79064832
+    ],
+    "normalized_solution": [
+      55,
+      161,
+      580,
+      322
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 942
+  },
+  {
+    "annotation_id": "945_1747383344099",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 769,
+    "normal_caption": "the non-white one of two mice facing the same direction",
+    "image": "open_image_v7/5896b411e1a18f8c.jpg",
+    "file_name": "5896b411e1a18f8c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the non-white one of two mice facing the same direction.",
+    "solution": [
+      89.71666923,
+      149.03286784,
+      499.85,
+      975.9248384
+    ],
+    "normalized_solution": [
+      117,
+      146,
+      650,
+      953
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 945
+  },
+  {
+    "annotation_id": "950_1747383425206",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 765,
+    "width": 1024,
+    "normal_caption": "a guitar whose strings are silver and whose body is not black",
+    "image": "open_image_v7/6a0ea300d03570a1.jpg",
+    "file_name": "6a0ea300d03570a1.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a guitar whose strings are silver and whose body is not black.",
+    "solution": [
+      99.04524288,
+      252.3382029,
+      990.45238784,
+      504.6763905
+    ],
+    "normalized_solution": [
+      97,
+      330,
+      967,
+      660
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 950
+  },
+  {
+    "annotation_id": "956_1747383770061",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 851,
+    "normal_caption": "the one of two flashlights that has a larger aperture and is neither the longest nor the shortest",
+    "image": "open_image_v7/a24716c54779b1cd.jpg",
+    "file_name": "a24716c54779b1cd.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the one of two flashlights that has a larger aperture and is neither the longest nor the shortest.",
+    "solution": [
+      318.49306442,
+      320,
+      542.6178537999999,
+      986.9473792
+    ],
+    "normalized_solution": [
+      374,
+      313,
+      638,
+      964
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 956
+  },
+  {
+    "annotation_id": "957_1747383837624",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 641,
+    "width": 1024,
+    "normal_caption": "the turkey that has one foot lifted and its head facing the ground",
+    "image": "open_image_v7/a14bcc5e63f76e7a.jpg",
+    "file_name": "a14bcc5e63f76e7a.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the turkey that has one foot lifted and its head facing the ground.",
+    "solution": [
+      437.39428864,
+      279.52283146,
+      899.6571648,
+      545.8744462
+    ],
+    "normalized_solution": [
+      427,
+      436,
+      879,
+      852
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "verb"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 957
+  },
+  {
+    "annotation_id": "958_1747383934676",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 705,
+    "width": 1024,
+    "normal_caption": "a parrot not holding anything in its beak with unspread wings",
+    "image": "open_image_v7/91451da3dffef91f.jpg",
+    "file_name": "91451da3dffef91f.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a parrot not holding anything in its beak with unspread wings.",
+    "solution": [
+      810.6027008,
+      268.790838,
+      1016.32385024,
+      609.771279
+    ],
+    "normalized_solution": [
+      792,
+      381,
+      993,
+      865
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 958
+  },
+  {
+    "annotation_id": "961_1747384024947",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 640,
+    "width": 1024,
+    "normal_caption": "a tank with a visible gun barrel and undamaged tracks, which is not green",
+    "image": "open_image_v7/dd173ffae69560b3.jpg",
+    "file_name": "dd173ffae69560b3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a tank with a visible gun barrel and undamaged tracks, which is not green.",
+    "solution": [
+      39.49714432,
+      89.13242240000001,
+      443.24573184,
+      388.6758016
+    ],
+    "normalized_solution": [
+      39,
+      139,
+      433,
+      607
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 961
+  },
+  {
+    "annotation_id": "964_1747384185375",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the snowmobile whose seat is black and no visible letters on it",
+    "image": "open_image_v7/dd25715fa2651270.jpg",
+    "file_name": "dd25715fa2651270.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the snowmobile whose seat is black and no visible letters on it.",
+    "solution": [
+      430.4,
+      0,
+      715.2,
+      276.80001024
+    ],
+    "normalized_solution": [
+      420,
+      0,
+      698,
+      360
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 964
+  },
+  {
+    "annotation_id": "966_1747384247957",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "an all-black handbag without a concentric circle design",
+    "image": "open_image_v7/dc7720e02f1918bf.jpg",
+    "file_name": "dc7720e02f1918bf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an all-black handbag without a concentric circle design.",
+    "solution": [
+      545.27075328,
+      73.93502208,
+      931.5812352,
+      497.2129792
+    ],
+    "normalized_solution": [
+      532,
+      72,
+      910,
+      486
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 966
+  },
+  {
+    "annotation_id": "968_1747384340672",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a striped necktie that also has black in it",
+    "image": "open_image_v7/d9f5f595c60cbabf.jpg",
+    "file_name": "d9f5f595c60cbabf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a striped necktie that also has black in it.",
+    "solution": [
+      148.8,
+      220.79999999999998,
+      353.6,
+      462.3999744
+    ],
+    "normalized_solution": [
+      145,
+      288,
+      345,
+      602
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 968
+  },
+  {
+    "annotation_id": "972_1747384415839",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "a stool with a round, white seat",
+    "image": "open_image_v7/faab0ba838f7d3fc.jpg",
+    "file_name": "faab0ba838f7d3fc.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a stool with a round, white seat.",
+    "solution": [
+      345.6,
+      94.40000256,
+      577.6,
+      385.60002048
+    ],
+    "normalized_solution": [
+      338,
+      123,
+      564,
+      502
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 972
+  },
+  {
+    "annotation_id": "979_1747384486882",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the person neither wearing a mask nor standing up",
+    "image": "open_image_v7/0038b12aeccdcb7e.jpg",
+    "file_name": "0038b12aeccdcb7e.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person neither wearing a mask nor standing up.",
+    "solution": [
+      333.7817088,
+      394.38718295,
+      567.8820352,
+      595.3583962
+    ],
+    "normalized_solution": [
+      326,
+      577,
+      555,
+      872
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 979
+  },
+  {
+    "annotation_id": "983_1747384574155",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 680,
+    "width": 1024,
+    "normal_caption": "the person wearing a green jersey whose number is not visible",
+    "image": "open_image_v7/007b9cad3e996e06.jpg",
+    "file_name": "007b9cad3e996e06.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a green jersey whose number is not visible.",
+    "solution": [
+      840.28234752,
+      215.6097556,
+      932.1411584,
+      423.6807116
+    ],
+    "normalized_solution": [
+      821,
+      317,
+      910,
+      623
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "9"
+    },
+    "image_index": 983
+  },
+  {
+    "annotation_id": "1004_1747388097725",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 1024,
+    "normal_caption": "the person in black clothing and not wearing a hat",
+    "image": "open_image_v7/1082cbe62ac8fe05.jpg",
+    "file_name": "1082cbe62ac8fe05.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person in black clothing and not wearing a hat.",
+    "solution": [
+      44.3610112,
+      75.78339328,
+      365.97833728,
+      1024
+    ],
+    "normalized_solution": [
+      43,
+      74,
+      357,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsTruncated"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 1004
+  },
+  {
+    "annotation_id": "1005_1747388170535",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the drawer on the second level to the left of the stove",
+    "image": "open_image_v7/1664c338a8380c25.jpg",
+    "file_name": "1664c338a8380c25.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the drawer on the second level to the left of the stove.",
+    "solution": [
+      355.2,
+      465.59999999999997,
+      449.6,
+      601.60002048
+    ],
+    "normalized_solution": [
+      347,
+      606,
+      439,
+      783
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "2",
+      "type": [
+        "spatial"
+      ],
+      "attribute": [],
+      "distractors": "4"
+    },
+    "image_index": 1005
+  },
+  {
+    "annotation_id": "1009_1747388341971",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 773,
+    "normal_caption": "the person playing a wind instrument whose hair is not pure black",
+    "image": "open_image_v7/0ed1fc34936188cd.jpg",
+    "file_name": "0ed1fc34936188cd.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person playing a wind instrument whose hair is not pure black.",
+    "solution": [
+      33.748440239000004,
+      160.50157568,
+      244.27443909,
+      417.3040639999999
+    ],
+    "normalized_solution": [
+      44,
+      157,
+      316,
+      408
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 1009
+  },
+  {
+    "annotation_id": "1013_1747388453674",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the cat whose eyes are both open and whose paw is not resting on the top among other cats",
+    "image": "open_image_v7/12e3a191ec6d32a6.jpg",
+    "file_name": "12e3a191ec6d32a6.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the cat whose eyes are both open and whose paw is not resting on the top among other cats.",
+    "solution": [
+      0,
+      227.19998976,
+      702.4,
+      767.9999999999999
+    ],
+    "normalized_solution": [
+      0,
+      296,
+      686,
+      1000
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 1013
+  },
+  {
+    "annotation_id": "1014_1747388529798",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 678,
+    "width": 1024,
+    "normal_caption": "the person wearing a black jersey but not holding a ball",
+    "image": "open_image_v7/48840c460bff6d9d.jpg",
+    "file_name": "48840c460bff6d9d.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the person wearing a black jersey but not holding a ball.",
+    "solution": [
+      596.9573888,
+      48.106429608,
+      741.30981888,
+      326.22172044
+    ],
+    "normalized_solution": [
+      583,
+      71,
+      724,
+      481
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "6"
+    },
+    "image_index": 1014
+  },
+  {
+    "annotation_id": "1016_1747388618705",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 768,
+    "width": 1024,
+    "normal_caption": "the glass that contains neither the most nor the least wine",
+    "image": "open_image_v7/3cc09b22cc15e964.jpg",
+    "file_name": "3cc09b22cc15e964.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the glass that contains neither the most nor the least wine.",
+    "solution": [
+      274.02816512,
+      27.199999488,
+      366.9733888,
+      228.80001024
+    ],
+    "normalized_solution": [
+      268,
+      35,
+      358,
+      298
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "5"
+    },
+    "image_index": 1016
+  },
+  {
+    "annotation_id": "1020_1747388832932",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 970,
+    "normal_caption": "the dress worn by a person wearing glasses and not holding a gong",
+    "image": "open_image_v7/06ffa4c23a5909a9.jpg",
+    "file_name": "06ffa4c23a5909a9.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the dress worn by a person wearing glasses and not holding a gong.",
+    "solution": [
+      0,
+      172.76624896,
+      248.34880900000002,
+      872.8295424
+    ],
+    "normalized_solution": [
+      0,
+      169,
+      256,
+      852
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 1020
+  },
+  {
+    "annotation_id": "1033_1747388966780",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 636,
+    "width": 1024,
+    "normal_caption": "a goose with a green head that is not flying at the back",
+    "image": "open_image_v7/310275a7da893e8c.jpg",
+    "file_name": "310275a7da893e8c.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a goose with a green head that is not flying at the back.",
+    "solution": [
+      278.213376,
+      153.16513247999998,
+      553.513472,
+      369.05505264
+    ],
+    "normalized_solution": [
+      272,
+      241,
+      541,
+      580
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "verb",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 1033
+  },
+  {
+    "annotation_id": "1034_1747389128850",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the pair of skis next to a wooden post and not red",
+    "image": "open_image_v7/6c6e3472e3fe3f90.jpg",
+    "file_name": "6c6e3472e3fe3f90.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the pair of skis next to a wooden post and not red.",
+    "solution": [
+      401.74630912,
+      482.0287526,
+      724.9557504,
+      545.49335848
+    ],
+    "normalized_solution": [
+      392,
+      706,
+      708,
+      799
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded",
+        "IsGroupOf"
+      ],
+      "distractors": "2"
+    },
+    "image_index": 1034
+  },
+  {
+    "annotation_id": "1036_1747389242278",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 681,
+    "normal_caption": "the shrimp that is not at the top, whose head faces the left side of the image, and is further from the vegetable salad",
+    "image": "open_image_v7/3c085ef655fb2de0.jpg",
+    "file_name": "3c085ef655fb2de0.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the shrimp that is not at the top, whose head faces the left side of the image, and is further from the vegetable salad.",
+    "solution": [
+      90.5986737,
+      637.9264,
+      552.65188233,
+      752.5420032
+    ],
+    "normalized_solution": [
+      133,
+      623,
+      812,
+      735
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 1036
+  },
+  {
+    "annotation_id": "1038_1747389395204",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the monkey that is either not opening its mouth or is lying flat, and is also further from the camera",
+    "image": "open_image_v7/1ef95ff742c28434.jpg",
+    "file_name": "1ef95ff742c28434.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the monkey that is either not opening its mouth or is lying flat, and is also further from the camera.",
+    "solution": [
+      909.2153344,
+      78.57522275,
+      966.6076672,
+      126.92920493
+    ],
+    "normalized_solution": [
+      888,
+      115,
+      944,
+      186
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 1038
+  },
+  {
+    "annotation_id": "1038_1747389436666",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the monkey that is neither opening its mouth or lying flat, and is also closer from the camera",
+    "image": "open_image_v7/1ef95ff742c28434.jpg",
+    "file_name": "1ef95ff742c28434.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the monkey that is neither opening its mouth or lying flat, and is also closer from the camera.",
+    "solution": [
+      101.19174144,
+      60.442477725,
+      288.47198208,
+      314.300891
+    ],
+    "normalized_solution": [
+      99,
+      88,
+      282,
+      460
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "exclude",
+        "verb"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 1038
+  },
+  {
+    "annotation_id": "1040_1747389546454",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 682,
+    "width": 1024,
+    "normal_caption": "the double-decker bus whose route is visible but is not going to \u201cNorth Finchley\u201d",
+    "image": "open_image_v7/624860d2c1d529cf.jpg",
+    "file_name": "624860d2c1d529cf.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the double-decker bus whose route is visible but is not going to \u201cNorth Finchley\u201d.",
+    "solution": [
+      649.4395392,
+      135.79645728,
+      984.7315456,
+      556.7654994
+    ],
+    "normalized_solution": [
+      634,
+      199,
+      962,
+      816
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "exclude",
+        "attr"
+      ],
+      "attribute": [
+        "IsOccluded"
+      ],
+      "distractors": "3"
+    },
+    "image_index": 1040
+  },
+  {
+    "annotation_id": "1041_1747389650047",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 1024,
+    "width": 685,
+    "normal_caption": "a sailboat whose sail is entirely white and which is closer to the sailboat whose sail is red",
+    "image": "open_image_v7/04c96ce577b79243.jpg",
+    "file_name": "04c96ce577b79243.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: a sailboat whose sail is entirely white and which is closer to the sailboat whose sail is red.",
+    "solution": [
+      176.92051905,
+      576.283648,
+      244.96689149999997,
+      771.403264
+    ],
+    "normalized_solution": [
+      258,
+      563,
+      358,
+      753
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "3"
+    },
+    "image_index": 1041
+  },
+  {
+    "annotation_id": "1043_1747389809334",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 680,
+    "width": 1024,
+    "normal_caption": "an adult cow that is on the same side of the fence as the camera and is partially out of frame",
+    "image": "open_image_v7/203b7cfdabfc70f8.jpg",
+    "file_name": "203b7cfdabfc70f8.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: an adult cow that is on the same side of the fence as the camera and is partially out of frame.",
+    "solution": [
+      772.51764224,
+      99.51219280000001,
+      1024,
+      468.91351599999996
+    ],
+    "normalized_solution": [
+      754,
+      146,
+      1000,
+      690
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "4",
+      "type": [
+        "spatial",
+        "attr"
+      ],
+      "attribute": [
+        "IsTruncated"
+      ],
+      "distractors": "4"
+    },
+    "image_index": 1043
+  },
+  {
+    "annotation_id": "1060_1747390758553",
+    "dataset": "refcocos_test",
+    "text_type": "caption",
+    "height": 683,
+    "width": 1024,
+    "normal_caption": "the waste container without a lid and the ground in front of it is not wet",
+    "image": "open_image_v7/950be35ffcc859e3.jpg",
+    "file_name": "950be35ffcc859e3.jpg",
+    "problem": "Please provide the bounding box coordinate of the region this sentence describes: the waste container without a lid and the ground in front of it is not wet.",
+    "solution": [
+      178.2182912,
+      181.32742976,
+      401.74630912,
+      475.9844962899999
+    ],
+    "normalized_solution": [
+      174,
+      265,
+      392,
+      697
+    ],
+    "categories": {
+      "empty_case": false,
+      "hops": "3",
+      "type": [
+        "attr"
+      ],
+      "attribute": [],
+      "distractors": "2"
+    },
+    "image_index": 1060
   }
 ]
