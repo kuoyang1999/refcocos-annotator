@@ -78,7 +78,8 @@ Before running the annotator, you need to download the test image set from Open 
 
 3.  Run the download script. This script reads the CSV, generates a list of image files to download (prefixed with `test/`), and downloads them into the `data/test_images/` directory using multiple processes. Ensure you have the `downloader.py` script (and its dependencies like `boto3`) available as it's imported by `download_test_images.py`.
     ```bash
-    python data/download_test_images.py
+    cd data
+    python download_test_images.py
     ```
     This will download the images specified in the CSV file into the `data/test_images/` directory.
 
